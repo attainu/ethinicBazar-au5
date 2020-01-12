@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Long+Cang&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+   <link rel="stylesheet" href="/stylesheets/style.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Long+Cang&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+</head>
+    <title>Edit Product</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-default ">
+        <!-- Brand -->
+        
+        <a class="navbar-brand ml-4"  href="ethnichub">
+            <img src="/uploads/logo.png" class="logo" width="42" height="42">
+        </a>
+
+        <ul class="nav justify-content-center">
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="/">
+                <button type = "button" class = "btn btn-primary navbar-btn border  border-dark shadow " >DASHBOARD</button>
+              </a>
+            </li>
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="/listings">
+                <button type = "button" class = "btn btn-primary navbar-btn border  border-dark shadow ">LISTINGS</button>
+              </a>
+            </li>
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="/orders">
+                <button type = "button" class = "btn btn-primary navbar-btn border  border-dark shadow ">ORDERS</button>
+              </a>
+            </li>
+        </ul>
+    
+        
+        <!-- Links -->
+        <div class="navbar-nav ml-auto">
+          <a class="nav-link" href="#">
+            <img src="/uploads/profile.jpg" class="profileimg" width="30" height="30">
+          </a>
+        </div>
+
+        <ul class="navbar-nav topnav-right">
+        
+            <li class="nav-item mr-4">
+              <a class="nav-link" href="/logout">
+                <button class="btn btn-primary border  border-dark shadow ">
+                 <i class="fa fa-sign-out" aria-hidden="true"></i>Logout
+                </button>
+              </a>
+              
+              
+            </li>
+        </ul>
+    </nav>
+
+<div class="row">
+    <!-- <div class="col"> -->
+      <div  class="left">
+        <a href="listings" style="color:black ;text-decoration: none;"><h1 class="left">My Listings</h1></a>
+      </div>
+    
+    <!-- </div> -->
+</div>
+
+
+<div class="m-3 pl-5">
+  <button class="btn btn-primary shadow">Add New  <i class="fa fa-plus"></i></button></a> 
+</div></a>
+
+
+<hr style="height:3px;border:none; box-shadow: 0 10px 10px -10px #8c8c8c inset;">
+
+
+<div class="row">
+
+
+  <div class="col-9">
+    <div class="row">
+      <div class="col mb-3">
+        <div class="card shadow bg-light   pl-4 pr-2" style="width: 54rem; margin-left:350px">
+          <div class="card-body">
+            <div class="e-profile">
+              <div class="row">
+             
+          
+              </div>
+              <ul class="nav nav-tabs">
+                <li class="nav-item"><a href="" class="active nav-link" style="background-color: #fb9224;"><b>Product Modification</b></a></li>
+              </ul>
+
+              <div class="tab-content pt-3">
+                <div class="tab-pane active">
+                  <form class="form" action="/edititem" method="POST">
+                    <div class="row">
+                        <div class="col">
+                            <input type="hidden" value="{{data._id}}" name="id">
+
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="form-group">
+                                  <label><b>Product Name</b></label>
+                                  <input class="form-control" type="text" name="productname" placeholder="" value="{{data.productname}}" >
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                <label><b>Price</b></label>
+                                <input class="form-control" type="number" name="price" placeholder="" value="{{data.price}}" >
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label><b>Category</b></label>
+                                    <input class="form-control" type="text" name="category" placeholder="" value="{{data.category}}" >
+                                  </div>
+                                </div>
+                            </div>
+                        
+                            <div class="row">
+                            <div class="col-sm-6">
+                            
+                                <div class="form-group">
+                                <p><b>Description</b></p>
+                                <label>Product Details: </label>
+                                <input class="form-control" rows="5" name="productdetails" placeholder="" value="{{data.productdetails}}" >
+                                 <label class="mt-1">Material and Care: </label>
+                                <input class="form-control" rows="5" name="material" placeholder="" value="{{data.material}}">
+                                <label class="mt-1">Specifications: </label>
+                                <input class="form-control" rows="5" name="specifications" placeholder="" value="{{data.specifications}}">
+                                </div>
+
+        
+                            </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="form-group">
+                                  <label><b>Warranty</b></label>
+                                  <input class="form-control" type="number" name="warranty" placeholder="" value="{{data.warranty}}">
+                                </div>
+                              </div>
+                            </div>
+
+                    
+                            <div class="row">
+                                <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label><b>Number of Units</b></label>
+                                    <input class="form-control" type="number" name="quantity" placeholder="" value="{{data.quantity}}" >
+                                </div>
+                                </div>
+                            </div>
+
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="form-group">
+                                <label><b>Available Colors</b></label>
+                                <input class="form-control" type="text" name="colors" placeholder="" value="{{data.colors}}" >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                     
+                      
+                    </div>
+                    {{!-- <div class="row">
+                      <div class="col-sm-6">
+                    
+                            
+                              <div class="form-group"> 
+                                <p><b>Upload Image</b></p>
+                                <label for="productImageUrl" class="btn btn-primary">
+                                  <i class="fa fa-fw fa-camera"></i>Upload
+                                </label>
+                                <input type="file"  name="productImageUrl" id="productImageUrl">
+                              </div>
+                            
+                            
+                        
+                      
+                      </div>
+                    </div> --}}
+                   
+                    <div class="row">
+                      <div class="col d-flex justify-content-end">
+                        <button class="btn btn-primary" type="submit">Save Changes</button>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+  </div>
+</div>
+</div>
+
+</body>
+</html>

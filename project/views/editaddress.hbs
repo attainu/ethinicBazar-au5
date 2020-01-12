@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link
+      href="https://fonts.googleapis.com/css?family=Long+Cang&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Long+Cang&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills>a.active:hover {
+        color: #fff;
+        background-color: #2a1a5e;
+    }
+  </style>
+    <title>Edit Address</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-default ">
+        <!-- Brand -->
+        
+        <a class="navbar-brand ml-4"  href="/ethnichub">
+            <img src="/uploads/logo.png" class="logo" width="42" height="42">
+        </a>
+
+        <ul class="nav justify-content-center">
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="/">
+                <button type = "button" class = "btn btn-primary navbar-btn border  border-dark shadow " >DASHBOARD</button>
+              </a>
+            </li>
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="/listings">
+                <button type = "button" class = "btn btn-primary navbar-btn border  border-dark shadow ">LISTINGS</button>
+              </a>
+            </li>
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="/orders">
+                <button type = "button" class = "btn btn-primary navbar-btn border  border-dark shadow ">ORDERS</button>
+              </a>
+            </li>
+        </ul>
+    
+        
+        <!-- Links -->
+        <div class="navbar-nav ml-auto">
+          <a class="nav-link" href="#">
+            <img src="/uploads/profile.jpg" class="profileimg" width="30" height="30">
+          </a>
+        </div>
+
+        <ul class="navbar-nav topnav-right">
+        
+            <li class="nav-item mr-4">
+              <a class="nav-link" href="/logout">
+                <button class="btn btn-primary border  border-dark shadow ">
+                 <i class="fa fa-sign-out" aria-hidden="true"></i>Logout
+                </button>
+              </a>
+              
+              
+            </li>
+        </ul>
+    </nav>
+
+<div class="row">
+    <!-- <div class="col"> -->
+      <div  class="left">
+        <a href="/"><h1 class="left" style="color:black ;text-decoration: none;">My Account</h1></a>
+      </div>
+    
+    <!-- </div> -->
+  </div>
+
+
+  <hr style="height:3px;border:none; box-shadow: 0 10px 10px -10px #8c8c8c inset;">
+
+
+
+<div class="row">
+    <div class="col-3">
+        <div class="card shadow bg-light ml-5">
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" style="font-size: larger;">Home</a>                   
+                  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false" style="font-size: larger;">Profile</a>
+                  <a class="nav-link active" id="v-pills-address-tab" data-toggle="pill" href="#v-pills-address" role="tab" aria-controls="v-pills-address" aria-selected="false" style="font-size: larger;">Address</a>                   
+                </div>
+              </div>
+            </div>              
+          </div>         
+        </div>
+      </div>
+
+
+  <div class="col-9">
+    <div class="row">
+      <div class="col mb-3">
+        <div class="card shadow bg-light " style="width: 54rem;">
+          <div class="card-body">
+            <div class="e-profile">
+             
+              <ul class="nav nav-tabs">
+                <li class="nav-item"><a href="" class="active nav-link" style="background-color: #fb9224;"><b>Address</b></a></li>
+              </ul>
+              <div class="tab-content pt-3">
+                <div class="tab-pane active">
+                 <form action="/editaddress" method="POST">
+                    <div class="row">
+                      <div class="col">
+                      
+                      
+                       <input type="hidden" value="{{data._id}}" name="id">
+                        <div class="row">
+                          <div class="col mb-3">
+                            <div class="form-group">
+                              <label><b>Address</b></label>
+                              <textarea class="form-control" rows="5" name="address" placeholder="My Address">{{data.address}}</textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col d-flex justify-content-end">
+                        <button class="btn btn-primary" type="submit">Save Changes</button>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+  </div>
+</div>
+</div>
+
+</body>
+</html>

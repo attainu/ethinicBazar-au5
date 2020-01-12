@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{!-- <base href="/"> --}}
+    <link
+      href="https://fonts.googleapis.com/css?family=Long+Cang&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+   <link rel="stylesheet" href="/stylesheets/style.css">
+   
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus {
+        color: #fff;
+        background-color: #2a1a5e;
+    }
+    .nav-pills>a.active:hover {
+        color: #fff;
+        background-color: darkblue;
+    }
+  </style>
+
+
+  <title>Seller Dashboard</title>
+</head>
+
+<body>
+      
+    <nav class="navbar navbar-default ">
+        <!-- Brand -->
+        
+        <a class="navbar-brand ml-4"  href="ethnichub">
+           <img src="/uploads/logo.png" class="logo" width="42" height="42">
+        </a>
+
+        <ul class="nav justify-content-center">
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="/">
+                <button type = "button" class = "btn btn-primary navbar-btn border border-dark  shadow " >DASHBOARD</button>
+              </a>
+            </li>
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="listings">
+                <button type = "button" class = "btn btn-primary navbar-btn border border-dark shadow ">LISTINGS</button>
+              </a>
+            </li>
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="orders">
+                <button type = "button" class = "btn btn-primary navbar-btn border border-dark shadow ">ORDERS</button>
+              </a>
+            </li>
+        </ul>
+    
+        
+        <!-- Links -->
+        <div class="navbar-nav ml-auto">
+          <a class="nav-link" href="#">
+            <img src="/uploads/profile.jpg" class="profileimg" width="30" height="30">
+          </a>
+        </div>
+
+        <ul class="navbar-nav topnav-right">
+        
+            <li class="nav-item mr-4">
+      
+              <a class="nav-link" href="logout">
+                <button class="btn btn-primary border border-dark shadow ">
+                 <i class="fa fa-sign-out" aria-hidden="true"></i>Logout
+                </button>
+              </a>
+              
+              
+            </li>
+        </ul>
+
+    </nav>
+
+    
+      <div class="row">
+        <!-- <div class="col"> -->
+          <div  class="left">
+           <h1 class="left">My Account</h1>
+          </div>
+        
+          <div class="right ml-auto mt-4">
+              <button class="btn btn-lg btn-danger border border-dark shadow"  id ="btndel" value="{{results._id}}" onclick="deleteSelected()" >Delete My Account</button>
+          </div>
+        <!-- </div> -->
+      </div>
+  
+   
+    <hr style="height:3px;border:none; box-shadow: 0 10px 10px -10px #8c8c8c inset;">
+    
+   
+    
+    
+      <div class="row">
+
+        <div class="col-3">
+          <div class="card shadow bg-light ml-5">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+
+                  <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" style="font-size: larger;">Home</a>                   
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false" style="font-size: larger;">Profile</a>
+                    <a class="nav-link" id="v-pills-address-tab" data-toggle="pill" href="#v-pills-address" role="tab" aria-controls="v-pills-address" aria-selected="false" style="font-size: larger;">Address</a>                   
+                  </div>
+               
+                </div>
+              </div>              
+            </div>         
+          </div>
+        </div>
+
+        <div class="col-9">
+          <div class="tab-content" id="v-pills-tabContent">
+
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+              <!-- <div class="col-12"> -->
+                <div class="card shadow bg-light " style="width: 70rem; height: 36rem;">
+                
+                  <p class="ml-3 mt-3" style="font-size: larger;"><b><u>Messages/Notifications</u></b></p>
+                
+                </div>
+              <!-- </div>  -->
+
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+              <!-- <div class="row"> -->
+        
+                <!-- <div class="col-9"> -->
+                
+                  <div class="card mb-3  shadow pt-2 pb-4 mb-5  bg-light rounded " style="width: 54rem;">
+                    <h4 class="mt-2 ml-1">Seller Profile</h4>
+                    <div class="row no-gutters ml-3">
+                      <div class="col-4 ">
+                        <img class="card-img-top mt-4" src="{{results.profileImageUrl}}" width="2" height="180" alt="Card image cap">
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Name:  {{results.firstname}}  {{results.lastname}}</h5>
+                          <h5 class="card-title mt-2">Email: {{results.email}}</h5>
+                          <h5 class="card-title mt-2">Mobile: {{results.mobile}}</h5>
+                          <h5 class="card-title mt-2">Company: {{results.company}}</h5>
+                          <a href="editprofile/{{results._id}}"><buttton class = "btn btn-primary pl-5 pr-5 pt-1 pb-1">Edit</buttton></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <!-- </div> -->
+              <!-- </div> -->
+
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-address" role="tabpanel" aria-labelledby="v-pills-address-tab">
+
+              <div class="row">
+                  
+                    <div class = "col-3 mr-3">
+                      <div class="card shadow p-3 mb-5  bg-light  rounded" style="height: 300px;">
+                        <a href="#"><i style = "margin-left: 36%; margin-top: 30%; font-size: 60px; color:#2a1a5e;" class="fa fa-plus-circle"></i></a>
+                        <h5 class = "text-center">Add New Address</h5>
+                        
+                      </div>
+                    </div>
+                    <div class = "col-3 ml-3 mr-3">
+                      <div class="card shadow p-3 mb-5   bg-light rounded" style="height: 300px;">
+                        <div class="card-body">
+                          <h5 class="card-title">Default</h5>
+                          <hr/>
+                          <p class="card-text mt-2">
+                          <h5>Address: </h5>{{results.address}}
+                          </p>
+                        </div>
+                      
+                      </div>
+                    </div>
+                    <div class = "col-3 ml-3 ">
+                      <div class="card shadow p-3 mb-5  bg-light rounded" style="height: 300px;">
+                        <div class="card-body mt-4">
+                          
+                          <p class="card-text mt-2 pt-1">
+                          <h5>Address: </h5>{{results.address}}
+                          </p>
+                          <a href = "editaddress/{{results._id}}">Edit</a>    |   <a href = "">Remove</a>    |   <a href = "">Make Default</a>
+                        
+                        </div>
+                      </div>
+                    </div>
+                  
+                  <br/>
+                
+              </div>  
+
+            </div>
+
+          </div> 
+        </div> 
+      </div>
+    <script src="/js/script.js"></script>
+    <script src="/assets/js/jquery-3.3.1.js"></script>
+      
+</body>
+</html>
