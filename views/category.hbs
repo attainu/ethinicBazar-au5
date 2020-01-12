@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://kit.fontawesome.com/69bcf6cd54.js" crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+
+
+</head>
+    <style>
+        div{
+            font-family: Arial, Helvetica, sans-serif;
+        
+        }
+    </style>
+<body>
+     <div class="top-head pt-1 border" class="header" style="height:80px;">
+     <div class="container">
+        <div class="row ">
+            <div class="col-md-12 text-right" style="margin-top: 10px;">
+            <ul class="list-inline">
+                <img style="border-radius: 20%; width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;" src="l.png" alt="logo">
+                <form class="form-inline">
+                <div class="input-group" style="margin-top: 5px; width:90;">                    
+                    <input type="text" class="form-control" style="margin-left: 200px; width:120" placeholder="Search">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-secondary" style="color: #2a1a5e;"><i class="fa fa-search" style="color: #2a1a5e;"></i></button>
+                    </div>
+                    </div>
+                    <div class="id 1" style="margin-top: 10px;">
+                    <a href="#"><li class="list-inline-item" style="font-size: 20px; margin-top: 1px; margin-bottom: 5px; margin-right: 10px;"><small><i class="fas fa-user" style="margin-right: 2px;"></i> </i> <strong>  My Account</strong></small></li></a>
+                    <a href="#"><li class="list-inline-item" style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;"><small><strong>Login / Signup</strong> </small></li></a>
+                    <a href="#"> <i class="fa fa-shopping-cart" style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px;"></i></a>
+                    </div>
+                </form>
+                
+                </ul>
+              </div>
+            </div>
+        </div>
+</div>
+{{!-- <div class="jumbotron" id="navbar-gap">
+  <div class="container">
+    <h1 class="text-center"> Find your favourite Product </h1>
+    <p class="text-center">Search many of Ecommerce's products</p>
+    <dir class="row">
+    	<div class="col-md-6 col-md-offset-3">
+    		<div class="input-group col-md-12">
+    			<input type="text" id="search" class="form-control input-lg" name="search_term" placeholder="Search for a Product....">
+    			<span class="input-group-btn">
+    				<button type="submit" class="btn btn-primary ml-3">Search</button>
+    			</span>
+    		</div>
+    	</div>
+    </dir>
+  </div>
+</div> --}}
+   
+
+<div class="row" >
+    <div class="col-md-2" style="border: 1px solid whitesmoke; background:white; margin-top:53px;" >   
+        <section>
+            <div class="condition-render-verticalFilters condition-render-hung" style="top: 180.4px; bottom: auto;">
+                <div class="vertical-filters-filters header-container" style="background: white; width: 270px; margin-left: 20px;">
+                    <span class="header-title">FILTERS</span>
+                    <span class="header-clearAllBtn">CLEAR ALL</span>
+                </div>
+                
+                <div class="vertical-filters-filters categories-container" style="background: white; width: 270px; margin-left: 20px;">
+                    <hr>
+                    <span class="vertical-filters-header">Categories</span>
+                    <div class="filter-search-filterSearchBox filter-search-expanded">
+                        <input type="text" class="filter-search-inputBox" placeholder="Search for Categories" style="height: 35px;">
+                        <span class="myntraweb-sprite filter-search-closeSearch sprites-remove"></span>
+                    </div>
+                    <ul class="categories-list">
+                         
+                         {{#eachUnique items}}
+                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="{{subcategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subcategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 -->(<!-- /react-text --><!-- react-text: 41 -->1396<!-- /react-text --><!-- react-text: 42 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                       
+                         {{/eachUnique}}
+                
+                    </ul>
+                 
+            <div class="categories-more"><!-- react-text: 108 -->+ <!-- /react-text --><!-- react-text: 109 -->2<!-- /react-text --><!-- react-text: 110 --> more<!-- /react-text --></div>
+                </div>
+                <div class="vertical-filters-filters brand-container"  style="background: white; width: 270px; margin-left: 20px;">
+                    <span class="vertical-filters-header">Brand</span>
+                    <div class="filter-search-filterSearchBox"  >
+                        <input type="text" class="filter-search-inputBox filter-search-hidden" placeholder="Search for Brand" style="height: 35px;">
+                        <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
+                    </div>
+                    <ul class="brand-list">
+                        {{#each items}}
+                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="category" class="custom-control-input" value="Carlton London"> <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{name}}<!-- /react-text --><span class="brand-num"><!-- react-text: 122 -->(<!-- /react-text --><!-- react-text: 123 -->3733<!-- /react-text --><!-- react-text: 124 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                        {{/each}}
+                    </ul>
+                    <div class="brand-more"><!-- react-text: 190 -->+ <!-- /react-text --><!-- react-text: 191 -->6<!-- /react-text --><!-- react-text: 192 --> more<!-- /react-text --></div>
+                </div>
+                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px;">
+                    <span class="vertical-filters-header">Price</span>
+                <ul class="price-list">
+                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="259.0 TO 707.0"><span class="custom-control-indicator"></span><!-- react-text: 199 -->Rs. 259 to Rs. 707<!-- /react-text --><span class="price-num"><!-- react-text: 201 -->(<!-- /react-text --><!-- react-text: 202 -->1259<!-- /react-text --><!-- react-text: 203 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="707.0 TO 1155.0"><span class="custom-control-indicator"></span><!-- react-text: 208 -->Rs. 707 to Rs. 1155<!-- /react-text --><span class="price-num"><!-- react-text: 210 -->(<!-- /react-text --><!-- react-text: 211 -->1162<!-- /react-text --><!-- react-text: 212 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="1155.0 TO 1603.0"><span class="custom-control-indicator"></span><!-- react-text: 217 -->Rs. 1155 to Rs. 1603<!-- /react-text --><span class="price-num"><!-- react-text: 219 -->(<!-- /react-text --><!-- react-text: 220 -->668<!-- /react-text --><!-- react-text: 221 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="1603.0 TO 2051.0"><span class="custom-control-indicator"></span><!-- react-text: 226 -->Rs. 1603 to Rs. 2051<!-- /react-text --><span class="price-num"><!-- react-text: 228 -->(<!-- /react-text --><!-- react-text: 229 -->103<!-- /react-text --><!-- react-text: 230 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                </ul>
+                </div>
+                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px;">
+                    <span class="vertical-filters-header">Color</span>
+                    <div class="filter-search-filterSearchBox">
+                        <input type="text" class="filter-search-inputBox filter-search-hidden" placeholder="Search for Color" style="height: 35px;">
+                        <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
+                    </div>
+                    <ul>
+                        
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="436"><span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(54, 69, 79);"></span><!-- react-text: 252 -->Black<!-- /react-text --><!-- react-text: 253 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 255 -->(<!-- /react-text --><!-- react-text: 256 -->436<!-- /react-text --><!-- react-text: 257 -->)<!-- /react-text --></span><input type="checkbox" value="Black" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="426"><span data-colorhex="navy blue" class="colour-label colour-colorDisplay" style="background-color: rgb(60, 68, 119);"></span><!-- react-text: 263 -->Navy Blue<!-- /react-text --><!-- react-text: 264 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 266 -->(<!-- /react-text --><!-- react-text: 267 -->426<!-- /react-text --><!-- react-text: 268 -->)<!-- /react-text --></span><input type="checkbox" value="Navy Blue" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="246"><span data-colorhex="white" class="colour-label colour-colorDisplay" style="background-color: rgb(255, 255, 255);"></span><!-- react-text: 274 -->White<!-- /react-text --><!-- react-text: 275 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 277 -->(<!-- /react-text --><!-- react-text: 278 -->246<!-- /react-text --><!-- react-text: 279 -->)<!-- /react-text --></span><input type="checkbox" value="White" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="207"><span data-colorhex="grey" class="colour-label colour-colorDisplay" style="background-color: rgb(159, 168, 171);"></span><!-- react-text: 285 -->Grey<!-- /react-text --><!-- react-text: 286 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 288 -->(<!-- /react-text --><!-- react-text: 289 -->207<!-- /react-text --><!-- react-text: 290 -->)<!-- /react-text --></span><input type="checkbox" value="Grey" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="171"><span data-colorhex="olive" class="colour-label colour-colorDisplay" style="background-color: rgb(61, 153, 112);"></span><!-- react-text: 296 -->Olive<!-- /react-text --><!-- react-text: 297 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 299 -->(<!-- /react-text --><!-- react-text: 300 -->171<!-- /react-text --><!-- react-text: 301 -->)<!-- /react-text --></span><input type="checkbox" value="Olive" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="100"><span data-colorhex="maroon" class="colour-label colour-colorDisplay" style="background-color: rgb(176, 48, 96);"></span><!-- react-text: 307 -->Maroon<!-- /react-text --><!-- react-text: 308 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 310 -->(<!-- /react-text --><!-- react-text: 311 -->100<!-- /react-text --><!-- react-text: 312 -->)<!-- /react-text --></span><input type="checkbox" value="Maroon" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                        </ul>
+                        <div class="colour-more">
+                            <span><!-- react-text: 317 -->+ <!-- /react-text --><!-- react-text: 318 -->26<!-- /react-text --><!-- react-text: 319 --> more<!-- /react-text --></span>
+                        </div>
+                </div>
+                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px;">
+                    <span class="vertical-filters-header">Discount Range</span>
+                    <ul class="discount-list">
+                    <li>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="customRadio" name="example1">
+                            <label class="custom-control-label" for="customRadio">10% and above</label>
+                        </div>  
+                    </li>
+                    <li>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="customRadio1" name="example1">
+                            <label class="custom-control-label" for="customRadio1">20% and above</label>
+                        </div>  
+                    </li>
+                    <li>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="customRadio2" name="example1">
+                            <label class="custom-control-label" for="customRadio2">30% and above</label>
+                        </div>  
+                    </li>
+                    <li>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="customRadio3" name="example1">
+                            <label class="custom-control-label" for="customRadio3">40% and above</label>
+                        </div>  
+                    </li>
+                    <li>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="customRadio4" name="example1">
+                            <label class="custom-control-label" for="customRadio4">50% and above</label>
+                        </div>  
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-md-10" style="background: white; border:1px solid whitesmoke; margin-top:53px; margin:53px -15px 2px 7px;  maxwidth:1700px;">
+      <div class="row" id="printcard"> 
+         
+          
+      </div>
+         
+       <div class="row" style="margin-right: -300px;" id="filter">
+            {{#each items}}
+            
+         
+
+            <div class="col-md-3 ml-5 shadow1  ">
+                <div class="row" >
+                    <i class="fas fa-heart" style="margin:20px; width:"></i>
+                    <div class="col-md-9 offset-3">
+                    <img src=" {{this.url}}" alt="" onclick="window.location.href='/product/{{this._id}}'">
+
+                    </div>
+
+                </div>
+                <ul>
+                    <li>
+                        <p class="product-title " >{{this.name}}</p>
+                    </li>
+                    <li>
+                        <div>
+                        <p class="discount-container" style="text-align: center;"> 
+                        
+                            <span class="after-discount"> <strong style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px;">{{this.price}}</strong> </span></b> </h2>
+                            <span class="discount-mrp"><s><!-- react-text: 60 -->Rs.5555 <!-- /react-text --><!-- react-text: 61 --><!-- /react-text --></s></span>
+                            <span class="discount">(40% OFF)</span>
+                        </p>
+                    </div>
+                    </li>
+                    <li>
+                         <div class="filled-stars" style="width:84.00000000000001%; text-align:center;">
+                        <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                    </div>
+
+                    </li>
+                </ul>
+               
+               
+            </div>
+           
+            
+          
+            
+             
+         <br>   
+        <br>
+             {{/each}}  
+            
+
+            
+       </div>
+
+        <div class="container">
+            <ul class="pagination" style="margin-left:500px;" >
+                
+                <li class="page-item"><a class="page-link" href="/products?pageNo=1&size=9">1</a></li>
+                <li class="page-item"><a class="page-link" href="/products?pageNo=2&size=9">2</a></li>
+                <li class="page-item"><a class="page-link" href="/products?pageNo=3&size=9">3</a></li>
+            </ul>
+        </div>
+    </div>
+</div>   
+</body>
+</html>
