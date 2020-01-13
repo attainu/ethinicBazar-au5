@@ -99,8 +99,8 @@ section .desc .breadcrumb{
 
 div.cart  {
     
-    position: fixed;
-    top: 0;
+    position: sticky;
+    bottom: 50px;
   }
   div.cart{
       width: 300px;

@@ -8,6 +8,48 @@ const cloudinary = require('cloudinary').v2;
 const mongoose = require('mongoose')
 
 
+router.get('/search', (req, res) => {
+    console.log("data is ",req.query.searchText)
+    var search = req.query.searchText;
+    console.log(search)
+
+    // var SEARCH = search.toUpperCase()
+    Product.find({
+        $or: [{ subcategory: new RegExp('^' + search + '.*', "i") },
+        { name: new RegExp('^' + search + '.*', "i") },
+        ]
+    })
+        .exec()
+        .then(docs => {
+            console.log(docs)
+            return res.render('search-result', {
+               
+                products: docs,
+                // category: "Result : " + SEARCH,
+               
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                Error: err
+            })
+        })
+})
+
+router.get('/:category', function(req, res, next){
+    Product.find({subcategory: req.params.category}, function(err, items){
+        console.log(items)
+        if(err){ return next(err); 
+        }
+        console.log(items._id)
+        res.render('category',{
+            items:items
+        });
+
+    });
+});
+
 
 router.get('/register',function(req,res){
     res.render('product_register')
@@ -28,6 +70,8 @@ router.get('/',function(req,res){
     });
 
 })
+
+
 
 //product create for testing........
 router.post('/create',function(req,res){
@@ -76,18 +120,7 @@ router.post('/create',function(req,res){
 
 //show products at home 
 
-router.get('/:category', function(req, res, next){
-    Product.find({subcategory: req.params.category}, function(err, items){
-        console.log(items)
-        if(err){ return next(err); 
-        }
-        console.log(items._id)
-        res.render('category',{
-            items:items
-        });
 
-    });
-});
 
 router.get('/product/:id',function(req,res){
 
@@ -100,6 +133,31 @@ router.get('/product/:id',function(req,res){
         console.log("product is",product)
     })
 })
+
+
+
+
+//mapping
+Product.createMapping(function(err, mapping){
+	if (err) {
+		console.log("error creating mapping");
+		console.log(err);
+	} else {
+		console.log("Mapping created");
+		console.log(mapping);
+	}
+})
+
+var stream = Product.synchronize();
+var count = 0;
+
+stream.on('data', function(){
+	count++;
+});
+
+stream.on('close', function(){
+	console.log("Indexed "+ count + " documents");
+});
 
 
 

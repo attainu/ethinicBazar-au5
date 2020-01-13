@@ -11,12 +11,13 @@ font-size: 20px;
 }
 
 
+
 /* body */
 
 body {
 	font-family: "Open Sans", sans-serif;
 }
-h2 {
+/* h2 {
 	color: #000;
 	font-size: 26px;
 	font-weight: 300;
@@ -24,11 +25,11 @@ h2 {
 	text-transform: uppercase;
 	position: relative;
 	margin: 30px 0 80px;
-}
+} */
 h2 b {
 	color: #ffc000;
 }
-h2::after {
+/* h2::after {
 	content: "";
 	width: 100px;
 	position: absolute;
@@ -38,7 +39,7 @@ h2::after {
 	left: 0;
 	right: 0;
 	bottom: -20px;
-}
+} */
 .carousel {
 	margin: 50px auto;
 	padding: 0 70px;

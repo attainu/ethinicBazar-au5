@@ -10,12 +10,11 @@ let ProductSchema = new Schema({
         max: 100
     },
     picture: {
-        type: String,
-  
-       
+        type: String, 
     },
     category: {
         type: String,
+        required:true,
     },
     subcategory:{
         type:String,

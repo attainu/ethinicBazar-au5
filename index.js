@@ -8,7 +8,7 @@ const path = require('path')
 const config = require('./config');
 const async = require('async')
 const routes = require('./routes/home.routes');
-
+const apiRoutes = require('./api/api');
 const multiparty = require("multiparty");
 const cloudinary = require('cloudinary').v2;
 const hbs = require('hbs')
@@ -102,6 +102,7 @@ mongoose.connect('mongodb+srv://Ethnic:abccba@cluster0-2exsp.mongodb.net/Ethinic
 
 
 app.use(routes)
+app.use('/api', apiRoutes); 
 
 
 
