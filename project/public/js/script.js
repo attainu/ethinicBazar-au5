@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
 
     // Password Matching
     $('#confirm_password').on('keyup', function () {
@@ -23,7 +23,7 @@ $(document).ready(function() {
       } 
     }
 
-
+ 
     //Delete Account
     function deleteSelected(event) {
 
@@ -40,10 +40,12 @@ $(document).ready(function() {
       
             
             if (response.msg === '') {
-                window.location.href = "/login";
+              window.location.href = "/logout";
+               
             }
             else {
               alert('Error: ' + response.msg);
+             
             }
         
           });
@@ -91,4 +93,6 @@ $(document).ready(function() {
 
     });
 
-})
+
+   
+

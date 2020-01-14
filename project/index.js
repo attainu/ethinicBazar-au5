@@ -9,6 +9,10 @@ var mongodb = require('mongodb');
 var ObjectId = require('mongodb').ObjectID;
 var mongoose=require('mongoose');
 var Request = require("request");
+var async = require("async");
+var nodemailer = require("nodemailer");
+var crypto = require("crypto");
+var passport = require("passport");
 
 var app = express()
 app.use(express.static("public"));
@@ -40,8 +44,18 @@ mongoose.connect("mongodb://localhost:27017/mongoose", {
 mongoose.Promise = global.Promise;
 
 
-app.use("/", signuploginRoutes)
+app.use(passport.initialize());
+app.use(passport.session());
 
+var smtpTransport = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+      user: 'raj.vijay.ece@gmail.com',
+      pass: 'sknagar2018'
+  }
+});
+
+app.use("/", signuploginRoutes)
 
 app.use(function(req, res, next){
     
@@ -59,3 +73,5 @@ app.use("/", sellerRoutes);
 app.listen(4500, () => {
   console.log("Listening on port 4500");
 });
+
+

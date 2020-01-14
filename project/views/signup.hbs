@@ -15,7 +15,7 @@
 <body class="form-v10">
 	<div class="page-content">
 		<div class="form-v10-content">
-			<form class="form-detail" onSubmit = "return checkPassword(this)" action="signup" method="POST" id="myform" enctype="multipart/form-data">
+			<form class="form-detail" onSubmit = "return  checkPassword(this)" action="signup" method="POST" id="myform" enctype="multipart/form-data">
 				
 				<div class="form-row form-header">
 					
@@ -50,10 +50,10 @@
 					<div class="form-group">
 
 						<div class="form-row form-row-1">
-							<input type="text" name="firstname" id="first_name" class="input-text" placeholder="First Name" required>
+							<input type="text" name="firstname" id="first_name" class="input-text" placeholder="First Name"  required>
 						</div>
 						<div class="form-row form-row-2">
-							<input type="text" name="lastname" id="last_name" class="input-text" placeholder="Last Name" required>
+							<input type="text" name="lastname" id="last_name" class="input-text" placeholder="Last Name"  required>
 						</div>
 						
 						
@@ -74,11 +74,11 @@
 					
 						
 					<div class="form-row ">
-						<input type="text" name="mobile" class="phone" id="phone" placeholder="Phone Number" required>
+						<input type="text" name="mobile" class="phone" id="phone" placeholder="Phone Number"   required>
 					</div>
 				
 					<div class="form-row">
-						<input type="text" name="email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email">
+						<input type="text" name="email" id="your_email" class="input-text" required  placeholder="Your Email">
 					</div>
 					
 					<div class="form-row">
@@ -116,6 +116,7 @@
 				</div>
 			
 				<div class="form-group">
+					<p id="message2"></p>
 					
 					{{#if mismatch}}
 						<div>

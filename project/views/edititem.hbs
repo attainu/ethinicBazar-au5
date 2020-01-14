@@ -62,11 +62,11 @@
     
         
         <!-- Links -->
-        <div class="navbar-nav ml-auto">
+        {{!-- <div class="navbar-nav ml-auto">
           <a class="nav-link" href="#">
-            <img src="/uploads/profile.jpg" class="profileimg" width="30" height="30">
+            <img src="{{results.profileImageUrl}}" class="profileimg" width="30" height="30">
           </a>
-        </div>
+        </div> --}}
 
         <ul class="navbar-nav topnav-right">
         
@@ -128,7 +128,7 @@
                               <div class="col-sm-6">
                                 <div class="form-group">
                                   <label><b>Product Name</b></label>
-                                  <input class="form-control" type="text" name="productname" placeholder="" value="{{data.productname}}" >
+                                  <input class="form-control" type="text" name="name" placeholder="" value="{{data.name}}" >
                                 </div>
                               </div>
                             </div>
@@ -150,6 +150,16 @@
                                   </div>
                                 </div>
                             </div>
+
+                            
+                            <div class="row">
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label><b>Category</b></label>
+                                    <input class="form-control" type="text" name="subcategory" placeholder="" value="{{data.subcategory}}" >
+                                  </div>
+                                </div>
+                            </div>
                         
                             <div class="row">
                             <div class="col-sm-6">
@@ -157,11 +167,11 @@
                                 <div class="form-group">
                                 <p><b>Description</b></p>
                                 <label>Product Details: </label>
-                                <input class="form-control" rows="5" name="productdetails" placeholder="" value="{{data.productdetails}}" >
+                                <input class="form-control" rows="5" name="productdescription1" placeholder="" value="{{data.productdescription1}}">
                                  <label class="mt-1">Material and Care: </label>
-                                <input class="form-control" rows="5" name="material" placeholder="" value="{{data.material}}">
+                                <input class="form-control" rows="5" name="productdescription2" placeholder="" value="{{data.productdescription2}}">
                                 <label class="mt-1">Specifications: </label>
-                                <input class="form-control" rows="5" name="specifications" placeholder="" value="{{data.specifications}}">
+                                <input class="form-control" rows="5" name="productdescription3" placeholder="" value="{{data.productdescription3}}">
                                 </div>
 
         
@@ -191,7 +201,7 @@
                             <div class="col-sm-6">
                               <div class="form-group">
                                 <label><b>Available Colors</b></label>
-                                <input class="form-control" type="text" name="colors" placeholder="" value="{{data.colors}}" >
+                                <input class="form-control" type="text" name="AvailableColors" placeholder="" value="{{data.AvailableColors}}" >
                               </div>
                             </div>
                           </div>

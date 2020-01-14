@@ -62,11 +62,11 @@
     
         
         <!-- Links -->
-        <div class="navbar-nav ml-auto">
+        {{!-- <div class="navbar-nav ml-auto">
           <a class="nav-link" href="#">
-            <img src="/uploads/profile.jpg" class="profileimg" width="30" height="30">
+            <img src="{{results.profileImageUrl}}" class="profileimg" width="30" height="30">
           </a>
-        </div>
+        </div> --}}
 
         <ul class="navbar-nav topnav-right">
         
@@ -131,7 +131,7 @@
                           <div class="col-sm-6">
                             <div class="form-group">
                               <label><b>Product Name</b></label>
-                              <input class="form-control" type="text" name="productname" placeholder="" value="" required>
+                              <input class="form-control" type="text" name="name" placeholder="" value="" required>
                             </div>
                           </div>
                         </div>
@@ -153,15 +153,23 @@
                         </div>
                         <div class="row">
                           <div class="col-sm-6">
+                            <div class="form-group">
+                              <label><b>Sub Category</b></label>
+                              <input class="form-control" type="text" placeholder="" name="subcategory" >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-6">
                            
                             <div class="form-group">
                               <p><b>Description</b></p>
                               <label>Product Details: </label>
-                              <textarea class="form-control" rows="5" name="productdetails" placeholder="" required></textarea>
+                              <textarea class="form-control" rows="5" name="productdescription1" placeholder="" required></textarea>
                               <label class="mt-1">Material and Care: </label>
-                              <input class="form-control" rows="5" name="material" placeholder="" required>
+                              <input class="form-control" rows="5" name="productdescription2" placeholder="" required>
                               <label class="mt-1">Specifications: </label>
-                              <input class="form-control" rows="5" name="specifications" placeholder="" required>
+                              <input class="form-control" rows="5" name="productdescription3" placeholder="" required>
                             </div>
 
       
@@ -187,7 +195,7 @@
                           <div class="col-sm-6">
                             <div class="form-group">
                               <label><b>Available Colors</b></label>
-                              <input class="form-control" type="text" name="colors" placeholder="" required>
+                              <input class="form-control" type="text" name="AvailableColors" placeholder="" required>
                             </div>
                           </div>
                         </div>
@@ -198,10 +206,10 @@
                                                
                         <div class="form-group"> 
                           <p><b>Upload Image</b></p>
-                          <label for="productImageUrl" class="btn btn-primary">
+                          <label for="picture" class="btn btn-primary">
                             <i class="fa fa-fw fa-camera"></i>Upload
                           </label>
-                          <input type="file"  name="productImageUrl" id="productImageUrl" required>
+                          <input type="file"  name="picture" id="picture" required>
                         </div>
                              
                       </div>

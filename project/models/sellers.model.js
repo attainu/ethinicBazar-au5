@@ -27,6 +27,11 @@ var sellerSchema= new Schema({
     required: true
   },
 
+  emailvalidate: { 
+    type: String, 
+    default: "true" 
+  },
+
   mobile: {
     type: Number,
     required: true,
@@ -51,9 +56,13 @@ var sellerSchema= new Schema({
   product:[{
     type: Schema.Types.ObjectId,
     ref: "Product"
-  }]
+  }],
+
     
+  resetPasswordToken: String,
+  resetPasswordExpires: Date,
 });
 
 var Seller = mongoose.model("Seller", sellerSchema);
 module.exports = Seller;
+

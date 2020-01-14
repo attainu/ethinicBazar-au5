@@ -6,10 +6,10 @@ html, body {
     background-color: #fb9224;
   
 }
-.nav.justify-content-center li a button {
+/* .nav.justify-content-center li a button {
     /* color:black; */
     /* background-color: white; */
-}
+
 
 .nav.justify-content-center li a:hover {
     color: blue;
@@ -92,7 +92,10 @@ input[type="file"] {
 a:hover {
     text-decoration: none !important;
     color:darkgrey;
-  }
+}
+
+
+
 
 /* @media screen and (max-width:800px) {
 body{
