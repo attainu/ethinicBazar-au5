@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-var mongoosastic = require('mongoosastic');
+// var mongoosastic = require('mongoosastic');
 const Schema = mongoose.Schema;
 ObjectId = Schema.Types;
 
@@ -59,11 +59,7 @@ let ProductSchema = new Schema({
     }
     
 });
-ProductSchema.plugin(mongoosastic, {
-	hosts: [
-	'http://0.0.0.0:9200/'
-	]
-});
-
+ProductSchema.index({ name: "text", subcategory: "text",},
+    { weights: { title: 5, body: 3, } })
 // Export the model
 module.exports = mongoose.model('Product', ProductSchema);

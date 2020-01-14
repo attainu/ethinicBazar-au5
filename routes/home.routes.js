@@ -12,18 +12,22 @@ router.get('/search', (req, res) => {
     console.log("data is ",req.query.searchText)
     var search = req.query.searchText;
     console.log(search)
+    var a = new RegExp('^' + search + '.*', "i")
+    console.log(a)
 
     // var SEARCH = search.toUpperCase()
     Product.find({
-        $or: [{ subcategory: new RegExp('^' + search + '.*', "i") },
-        { name: new RegExp('^' + search + '.*', "i") },
+        $or: [{ subcategory: new RegExp(search , "gi") },
+        { name: new RegExp(search, "gi") },
+        {productdescription1: new RegExp(search,"gi")}
         ]
-    })
+         })
+         
         .exec()
         .then(docs => {
             console.log(docs)
             return res.render('search-result', {
-               
+                category:"Search results -"+search,
                 products: docs,
                 // category: "Result : " + SEARCH,
                
@@ -137,27 +141,27 @@ router.get('/product/:id',function(req,res){
 
 
 
-//mapping
-Product.createMapping(function(err, mapping){
-	if (err) {
-		console.log("error creating mapping");
-		console.log(err);
-	} else {
-		console.log("Mapping created");
-		console.log(mapping);
-	}
-})
+// //mapping
+// Product.createMapping(function(err, mapping){
+// 	if (err) {
+// 		console.log("error creating mapping");
+// 		console.log(err);
+// 	} else {
+// 		console.log("Mapping created");
+// 		console.log(mapping);
+// 	}
+// })
 
-var stream = Product.synchronize();
-var count = 0;
+// var stream = Product.synchronize();
+// var count = 0;
 
-stream.on('data', function(){
-	count++;
-});
+// stream.on('data', function(){
+// 	count++;
+// });
 
-stream.on('close', function(){
-	console.log("Indexed "+ count + " documents");
-});
+// stream.on('close', function(){
+// 	console.log("Indexed "+ count + " documents");
+// });
 
 
 

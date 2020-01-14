@@ -109,93 +109,7 @@ $(document).ready(function(){
     }); //event handler
 
   
-    // $('#search').keyup(function(){
-    //     var search_term = $(this).val();
-    //     if(search_term === ''){
-
-    //         $('#search-result').show();
-    //         $('#result').hide()
-    //     }
-        
-
-	// 	$.ajax({
-	// 		method: 'POST',
-	// 		url: '/api/search',
-	// 		data: { 
-	// 			search_term
-	// 		},
-    //         dataType: 'json',
-            
-	// 		success: function(json){
-    //             console.log(json)
-	// 			var data = json.hits.hits.map(function(hit){
-	// 				return hit;
-    //             });
-    //             $( "#search" ).autocomplete({
-    //                 source: data[0]._source
-    //             });
-          
-                   
-                
-         
-
-    //             $('#search-result').empty();
-                
-                
-                
-
-    //                 for (var i = 0; i < data.length; i++){
-                        
-                        
-    //                         console.log(data.length)
-    
-                           
-                          
-    //                         var html = '<div class="col-md-3 ml-3 shadow">';
-    //                         html += ' <div class="row ">';
-    //                         html += '<i class="fas fa-heart" style="margin:20px; width:"></i>';
-    //                         html += '<div class="col-md-9 offset-2 " ><img class="card-img-top" src="'+data[i]._source.url+'" alt="..."> </div>';
-    //                         html += ' </div>';
-    //                         html += '<ul >';
-    //                         html += '<li>';
-    //                         html += '<p class="product-title " id="title">'+data[i]._source.name + '</p>';
-    //                         html += ' </li>';
-    //                         html += '<li>';
-    //                         html += ' <div>';
-    //                         html += '<p class="discount-container" style="text-align: center;"> ';
-    //                         html += ' <span class="after-discount"> <strong style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px;">'+data[i]._source.price +'</strong> </span></b> </h2>';
-    //                         html += ' <span class="discount-mrp"><s><!-- react-text: 60 -->Rs.5555 <!-- /react-text --><!-- react-text: 61 --><!-- /react-text --></s></span>';
-    //                         html += '<span class="discount">(40% OFF)</span>';
-    //                         html += '</p>';
-    //                         html += '</div>';
-    //                         html += '</li>';
-    //                         html += ' <li>';
-    //                         html += '<div class="filled-stars" style="width:84.00000000000001%; text-align:center;">';
-    //                         html += '<span class="fa fa-star checked"></span>';
-    //                         html += '<span class="fa fa-star checked"></span>';
-    //                         html += '<span class="fa fa-star checked"></span>';
-    //                         html += '<span class="fa fa-star checked"></span>';
-    //                         html += '<span class="fa fa-star checked"></span>';
-    //                         html += '</div>';
-    //                         html += '</li>';
-    //                         html += '</ul>'
-    //                         html += '</div>';
-                            
-    //                         $('#result').append(html);
-    //                     }
-                
-				
-    //             console.log(data);
-                
-	// 		},
-
-	// 		error: function(error){
-	// 			console.log(err);
-    //         }
-           
-    //     });
-       
-    // });
+  
 
     $('#data').click(function(){
         console.log("hehhe")
@@ -203,5 +117,8 @@ $(document).ready(function(){
         window.location.href='/search/?searchText='+Text
 
     })
+    $(window).load(function() {      //Do the code in the {}s when the window has loaded 
+        $("#loader").fadeOut("fast");  //Fade out the #loader div
+    });
     
 })
