@@ -25,7 +25,7 @@ var signuploginRoutes = require("./routes/signuplogin.route");
 var sellerRoutes = require("./routes/sellers.route");
 'use strict';
 
-const express = require('express')
+// const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
