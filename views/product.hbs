@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit User</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h1>Product Listing</h1>
+            <form action="/product" method="POST">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" class="form-control" id="productName" name="productName"
+                        placeholder="Product Name">
+                </div>
+                <div class="form-group">
+                    <label for="Price">Price</label>
+                    <input type="number" class="form-control" id="Price" name="price" placeholder="Price">
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Product Description</label>
+                    <input type="text" class="form-control" id="productDescription" name="productDescription"
+                        placeholder="Product Description">
+                </div>
+
+
+
+
+
+                <button type="submit" class="btn btn-primary">Add Product</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+</body>
+
+</html>

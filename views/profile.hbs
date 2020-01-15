@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Profile</title>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="styleHome.css">
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Long+Cang&display=swap" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  {{!-- <link rel="stylesheet" href="profile.css" /> --}}
+
+</head>
+
+<body>
+  <!-- header starts -->
+  <div class="top-head pt-1 border" class="header" style="height:80px;">
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-12 text-right" style="margin-top: 10px;">
+          <ul class="list-inline">
+            <a href="/home"><img
+                style="border-radius: 20%; width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;"
+                src="l.png" alt="logo"></a>
+            <form class="form-inline">
+              <div class="input-group" style="margin-top: 5px; width:90;">
+                <input type="text" class="form-control" style="margin-left: 200px; width:120" placeholder="Search">
+                <div class="input-group-append">
+                  <button type="button" class="btn btn-secondary" style="color: #2a1a5e;"><i class="fa fa-search"
+                      style="color: #2a1a5e;"></i></button>
+                </div>
+              </div>
+              <div class="id 1" style="margin-top: 10px;">
+                <a href="/user">
+                  <li class="list-inline-item"
+                    style="font-size: 20px; margin-top: 1px; margin-bottom: 5px; margin-right: 10px;">
+                    <small><i class="fas fa-user" style="margin-right: 2px;"></i> </i> <strong> My
+                        Account</strong></small></li>
+                </a>
+                <a href="/userLogin">
+                  <li class="list-inline-item"
+                    style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;">
+                    <small><strong>Login / Signup</strong> </small></li>
+                </a>
+                <a href="/user/cart"> <i class="fa fa-shopping-cart"
+                    style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px;"></i></a>
+              </div>
+            </form>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header ends -->
+
+  <div class="container">
+    <h1 class="mt-4 d-inline-block">User profile</h1>
+
+    <form action="delete" method="POST">
+      <input type="hidden" name="id" value={{_id}}>
+      <button style="margin-left: 78%;" type="submit" class="btn btn-danger">Delete Account</button>
+    </form>
+    <div style="margin-left: 870px" class="d-inline-block"><a href="/userLogout"><button
+          class=" mr-auto btn btn-primary d-inline-block">Logout</button></a></div>
+
+
+    <div class="card mb-3 mt-4 shadow p-3  bg-white rounded">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="blank.jfif" style="width: 250px" class="card-img img-rounded" alt="..." />
+        </div>
+        <div class="col-md-4">
+          <div class="card-body">
+            <h3 class="card-title"><i class="fa fa-user" style="color: #2a1a5e;"> {{name}}</i></h3>
+            <p class="card-title mt-2 d-inline-block"><i class="fa fa-envelope" style="color: #2a1a5e;">email:</i>
+              <h4 class="d-inline-block">{{email}}</h4>
+            </p>
+            <p class="card-title mt-2 d-inline-block"><i class="fa fa-mobile" style="color: #2a1a5e;">Mobile:</i>
+              <h4 class="d-inline-block">{{mobile}}</h4>
+            </p>
+
+            <a href="/user/edit"><button style="width:150px; background-color: #2a1a5e" class="btn btn-primary">Edit
+                Profile</button></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow p-3  bg-white rounded" style="height: 350px;width: 100%">
+          <a href="/user/address"><i style="margin-left: 42%; margin-top: 36%; font-size: 60px"
+              class="fa fa-plus-circle d-inline-block"></i></a>
+          <h5 class="text-center">Add new address</h5>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow p-3  bg-white rounded" style="height: 350px;">
+          <div class="card-body">
+            <h5 class="card-title">Default</h5>
+            <hr />
+            <h5 class="card-title">State: <p class="d-inline-block lead text-dark">Assam</p>
+            </h5>
+            <h5 class="card-title mt-2">City: <p class="d-inline-block lead text-dark">Guwahati</p>
+            </h5>
+            <h5 class="card-title mt-2">Pin: <p class="d-inline-block lead text-dark">782413</p>
+            </h5>
+            <h5 class="card-title mt-2">Landmark: <p class="d-inline-block lead text-dark">Janakpur</p>
+            </h5>
+            <h5 class="card-title mt-2">Locality: <p class="d-inline-block lead text-dark">Ganeshguri</p>
+            </h5>
+
+
+          </div>
+        </div>
+      </div>
+      {{#each addresses}}
+      <div class="col-md-4">
+        <div class="card shadow p-3 mt-2  bg-white rounded" style="height: 350px;">
+          <div class="card-body ">
+            <h5 class="card-title">State: <p class="d-inline-block lead text-dark">{{state}}</p>
+            </h5>
+            <h5 class="card-title ">City: <p class="d-inline-block lead text-dark">{{city}}</p>
+            </h5>
+            <h5 class="card-title ">Pin: <p class="d-inline-block lead text-dark">{{pin}}</p>
+            </h5>
+            <h5 class="card-title ">Landmark: <p class="d-inline-block lead text-dark">{{landmark}}</p>
+            </h5>
+            <h5 class="card-title ">Locality: <p class="d-inline-block lead text-dark">{{locality}}</p>
+            </h5>
+
+            <a href="">Edit</a> | <form class="d-inline-block" action="/user/address/{{_id}}" method="POST"><button
+                type="submit">Remove</button></form>
+            | <a href="">Make Default</a>
+
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+
+  {{!-- <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow p-3  bg-white rounded" style="height: 300px;">
+          <div class="card-body mt-4">
+            <h5 class="card-title">Vivek Regmi</h5>
+            <h5 class="card-title mt-2">email: vivekregmi5@gmail.com</h5>
+            <h5 class="card-title mt-2">Mobile: 7002911128</h5>
+            <p class="card-text mt-2">
+              <h5>Address: </h5>VPO-Amlighat, Morigaon Assam
+            </p>
+            <a href="">Edit</a> | <a href="">Remove</a> | <a href="">Make Default</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow p-3  bg-white rounded" style="height: 300px;">
+          <div class="card-body mt-4">
+            <h5 class="card-title">Vivek Regmi</h5>
+            <h5 class="card-title mt-2">email: vivekregmi5@gmail.com</h5>
+            <h5 class="card-title mt-2">Mobile: 7002911128</h5>
+            <p class="card-text mt-2">
+              <h5>Address: </h5>VPO-Amlighat, Morigaon Assam
+            </p>
+            <a href="">Edit</a> | <a href="">Remove</a> | <a href="">Make Default</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow p-3  bg-white rounded" style="height: 300px;">
+          <div class="card-body mt-4">
+            <h5 class="card-title">Vivek Regmi</h5>
+            <h5 class="card-title mt-2">email: vivekregmi5@gmail.com</h5>
+            <h5 class="card-title mt-2">Mobile: 7002911128</h5>
+            <p class="card-text mt-2">
+              <h5>Address: </h5>VPO-Amlighat, Morigaon Assam
+            </p>
+            <a href="">Edit</a> | <a href="">Remove</a> | <a href="">Make Default</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-4">
+          <img src="vivek.jpg" style="width: 400px" />
+        </div>
+      </div> -->
+   --}}
+  <!--footer starts here-->
+  <div>
+    <h5 class="text-white">Downloads</h5>
+    <footer class="w-100 footer">
+      <div class="container bottom_border">
+        <div class="row">
+          <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
+            <li class="list-inline-item">
+              <a href="#" target="_blank"><img
+                  src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
+                  class=" mb-3" alt=""></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" target="_blank"><img
+                  src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
+                  class=" mb-3" alt=""></a>
+            </li>
+            </ul>
+          </div>
+          <div class=" col-sm-4 col-md  col-6 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
+            <ul class="footer_ul_amrc">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Sell On EthnicHub</a></li>
+
+            </ul>
+
+          </div>
+
+
+          <div class=" col-sm-4 col-md  col-6 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
+
+            <ul class="footer_ul_amrc">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Policy For Sellers</a></li>
+              <li><a href="#">Policy For Buyers</a></li>
+            </ul>
+          </div>
+          <div class=" col-sm-4 col-md  col-12 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
+            <a href="#"><img src="images.jfif"></a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+        <ul class="social_footer_ul">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+  </div>
+
+  <!-- footer ends -->
+
+  <script src="" async defer></script>
+</body>
+
+</html>

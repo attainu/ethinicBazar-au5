@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit User</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h1>Edit User</h1>
+            <form action="/user/edit" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" value={{name}} class="form-control" id="name" name="name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="number" class="form-control" value={{mobile}} id="mobile" name="mobile"
+                        placeholder="Mobile">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" name="email" value={{email}} id="email"
+                        aria-describedby="emailHelp" placeholder="Enter email">
+
+                </div>
+
+
+
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+</body>
+
+</html>
