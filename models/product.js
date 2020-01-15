@@ -7,7 +7,7 @@ let ProductSchema = new Schema({
     name: {
         type: String,
         required: true,
-        max: 100
+        max: 90
     },
     picture: {
         type: String, 

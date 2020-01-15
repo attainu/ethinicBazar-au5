@@ -69,7 +69,7 @@ $(document).ready(function(){
 //pin code api 
     $('#pin').hide()
     $('#service').hide()
-    
+    console.log("hello")
     $('#search').click(function(){
     
         $.ajax({
