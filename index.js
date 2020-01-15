@@ -7,7 +7,8 @@ const mongoose = require('mongoose')
 const path = require('path')
 const config = require('./config');
 const async = require('async')
-const routes = require('./routes/home.routes');
+const routes = require('./routes/home.route');
+const productRoute = require('./routes/product.route')
 const apiRoutes = require('./api/api');
 const multiparty = require("multiparty");
 const cloudinary = require('cloudinary').v2;
@@ -15,7 +16,7 @@ const hbs = require('hbs')
 
 
 
-//external helper class 
+.//..........................//external helper function //.................................................................//
 hbs.registerHelper('eachUnique', function(array, options) {
     
     var  dupCheck = {};
@@ -40,7 +41,7 @@ hbs.registerHelper('eachUnique', function(array, options) {
     return buffer;
   });
 
-  hbs.registerHelper('eachUnique1', function(array, options) {
+hbs.registerHelper('eachUnique1', function(array, options) {
     
     var  dupCheck = {};
     var buffer = '';
@@ -73,8 +74,9 @@ hbs.registerHelper('eachUnique', function(array, options) {
     
     return buffer;
   });
+//............................end helper function.............//
 
-//cloudnary setup
+//cloudnary setup for product
 cloudinary.config({
     cloud_name: "dlqxpkg7h",
     api_key: "661815952242859",
@@ -100,8 +102,9 @@ mongoose.connect('mongodb+srv://Ethnic:abccba@cluster0-2exsp.mongodb.net/Ethinic
 
 
 
-
-app.use(routes)
+//used for product
+app.use(homeroutes)
+app.use(productRoute)
 app.use('/api', apiRoutes); 
 
 
