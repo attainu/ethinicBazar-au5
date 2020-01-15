@@ -1,137 +1,67 @@
 var express = require("express");
-var app = express();
-var session = require("express-session");
+var bodyParser = require('body-parser')
 var hbs = require("hbs");
+var multiparty = require("multiparty");
+var cloudinary = require('cloudinary').v2;
+var session = require('express-session');
+var path = require('path')
+var mongodb = require('mongodb');
+var ObjectId = require('mongodb').ObjectID;
+var mongoose=require('mongoose');
+var Request = require("request");
+var async = require("async");
+var nodemailer = require("nodemailer");
+var crypto = require("crypto");
+var passport = require("passport");
 
-var bodyParser = require("body-parser");
-
-app.set("view engine", "hbs");
-var mongoose = require("mongoose");
-var User = require("./models/userModel");
-app.use(
-  session({
-    secret: "kdjfwjef wefhkwjef wkej fhwkejf",
-    cookie: {
-      maxAge: 1000 * 500,
-      path: "/",
-      httpOnly: true
-    }
-  })
-);
-
-var buyerRoutes = require("./routes/buyer");
-var sellerRoutes = require("./routes/seller");
-var userRoutes = require("./routes/user");
-var Product = require("./models/productModel");
-
-mongoose.connect("mongodb://localhost/ethinic-bazaar", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
+var app = express()
 app.use(express.static("public"));
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.set('view engine','hbs')
 
-var authMiddleware = function(req, res, next) {
-  if (!req.session.user) {
-    res.redirect("/userLogin?shouldLogin=true");
-  } else {
-    next();
+var signuploginRoutes = require("./routes/signuplogin.route");
+var sellerRoutes = require("./routes/sellers.route");
+
+
+
+app.use(session({
+  secret: "ethnicHub-secret"
+}));
+
+
+
+
+mongoose.connect('mongodb+srv://Ethnic:abccba@cluster0-2exsp.mongodb.net/EthinicBazar?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  
+});
+
+
+mongoose.Promise = global.Promise;
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+app.use("/", signuploginRoutes)
+
+app.use(function(req, res, next){
+    
+  if(req.session.seller){
+      next(); 
   }
-};
-
-// app.use("/buyer", authMiddleware, buyerRoutes);
-// app.use("/seller", authMiddleware, sellerRoutes);
-app.use("/user", authMiddleware, userRoutes);
-
-app.get("/userSignup", function(req, res) {
-  res.render("UserSignup.hbs");
+  else{
+      res.redirect("/login");
+  }
 });
 
-app.get("/userLogin", function(req, res) {
-  var mismatch = req.query.mismatch;
-  var shouldLogin = req.query.shouldLogin;
-  res.render("UserLogin.hbs", {
-    mismatch: mismatch,
-    shouldLogin: shouldLogin
-  });
+app.use("/", sellerRoutes);
+
+
+app.listen(4500, () => {
+  console.log("Listening on port 4500");
 });
 
-app.post("/userLogin", function(req, res, next) {
-  User.findOne({ email: req.body.email })
-    .populate("addresses")
-    .populate("cart")
-    .populate("orderHistory")
-    .exec()
-    .then(result => {
-      if (req.body.password !== result.password) {
-        res.redirect("/userLogin?mismatch=true");
-      } else {
-        req.session.user = result;
-        console.log("session data after login: ", req.session.user);
-        res.status(200).redirect("/user");
-      }
-    })
 
-    .catch(err => {
-      console.log(err);
-      res.redirect("/userLogin?mismatch=true");
-    });
-});
-
-app.post("/delete", authMiddleware, (req, res) => {
-  console.log(req.body);
-  User.findByIdAndDelete({ _id: req.body.id })
-    .exec()
-    .then(result => {
-      console.log(result);
-      res.status(200).redirect("/userSignup");
-    })
-    .catch(err => {
-      console.log("err");
-      res.status(500).json(err);
-    });
-});
-
-app.get("/userLogout", authMiddleware, (req, res) => {
-  req.session.destroy();
-  res.redirect("/userLogin");
-});
-
-app.get("/product", authMiddleware, (req, res) => {
-  res.render("product");
-});
-
-app.post("/product", authMiddleware, (req, res) => {
-  Product.create(req.body)
-    .then(product => {
-      res.send(product);
-    })
-    .catch(err => {
-      res.send(err);
-    });
-});
-
-app.get("/productList", async (req, res) => {
-  var products = await Product.find();
-
-  res.render("productList", {
-    products: products
-  });
-});
-
-app.get("/home", (req, res) => {
-  res.render("index");
-});
-
-app.get("*", function(req, res) {
-  res.render("notFound");
-});
-app.listen(7000, () => {
-  console.log("Listening on port 7000");
-});
