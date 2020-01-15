@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 const config = require('./config');
 const async = require('async')
-const routes = require('./routes/home.route');
+const homeroutes = require('./routes/home.route');
 const productRoute = require('./routes/product.route')
 const apiRoutes = require('./api/api');
 const multiparty = require("multiparty");
@@ -16,7 +16,7 @@ const hbs = require('hbs')
 
 
 
-.//..........................//external helper function //.................................................................//
+//..........................//external helper function //.................................................................//
 hbs.registerHelper('eachUnique', function(array, options) {
     
     var  dupCheck = {};
