@@ -54,7 +54,7 @@ h2::after {
 	position: relative;
 }
 .carousel .item img {	
-	max-width: 100%;
+	max-width: 60%;
 	max-height: 100%;
 	display: inline-block;
 	position: absolute;
