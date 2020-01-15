@@ -13,6 +13,12 @@ var passport = require("passport");
 var Seller = require("../models/sellers.model");
 var Product = require("../models/products.model");
 
+cloudinary.config({
+  cloud_name: "rajvijay",
+  api_key: "228268787423585",
+  api_secret: "8Jjxk0EPNl7jkqqhEe_N_Mmo8AE"
+});
+
 
 
 exports.getEthnicHub = function(req, res, next) {
@@ -21,7 +27,7 @@ exports.getEthnicHub = function(req, res, next) {
 
 };
 
-exports.getHome = function(req, res, next){
+exports.getsellerHome = function(req, res, next){
 
     if(req.session.seller)
         res.redirect("/dashboard");

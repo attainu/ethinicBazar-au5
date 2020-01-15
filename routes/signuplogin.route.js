@@ -6,7 +6,7 @@ var router = express.Router();
 var sellerController = require("../controllers/sellers.controller");
 
 router.get("/ethnichub", sellerController.getEthnicHub);
-router.get("/", sellerController.getHome);
+router.get("/sellerhome", sellerController.getsellerHome);
 router.get("/signup", sellerController.getSignup);
 router.get("/login", sellerController.getLogin);
 router.post("/signup", sellerController.postSignup);
