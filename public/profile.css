@@ -1,0 +1,29 @@
+/* color1: 2a1a5e
+color2: f45905
+color3: fb9224
+color4: fbe555 */
+
+#nav {
+  background-color: #2a1a5e;
+}
+#head {
+  color: #fbe555;
+  font-family: "Long Cang", cursive;
+  font-size: 50px;
+}
+.fa-shopping-cart {
+  margin-left: 300px;
+  font-size: 35px;
+  color: #fbe555;
+}
+
+.fa-user-circle {
+  margin-left: 30px;
+  font-size: 45px;
+  color: #fbe555;
+}
+
+/* .edit {
+  background-color: #2a1a5e;
+  width: 150px;
+} */

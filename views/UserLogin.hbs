@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Seller login form</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" , initial-scale="1" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link href="global.css" type="text/css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <form class="form-signin" action="/userLogin" method="POST">
+              {{#if shouldLogin}}
+              <div class="alert alert-warning">You must login first to access this page</div>
+              {{/if}}
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address"
+                  required autofocus />
+                <label for="inputEmail">Email address</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
+                  required />
+                <label for="inputPassword">Password</label>
+              </div>
+
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" />
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+              {{#if mismatch}}
+              <div class="alert alert-danger">Email password mismatching</div>
+              {{/if}}
+              <button class="btn btn-lg btn-primary btn-block text-uppercase signinText" type="submit">
+                Sign in
+              </button>
+              <hr class="my-2" />
+
+              <div class="btn-group">
+                <button type="button" class="loginBtn loginBtn--facebook">
+                  Login with Facebook
+                </button>
+                <button type="submit" class="loginBtn loginBtn--google">
+                  Login with Google
+                </button>
+              </div>
+              <p>Not registered yet? <a href="/signup">Signup Here</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
