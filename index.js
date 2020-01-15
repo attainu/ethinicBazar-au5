@@ -20,24 +20,21 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.set('view engine','hbs')
 
-cloudinary.config({
-  cloud_name: "rajvijay",
-  api_key: "228268787423585",
-  api_secret: "8Jjxk0EPNl7jkqqhEe_N_Mmo8AE"
-});
+var signuploginRoutes = require("./routes/signuplogin.route");
+var sellerRoutes = require("./routes/sellers.route");
+
 
 
 app.use(session({
   secret: "ethnicHub-secret"
 }));
 
-var signuploginRoutes = require("./routes/signuplogin.route");
-var sellerRoutes = require("./routes/sellers.route");
 
 
-mongoose.connect("mongodb://localhost:27017/mongoose", {
+
+mongoose.connect('mongodb+srv://Ethnic:abccba@cluster0-2exsp.mongodb.net/EthinicBazar?retryWrites=true&w=majority', {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  
 });
 
 
@@ -47,13 +44,6 @@ mongoose.Promise = global.Promise;
 app.use(passport.initialize());
 app.use(passport.session());
 
-var smtpTransport = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-      user: 'raj.vijay.ece@gmail.com',
-      pass: 'sknagar2018'
-  }
-});
 
 app.use("/", signuploginRoutes)
 
