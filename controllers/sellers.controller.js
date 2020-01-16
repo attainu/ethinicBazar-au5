@@ -412,24 +412,24 @@ exports.postAddItem =  function(req,res,next) {
 
     form.parse(req, function(err, fields, files) {
 
-        cloudinary.uploader.upload(files.picture[0].path, {resource_type: "image"}, function(error, res1) {
+        cloudinary.uploader.upload(files.productImage[0].path, {resource_type: "image"}, function(error, res1) {
             console.log("error", error);
             imageResult = res1;
         
 
             var product = new Product({
     
-                name: fields.name[0], 
-                price: fields.price[0],
+                productName: fields.productName[0], 
+                productPrice: fields.productPrice[0],
                 category: fields.category[0],
-                subcategory: fields.subcategory[0],
-                productdescription1: fields.productdescription1[0],
-                productdescription2: fields.productdescription2[0],
-                productdescription3: fields.productdescription3[0],
-                warranty: fields.warranty[0],
-                quantity: fields.quantity[0],
-                AvailableColors: fields.AvailableColors[0],
-                picture: imageResult.secure_url
+                subCategory: fields.subCategory[0],
+                productDescription1: fields.productDescription1[0],
+                productDescription2: fields.productDescription2[0],
+                productDescription3: fields.productDescription3[0],
+                productWarranty: fields.productWarranty[0],
+                availableUnits: fields.availableUnits[0],
+                availableColors: fields.availableColors[0],
+                productImage: imageResult.secure_url
                 
             });
         
@@ -470,16 +470,17 @@ exports.postEditItem = function(req,res,next) {
 
     var data = {
     
-        name: req.body.name, 
-        price: req.body.price,
+        productName: req.body.productName, 
+        productPrice: req.body.productPrice,
         category: req.body.category,
-        subcategory: req.body.subcategory,
-        productdescription1: req.body.productdescription1,
-        productdescription2: req.body.productdescription2,
-        productdescription3: req.body.productdescription3,
-        warranty: req.body.warranty,
-        quantity: req.body.quantity,
-        AvailableColors: req.body.AvailableColors
+        subCategory: req.body.subCategory,
+        productDescription1: req.body.productDescription1,
+        productDescription2: req.body.productDescription2,
+        productDescription3: req.body.productDescription3,
+        productWarranty: req.body.productWarranty,
+        availableUnits: req.body.availableUnits,
+        availableColors: req.body.availableColors,
+   
         
     };
 
@@ -550,7 +551,7 @@ exports.deleteItem = function(req,res,next) {
 
 exports.getLogout = function(req,res,next) {
     req.session.destroy();
-    res.redirect("/");
+    res.redirect("/login");
 }
 
 exports.deleteAccount = function(req,res,next) {

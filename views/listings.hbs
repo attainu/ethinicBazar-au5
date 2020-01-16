@@ -46,7 +46,7 @@
 
         <ul class="nav justify-content-center">
             <li class="nav-item ml-5">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/dashboard">
                 <button type = "button" class = "btn btn-primary navbar-btn border  border-dark shadow " >DASHBOARD</button>
               </a>
             </li>
@@ -115,10 +115,10 @@
               {{#each results}}
                 {{#each product}}
                 <tr>
-                  <td class="text-center" width="15%"><div><img src="{{picture}}" width="80" ></div></td>
-                  <td class=width="50%"><span style="white-space: pre-line;"><div><h5 style="color:darkblue">{{name}}</h5></span>{{productdescription1}}</div></td>
-                  <td class="text-center" width="10%"><div>{{quantity}}</div></td>
-                  <td class="text-center" width="10%"><div>Rs. {{price}}</div></td>
+                  <td class="text-center" width="15%"><div><img src="{{productImage}}" width="80" ></div></td>
+                  <td class=width="50%"><span style="white-space: pre-line;"><div><h5 style="color:darkblue">{{productName}}</h5></span>{{productDescription1}}</div></td>
+                  <td class="text-center" width="10%"><div>{{availableUnits}}</div></td>
+                  <td class="text-center" width="10%"><div>Rs. {{productPrice}}</div></td>
                   <td class="text-center" width="15%"><div><button class="btn btn-primary btnprod pb-1 pt-1 pl-2 pr-2"  value="{{_id}}">Delete</button>   <a href="edititem/{{_id}}"><button class="btn btn-primary pl-3 pr-3 pt-1 pb-1 ml-2">Edit</button></a></div></td>
                 </tr>
                 {{/each}}

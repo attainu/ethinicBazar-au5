@@ -1,6 +1,6 @@
 
 //for search
-const Product = require('../models/product')
+const Product = require('../models/products.model')
 var router = require('express').Router();
 router.post('/search', function(req, res, next){
     console.log(req.body.search_term)

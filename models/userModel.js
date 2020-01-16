@@ -1,34 +1,32 @@
 var mongoose = require("mongoose");
-
 var userSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  name: {
+  userName: {
     type: String,
-    unique: true,
     require: true
   },
-  email: {
+  userEmail: {
     type: String,
     trim: true,
     lowercase: true,
     unique: true,
     required: "Email address is required"
   },
-  password: {
+  userPassword: {
     type: String,
     required: true,
     min: [6, "Password must be atlest 6 characters length"]
   },
-  mobile: {
-    type: String,
+  userMobile: {
+    type: Number,
     required: true,
     unique: true
   },
-  image: {
+  userImage: {
     type: String,
     default: "blank.jfif"
   },
-  addresses: [
+  userAddresses: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Address"
@@ -47,6 +45,5 @@ var userSchema = mongoose.Schema({
     }
   ]
 });
-
 var User = mongoose.model("User", userSchema);
 module.exports = User;

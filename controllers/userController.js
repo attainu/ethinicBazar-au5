@@ -10,10 +10,10 @@ var userDashboard = (req, res, next) => {
 var newUser = (req, res, next) => {
   var user = new User({
     _id: mongoose.Types.ObjectId(),
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-    mobile: req.body.mobile
+    userName: req.body.userName,
+    userEmail: req.body.userEmail,
+    userPassword: req.body.userPassword,
+    userMobile: req.body.userMobile
   });
 
   user
