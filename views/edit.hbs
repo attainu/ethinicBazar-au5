@@ -18,16 +18,17 @@
             <form action="/user/edit" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" value={{name}} class="form-control" id="name" name="name" placeholder="Name">
+                    <input type="text" value={{userName}} class="form-control" id="name" name="userName"
+                        placeholder="Name">
                 </div>
                 <div class="form-group">
                     <label for="mobile">Mobile</label>
-                    <input type="number" class="form-control" value={{mobile}} id="mobile" name="mobile"
+                    <input type="number" class="form-control" value={{userMobile}} id="mobile" name="userMobile"
                         placeholder="Mobile">
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" name="email" value={{email}} id="email"
+                    <input type="email" class="form-control" name="userEmail" value={{userEmail}} id="email"
                         aria-describedby="emailHelp" placeholder="Enter email">
 
                 </div>

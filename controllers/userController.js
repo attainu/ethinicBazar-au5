@@ -1,35 +1,21 @@
 var express = require("express");
 var mongoose = require("mongoose");
-var User = require("./../models/userModel");
-var Address = require("./../models/addressModel");
+var User = require("../models/userModel");
+var Address = require("../models/addressModel");
+var cloudinary = require("cloudinary").v2;
+var multipary = require("multiparty");
+
+cloudinary.config({
+  cloud_name: "dgq5a8zjh",
+  api_key: "641339485594975",
+  api_secret: "AUiaAT0cigGwmevOurEe5xX70ZQ"
+});
 
 var userDashboard = (req, res, next) => {
   res.render("profile", req.session.user);
 };
 
-var newUser = (req, res, next) => {
-  var user = new User({
-    _id: mongoose.Types.ObjectId(),
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-    mobile: req.body.mobile
-  });
-
-  user
-    .save()
-    .then(result => {
-      console.log(result);
-      req.session.user = result;
-      res.redirect("/user");
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({
-        error: err
-      });
-    });
-};
+// var newUser =
 
 var editUser = async (req, res, next) => {
   var updatedUser = await User.findByIdAndUpdate(
@@ -39,7 +25,7 @@ var editUser = async (req, res, next) => {
   )
     .populate("cart")
     .populate("orderHistory")
-    .populate("addresses");
+    .populate("userAddresses");
 
   req.session.user = updatedUser;
   res.redirect("/user");
@@ -53,10 +39,10 @@ var createAddress = async function(req, res) {
   var newAddr = await Address.create(req.body);
   var updatedUser = await User.findByIdAndUpdate(
     { _id: req.session.user._id },
-    { $push: { addresses: newAddr._id } },
+    { $push: { userAddresses: newAddr._id } },
     { new: true }
-  ).populate("addresses");
-  // var populatedUser = await updatedUser.populate("addresses");
+  ).populate("userAddresses");
+  // var populatedUser = await updatedUser.populate("userAddresses");
   req.session.user = updatedUser;
   console.log("session data: ", req.session.user);
   res.redirect("/user");
@@ -73,10 +59,10 @@ var deleteAddress = async function(req, res) {
   console.log(idToDelete);
   var updatedUser = await User.findByIdAndUpdate(
     { _id: req.session.user._id },
-    { $pull: { addresses: idToDelete } },
+    { $pull: { userAddresses: idToDelete } },
     { new: true }
   )
-    .populate("addresses")
+    .populate("userAddresses")
     .populate("cart")
     .populate("orderHistory");
   req.session.user = updatedUser;
@@ -95,7 +81,7 @@ var addItemsToCart = (req, res) => {
     { $push: { cart: mongoose.Types.ObjectId(req.body.id) } },
     { new: true }
   )
-    .populate("addresses")
+    .populate("userAddresses")
     .populate("cart")
     .then(result => {
       req.session.user = result;
@@ -113,7 +99,7 @@ var deleteCartItem = async (req, res) => {
     { new: true }
   )
     .populate("cart")
-    .populate("addresses");
+    .populate("userAddresses");
 
   req.session.user = updatedUser;
   res.redirect("/user/cart?itemDeleted=true");
@@ -135,7 +121,7 @@ var itemAddedToOrderHistory = async (req, res) => {
     new: true
   })
     .populate("orderHistory")
-    .populate("addresses")
+    .populate("userAddresses")
     .populate("cart");
 
   req.session.user = updatedUser;
@@ -144,7 +130,7 @@ var itemAddedToOrderHistory = async (req, res) => {
 
 module.exports = {
   userDashboard,
-  newUser,
+  // newUser,
   editUser,
   editUserForm,
   createAddress,

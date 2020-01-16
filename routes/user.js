@@ -6,7 +6,6 @@ var userController = require("../controllers/userController");
 var mongoose = require("mongoose");
 
 router.get("/", userController.userDashboard);
-router.post("/", userController.newUser);
 
 router.post("/edit", userController.editUser);
 router.get("/edit", userController.editUserForm);

@@ -78,17 +78,23 @@
 
     <div class="card mb-3 mt-4 shadow p-3  bg-white rounded">
       <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="blank.jfif" style="width: 250px" class="card-img img-rounded" alt="..." />
-        </div>
+        <form action="/user/image" method="POST" enctype="multipart/form-data" style="width:450px;">
+          <div class="col-md-4">
+            <img src={{userImage}} style="width: 250px; height: 250px" class="card-img img-rounded" alt="..." />
+            <input type="file" name="file">
+            <button type="submit">Upload</button>
+          </div>
+        </form>
+
+
         <div class="col-md-4">
           <div class="card-body">
-            <h3 class="card-title"><i class="fa fa-user" style="color: #2a1a5e;"> {{name}}</i></h3>
+            <h3 class="card-title"><i class="fa fa-user" style="color: #2a1a5e;"> {{userName}}</i></h3>
             <p class="card-title mt-2 d-inline-block"><i class="fa fa-envelope" style="color: #2a1a5e;">email:</i>
-              <h4 class="d-inline-block">{{email}}</h4>
+              <h4 class="d-inline-block">{{userEmail}}</h4>
             </p>
             <p class="card-title mt-2 d-inline-block"><i class="fa fa-mobile" style="color: #2a1a5e;">Mobile:</i>
-              <h4 class="d-inline-block">{{mobile}}</h4>
+              <h4 class="d-inline-block">{{userMobile}}</h4>
             </p>
 
             <a href="/user/edit"><button style="width:150px; background-color: #2a1a5e" class="btn btn-primary">Edit
@@ -128,7 +134,7 @@
           </div>
         </div>
       </div>
-      {{#each addresses}}
+      {{#each userAddresses}}
       <div class="col-md-4">
         <div class="card shadow p-3 mt-2  bg-white rounded" style="height: 350px;">
           <div class="card-body ">
@@ -155,57 +161,7 @@
   </div>
 
 
-  {{!-- <div class="row">
-      <div class="col-md-4">
-        <div class="card shadow p-3  bg-white rounded" style="height: 300px;">
-          <div class="card-body mt-4">
-            <h5 class="card-title">Vivek Regmi</h5>
-            <h5 class="card-title mt-2">email: vivekregmi5@gmail.com</h5>
-            <h5 class="card-title mt-2">Mobile: 7002911128</h5>
-            <p class="card-text mt-2">
-              <h5>Address: </h5>VPO-Amlighat, Morigaon Assam
-            </p>
-            <a href="">Edit</a> | <a href="">Remove</a> | <a href="">Make Default</a>
 
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow p-3  bg-white rounded" style="height: 300px;">
-          <div class="card-body mt-4">
-            <h5 class="card-title">Vivek Regmi</h5>
-            <h5 class="card-title mt-2">email: vivekregmi5@gmail.com</h5>
-            <h5 class="card-title mt-2">Mobile: 7002911128</h5>
-            <p class="card-text mt-2">
-              <h5>Address: </h5>VPO-Amlighat, Morigaon Assam
-            </p>
-            <a href="">Edit</a> | <a href="">Remove</a> | <a href="">Make Default</a>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow p-3  bg-white rounded" style="height: 300px;">
-          <div class="card-body mt-4">
-            <h5 class="card-title">Vivek Regmi</h5>
-            <h5 class="card-title mt-2">email: vivekregmi5@gmail.com</h5>
-            <h5 class="card-title mt-2">Mobile: 7002911128</h5>
-            <p class="card-text mt-2">
-              <h5>Address: </h5>VPO-Amlighat, Morigaon Assam
-            </p>
-            <a href="">Edit</a> | <a href="">Remove</a> | <a href="">Make Default</a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="row">
-        <div class="col-md-4">
-          <img src="vivek.jpg" style="width: 400px" />
-        </div>
-      </div> -->
-   --}}
-  <!--footer starts here-->
   <div>
     <h5 class="text-white">Downloads</h5>
     <footer class="w-100 footer">
