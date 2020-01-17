@@ -67,51 +67,51 @@ const Schema = mongoose.Schema;
 ObjectId = Schema.Types;
 
 let ProductSchema = new Schema({
-    name: {
+    productName: {
         type: String,
         required: true,
         max: 100
     },
-    picture: {
+    productImage: {
         type: String, 
     },
     category: {
         type: String,
         required:true,
     },
-    subcategory:{
+    subCategory:{
         type:String,
         required:true
     },
-    productdescription1: {
+    productDescription1: {
         type: String, 
         required: true
     },
-    productdescription2: {
+    productDescription2: {
         type: String, 
         required: true
     },
-    productdescription3: {
+    productDescription3: {
         type: String, 
         required: true
     },
-    warranty: {
+    productWarranty: {
         type: Number, 
         required: true
     },
    
-    quantity: {
+    availableUnits: {
         type: Number, 
         required: true
     },
-    AvailableColors: {
+    availableColors: {
         type: String, 
         
     },
-    price: {
+    productPrice: {
         type: Number, 
         required: true
-    },
+    }
 
     // url:{
     //     type:String,

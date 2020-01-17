@@ -36,7 +36,7 @@
         <div class="row ">
             <div class="col-md-12 text-right" style="margin-top: 10px;">
             <ul class="list-inline">
-                <img style="border-radius: 20%; width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;" src="/images/l.png" alt="logo">
+                <img style="border-radius: 20%; width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;" src="/uploads/l.png" alt="logo">
                 <form class="form-inline">
                 <div class="input-group" style="margin-top: 5px; width:90;">                    
                     <input type="text" class="form-control" style="margin-left: 100px; width:120" placeholder="Search" id="search">
@@ -65,7 +65,7 @@
           
          <div class="thumbnail shadow" style="width: 500px; height:500px;">
               <svg xmlns="http://www.w3.org/2000/svg" class="_2oLiqr" width="16" height="16" viewBox="0 0 20 16"><path d="M8.695 16.682C4.06 12.382 1 9.536 1 6.065 1 3.219 3.178 1 5.95 1c1.566 0 3.069.746 4.05 1.915C10.981 1.745 12.484 1 14.05 1 16.822 1 19 3.22 19 6.065c0 3.471-3.06 6.316-7.695 10.617L10 17.897l-1.305-1.215z" fill="#2874F0" class="_35Y7Yo" stroke="#FFF" fill-rule="evenodd" opacity=".9"></path></svg>
-           <img src="{{product.url}}" class="img-responsive" alt="" style="height: 400px;">
+           <img src="{{product.productImage}}" class="img-responsive" alt="" style="height: 400px;">
            
          </div>
            <div class="caption" style="width: 500px; margin-left:-50px; margin-top:100px;">
@@ -87,14 +87,14 @@
            <ol class="breadcrumb col-sm-12" style="background-color:transparent;">
              <li><a href="#">Home</a></li>
              <li><a href="#">Clothing</a></li>
-             <li><a href="">{{product.subcategory}}</a></li>
+             <li><a href="">{{product.subCategory}}</a></li>
              
            </ol>
-           <h2 style="margin-right: 700px;">{{product.name}}</h2>
+           <h2 style="margin-right: 700px;">{{product.productName}}</h2>
         <div style="border-top: 1px solid #f0f0f0;"></div>
            <p class="discount-container"> 
                
-                <span class="after-discount"> <strong style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 30px;">Rs- {{product.price}}</strong> </span></b> </h2>
+                <span class="after-discount"> <strong style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 30px;">Rs- {{product.productPrice}}</strong> </span></b> </h2>
                 <span class="discount-mrp"><s><!-- react-text: 60 -->Rs. <!-- /react-text --><!-- react-text: 61 -->3000<!-- /react-text --></s></span>
                 <span class="discount">(40% OFF)</span>
            </p>
@@ -198,7 +198,7 @@
                     <h4 class="pdp-product-description-title" style="font-size: 24px;"><!-- react-text: 221 --><b>Product Details </b> <!-- /react-text -->
                     <span class="myntraweb-sprite pdp-productDetailsIcon sprites-productDetailsIcon"></span>
                     </h4>
-                    <p class="pdp-product-description-content" style="font-size: 22px;">{{product.productdescription1}}</br></p>
+                    <p class="pdp-product-description-content" style="font-size: 22px;">{{product.productDescription1}}</br></p>
                 </div>
                 <div class="pdp-sizeFitDesc">
                     <br>
@@ -209,7 +209,7 @@
                 </div>
                 <div class="pdp-sizeFitDesc">
                     <h4 class="pdp-sizeFitDescTitle pdp-product-description-title" style="font-size: 24px;"> <b> Material &amp; Care</b></h4>
-                    <p class="pdp-sizeFitDescContent pdp-product-description-content" style="font-size: 20px;">{{product.productdescription2}}</p>
+                    <p class="pdp-sizeFitDescContent pdp-product-description-content" style="font-size: 20px;">{{product.productDescription2}}</p>
                 </div>
                 <br>
                 <div class="index-sizeFitDesc">
@@ -219,7 +219,7 @@
                             <div class="index-rowKey" style="font-size: 22px;">Pattern
 
                             </div>
-                            <div class="index-rowValue"style="font-size: 22px;">{{product.productdescription3}}
+                            <div class="index-rowValue"style="font-size: 22px;">{{product.productDescription3}}
 
                             </div>
                         </div>
