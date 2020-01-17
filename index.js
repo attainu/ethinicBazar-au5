@@ -164,20 +164,20 @@ app.post("/forgotPassword", function(req, res, next) {
         var smtpTransport = nodemailer.createTransport({
           service: "Gmail",
           auth: {
-            user: "raj.vijay.ece@gmail.com",
-            pass: "sknagar2018"
+            user: "vivekregmi5@gmail.com",
+            pass: "Infinity!422"
           }
         });
         var mailOptions = {
           to: user.userEmail,
-          from: "raj.vijay.ece@gmail.com",
+          from: "vivekregmi5@gmail.com",
           subject: "Ecommerce Password Reset",
           text:
             "You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n" +
             "Please click on the following link, or paste this into your browser to complete the process:\n\n" +
             "http://" +
             req.headers.host +
-            "/reset/" +
+            "/userReset/" +
             token +
             "\n\n" +
             "If you did not request this, please ignore this email and your password will remain unchanged.\n"
@@ -197,7 +197,7 @@ app.post("/forgotPassword", function(req, res, next) {
   );
 });
 
-exports.verify = function(req, res) {
+app.get("/userReset/:token", function(req, res) {
   console.log(req.params.token);
   User.findOne(
     {
@@ -208,12 +208,12 @@ exports.verify = function(req, res) {
       if (!user) {
         return res.redirect("/forgotPassword");
       }
-      res.render("reset", { token: req.params.token });
+      res.render("userResetPassword", { token: req.params.token });
     }
   );
-};
+});
 
-exports.token = function(req, res) {
+app.post("/userReset/:token", function(req, res) {
   console.log("reached");
   async.waterfall(
     [
@@ -246,18 +246,18 @@ exports.token = function(req, res) {
         var smtpTransport = nodemailer.createTransport({
           service: "Gmail",
           auth: {
-            user: "raj.vijay.ece@gmail.com",
-            pass: "sknagar2018"
+            user: "vivekregmi5@gmail.com",
+            pass: "Infinity!422"
           }
         });
         var mailOptions = {
-          to: user.email,
+          to: user.userEmail,
           from: "learntocodeinfo@mail.com",
           subject: "Your password has been changed",
           text:
             "Hello,\n\n" +
             "This is a confirmation that the password for your account " +
-            user.email +
+            user.userEmail +
             " has just been changed.\n"
         };
         smtpTransport.sendMail(mailOptions, function(err) {
@@ -269,7 +269,7 @@ exports.token = function(req, res) {
       res.redirect("/userLogin");
     }
   );
-};
+});
 
 //************Forgot Password ******************************//
 app.post("/userLogin", function(req, res, next) {
