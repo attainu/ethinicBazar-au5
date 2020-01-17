@@ -78,9 +78,13 @@
 
     <div class="card mb-3 mt-4 shadow p-3  bg-white rounded">
       <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="blank.jfif" style="width: 250px" class="card-img img-rounded" alt="..." />
-        </div>
+        <form action="/user/image" method="POST" enctype="multipart/form-data" style="width:450px;">
+          <div class="col-md-4">
+            <img src={{userImage}} style="width: 250px; height: 250px" class="card-img img-rounded" alt="..." />
+            <input type="file" name="file">
+            <button type="submit">Upload</button>
+          </div>
+        </form>
         <div class="col-md-4">
           <div class="card-body">
             <h3 class="card-title"><i class="fa fa-user" style="color: #2a1a5e;"> {{userName}}</i></h3>
@@ -128,7 +132,7 @@
           </div>
         </div>
       </div>
-      {{#each addresses}}
+      {{#each userAddresses}}
       <div class="col-md-4">
         <div class="card shadow p-3 mt-2  bg-white rounded" style="height: 350px;">
           <div class="card-body ">

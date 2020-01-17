@@ -2,6 +2,14 @@ var express = require("express");
 var mongoose = require("mongoose");
 var User = require("../models/userModel");
 var Address = require("../models/addressModel");
+var cloudinary = require("cloudinary").v2;
+var multipary = require("multiparty");
+
+cloudinary.config({
+  cloud_name: "dgq5a8zjh",
+  api_key: "641339485594975",
+  api_secret: "AUiaAT0cigGwmevOurEe5xX70ZQ"
+});
 
 var userDashboard = (req, res, next) => {
   res.render("profile", req.session.user);
@@ -39,7 +47,7 @@ var editUser = async (req, res, next) => {
   )
     .populate("cart")
     .populate("orderHistory")
-    .populate("addresses");
+    .populate("userAddresses");
 
   req.session.user = updatedUser;
   res.redirect("/user");
@@ -53,9 +61,9 @@ var createAddress = async function(req, res) {
   var newAddr = await Address.create(req.body);
   var updatedUser = await User.findByIdAndUpdate(
     { _id: req.session.user._id },
-    { $push: { addresses: newAddr._id } },
+    { $push: { userAddresses: newAddr._id } },
     { new: true }
-  ).populate("addresses");
+  ).populate("userAddresses");
   // var populatedUser = await updatedUser.populate("addresses");
   req.session.user = updatedUser;
   console.log("session data: ", req.session.user);
@@ -73,10 +81,10 @@ var deleteAddress = async function(req, res) {
   console.log(idToDelete);
   var updatedUser = await User.findByIdAndUpdate(
     { _id: req.session.user._id },
-    { $pull: { addresses: idToDelete } },
+    { $pull: { userAddresses: idToDelete } },
     { new: true }
   )
-    .populate("addresses")
+    .populate("userAddresses")
     .populate("cart")
     .populate("orderHistory");
   req.session.user = updatedUser;
@@ -95,12 +103,13 @@ var addItemsToCart = (req, res) => {
     { $push: { cart: mongoose.Types.ObjectId(req.body.id) } },
     { new: true }
   )
-    .populate("addresses")
+    .populate("userAddresses")
     .populate("cart")
+    .populate("orderHistory")
     .then(result => {
       req.session.user = result;
       console.log(req.session.user);
-      res.redirect("/productList");
+      res.redirect("/user/cart");
     });
 };
 
@@ -113,7 +122,7 @@ var deleteCartItem = async (req, res) => {
     { new: true }
   )
     .populate("cart")
-    .populate("addresses");
+    .populate("userAddresses");
 
   req.session.user = updatedUser;
   res.redirect("/user/cart?itemDeleted=true");
@@ -135,7 +144,7 @@ var itemAddedToOrderHistory = async (req, res) => {
     new: true
   })
     .populate("orderHistory")
-    .populate("addresses")
+    .populate("userAddresses")
     .populate("cart");
 
   req.session.user = updatedUser;

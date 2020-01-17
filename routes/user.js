@@ -5,21 +5,33 @@ var Address = require("../models/addressModel");
 var userController = require("../controllers/userController");
 var mongoose = require("mongoose");
 
-router.get("/", userController.userDashboard);
-router.post("/", userController.newUser);
+var authMiddleware = function(req, res, next) {
+  if (!req.session.user) {
+    res.redirect("/userLogin?shouldLogin=true");
+  } else {
+    next();
+  }
+};
 
-router.post("/edit", userController.editUser);
-router.get("/edit", userController.editUserForm);
+router.get("/", authMiddleware, userController.userDashboard);
+// router.post("/", userController.newUser);
 
-router.post("/address", userController.createAddress);
-router.get("/address", userController.createAddressForm);
-router.post("/address/:id", userController.deleteAddress);
+router.post("/edit", authMiddleware, userController.editUser);
+router.get("/edit", authMiddleware, userController.editUserForm);
 
-router.get("/cart", userController.cartPage);
-router.post("/cart", userController.addItemsToCart);
-router.post("/cart/:id", userController.deleteCartItem);
+router.post("/address", authMiddleware, userController.createAddress);
+router.get("/address", authMiddleware, userController.createAddressForm);
+router.post("/address/:id", authMiddleware, userController.deleteAddress);
 
-router.get("/orderHistory", userController.orderHistoryPage);
-router.post("/orderHistory", userController.itemAddedToOrderHistory);
+router.get("/cart", authMiddleware, userController.cartPage);
+router.post("/cart", authMiddleware, userController.addItemsToCart);
+router.post("/cart/:id", authMiddleware, userController.deleteCartItem);
+
+router.get("/orderHistory", authMiddleware, userController.orderHistoryPage);
+router.post(
+  "/orderHistory",
+  authMiddleware,
+  userController.itemAddedToOrderHistory
+);
 
 module.exports = router;

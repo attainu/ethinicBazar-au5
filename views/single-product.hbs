@@ -70,8 +70,11 @@
          </div>
            <div class="caption" style="width: 500px; margin-left:-50px; margin-top:100px;">
              <div class="row buttons"  style="margin-left: 120px;">
-               
-                <button class="btn col-md-5   " style="background-color:blue; color:#fff;font-size:1em; max-width:500px; float:left;"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;ADD TO CART</button>
+               <form method = "POST" action = "/user/cart">
+               <input type = "hidden" name = "id" value = {{product._id}}>
+                    <button type = "submit" class="btn   " style="background-color:blue; color:#fff;font-size:1em; max-width:500px; float:left;"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;ADD TO CART</button>
+               </form>
+                
                 
                                 
                <button class="btn col-md-6 offset-1 " style="background-color:#fb641b; color:#fff;font-size:1em;"><i class="fa fa-bolt" style="font-size:1.2em;"></i> BUY NOW</button>
