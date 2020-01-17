@@ -15,30 +15,6 @@ var userDashboard = (req, res, next) => {
   res.render("profile", req.session.user);
 };
 
-///
-
-// var resultUser = await User.findOne({ userEmail: req.body.userEmail });
-// if (resultUser.userEmail === req.body.userEmail) {
-//   res.redirect("/userSignup?emailAlreadyExists=true");
-// }else{
-//   user.save()
-
-// user
-//         .save()
-//         .then(result => {
-//           console.log(result);
-//           req.session.user = result;
-//           res.redirect("/user");
-//         })
-//         .catch(err => {
-//           console.log(err);
-//           res.status(500).json({
-//             error: err
-//           });
-//         });
-
-///
-
 var editUser = async (req, res, next) => {
   var updatedUser = await User.findByIdAndUpdate(
     { _id: req.session.user._id },
@@ -151,6 +127,22 @@ var itemAddedToOrderHistory = async (req, res) => {
   res.redirect("/user/orderHistory");
 };
 
+var addItemDirectlyToOrderHistory = (req, res) => {
+  return User.findByIdAndUpdate(
+    { _id: req.session.user._id },
+    { $push: { orderHistory: mongoose.Types.ObjectId(req.body.id) } },
+    { new: true }
+  )
+    .populate("userAddresses")
+    .populate("cart")
+    .populate("orderHistory")
+    .then(result => {
+      req.session.user = result;
+      console.log(req.session.user);
+      res.redirect("/user/orderHistory");
+    });
+};
+
 module.exports = {
   userDashboard,
   editUser,
@@ -162,5 +154,6 @@ module.exports = {
   addItemsToCart,
   deleteCartItem,
   orderHistoryPage,
-  itemAddedToOrderHistory
+  itemAddedToOrderHistory,
+  addItemDirectlyToOrderHistory
 };

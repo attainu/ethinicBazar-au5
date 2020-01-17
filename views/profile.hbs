@@ -30,7 +30,7 @@
       <div class="row ">
         <div class="col-md-12 text-right" style="margin-top: 10px;">
           <ul class="list-inline">
-            <a href="/home"><img
+            <a href="/"><img
                 style="border-radius: 20%; width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;"
                 src="l.png" alt="logo"></a>
             <form class="form-inline">
@@ -48,10 +48,10 @@
                     <small><i class="fas fa-user" style="margin-right: 2px;"></i> </i> <strong> My
                         Account</strong></small></li>
                 </a>
-                <a href="/userLogin">
+                <a href="/user/orderHistory">
                   <li class="list-inline-item"
                     style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;">
-                    <small><strong>Login / Signup</strong> </small></li>
+                    <small><strong>Order History</strong> </small></li>
                 </a>
                 <a href="/user/cart"> <i class="fa fa-shopping-cart"
                     style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px;"></i></a>
@@ -72,6 +72,10 @@
       <input type="hidden" name="id" value={{_id}}>
       <button style="margin-left: 78%;" type="submit" class="btn btn-danger">Delete Account</button>
     </form>
+
+
+
+
     <div style="margin-left: 870px" class="d-inline-block"><a href="/userLogout"><button
           class=" mr-auto btn btn-primary d-inline-block">Logout</button></a></div>
 
@@ -147,9 +151,8 @@
             <h5 class="card-title ">Locality: <p class="d-inline-block lead text-dark">{{locality}}</p>
             </h5>
 
-            <a href="">Edit</a> | <form class="d-inline-block" action="/user/address/{{_id}}" method="POST"><button
+            <form class="d-inline-block" action="/user/address/{{_id}}" method="POST"><button
                 type="submit">Remove</button></form>
-            | <a href="">Make Default</a>
 
           </div>
         </div>
@@ -158,58 +161,6 @@
     </div>
   </div>
 
-
-  {{!-- <div class="row">
-      <div class="col-md-4">
-        <div class="card shadow p-3  bg-white rounded" style="height: 300px;">
-          <div class="card-body mt-4">
-            <h5 class="card-title">Vivek Regmi</h5>
-            <h5 class="card-title mt-2">email: vivekregmi5@gmail.com</h5>
-            <h5 class="card-title mt-2">Mobile: 7002911128</h5>
-            <p class="card-text mt-2">
-              <h5>Address: </h5>VPO-Amlighat, Morigaon Assam
-            </p>
-            <a href="">Edit</a> | <a href="">Remove</a> | <a href="">Make Default</a>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow p-3  bg-white rounded" style="height: 300px;">
-          <div class="card-body mt-4">
-            <h5 class="card-title">Vivek Regmi</h5>
-            <h5 class="card-title mt-2">email: vivekregmi5@gmail.com</h5>
-            <h5 class="card-title mt-2">Mobile: 7002911128</h5>
-            <p class="card-text mt-2">
-              <h5>Address: </h5>VPO-Amlighat, Morigaon Assam
-            </p>
-            <a href="">Edit</a> | <a href="">Remove</a> | <a href="">Make Default</a>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow p-3  bg-white rounded" style="height: 300px;">
-          <div class="card-body mt-4">
-            <h5 class="card-title">Vivek Regmi</h5>
-            <h5 class="card-title mt-2">email: vivekregmi5@gmail.com</h5>
-            <h5 class="card-title mt-2">Mobile: 7002911128</h5>
-            <p class="card-text mt-2">
-              <h5>Address: </h5>VPO-Amlighat, Morigaon Assam
-            </p>
-            <a href="">Edit</a> | <a href="">Remove</a> | <a href="">Make Default</a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="row">
-        <div class="col-md-4">
-          <img src="vivek.jpg" style="width: 400px" />
-        </div>
-      </div> -->
-   --}}
-  <!--footer starts here-->
   <div>
     <h5 class="text-white">Downloads</h5>
     <footer class="w-100 footer">

@@ -43,7 +43,9 @@ var userSchema = mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "Product"
     }
-  ]
+  ],
+  resetPasswordToken: String,
+  resetPasswordExpires: Date
 });
 var User = mongoose.model("User", userSchema);
 module.exports = User;

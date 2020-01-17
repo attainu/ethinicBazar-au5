@@ -291,15 +291,19 @@ app.post("/userLogin", function(req, res, next) {
         .populate("cart")
         .populate("orderHistory");
 
-      req.session.user = updatedUser;
-      res.redirect("/user");
+      if (updatedUser.userPassword === req.body.userPassword) {
+        req.session.user = updatedUser;
+        res.redirect("/");
+      } else {
+        res.redirect("/userLogin?mismatch=true");
+      }
     }
   });
 });
 
 app.get("/userLogout", (req, res) => {
   req.session.destroy();
-  res.redirect("/userLogin");
+  res.redirect("/");
 });
 
 app.post("/user/image", authMiddleware, async (req, res) => {

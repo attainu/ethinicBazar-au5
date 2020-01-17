@@ -33,5 +33,10 @@ router.post(
   authMiddleware,
   userController.itemAddedToOrderHistory
 );
+router.post(
+  "/addToOrderHistory",
+  authMiddleware,
+  userController.addItemDirectlyToOrderHistory
+);
 
 module.exports = router;
