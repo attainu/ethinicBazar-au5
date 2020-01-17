@@ -118,7 +118,9 @@ var authMiddleware = function(req, res, next) {
 
 app.use("/user", userRoutes);
 app.get("/userSignup", function(req, res) {
-  res.render("userSignup.hbs");
+  res.render("userSignup.hbs", {
+    emailAlreadyExists: req.query.emailAlreadyExists
+  });
 });
 app.get("/userLogin", function(req, res) {
   var mismatch = req.query.mismatch;
@@ -130,12 +132,11 @@ app.get("/userLogin", function(req, res) {
   });
 });
 //************Forgot Password ******************************//
+app.get("/forgotPassword", (req, res) => {
+  res.render("forgot");
+});
 
-exports.getForgot = function(req, res, next) {
-  res.render("forgot", {});
-};
-
-exports.postForgot = function(req, res, next) {
+app.post("/forgotPassword", function(req, res, next) {
   async.waterfall(
     [
       function(done) {
@@ -145,7 +146,7 @@ exports.postForgot = function(req, res, next) {
         });
       },
       function(token, done) {
-        Seller.findOne({ email: req.body.email }, function(err, user) {
+        User.findOne({ userEmail: req.body.userEmail }, function(err, user) {
           if (!user) {
             return res.render("forgot", {
               flag: false
@@ -168,7 +169,7 @@ exports.postForgot = function(req, res, next) {
           }
         });
         var mailOptions = {
-          to: user.email,
+          to: user.userEmail,
           from: "raj.vijay.ece@gmail.com",
           subject: "Ecommerce Password Reset",
           text:
@@ -194,18 +195,18 @@ exports.postForgot = function(req, res, next) {
       });
     }
   );
-};
+});
 
 exports.verify = function(req, res) {
   console.log(req.params.token);
-  Seller.findOne(
+  User.findOne(
     {
       resetPasswordToken: req.params.token,
       resetPasswordExpires: { $gt: Date.now() }
     },
     function(err, user) {
       if (!user) {
-        return res.redirect("/forgot");
+        return res.redirect("/forgotPassword");
       }
       res.render("reset", { token: req.params.token });
     }
@@ -217,7 +218,7 @@ exports.token = function(req, res) {
   async.waterfall(
     [
       function(done) {
-        Seller.findOne(
+        User.findOne(
           {
             resetPasswordToken: req.params.token,
             resetPasswordExpires: { $gt: Date.now() }
@@ -226,8 +227,8 @@ exports.token = function(req, res) {
             if (!user) {
               return res.redirect("back");
             }
-            if (req.body.password === req.body.confirm) {
-              user.password = req.body.password;
+            if (req.body.userPassword === req.body.confirm_password) {
+              user.userPassword = req.body.userPassword;
               user.resetPasswordToken = undefined;
               user.resetPasswordExpires = undefined;
               user.save(function(err) {
@@ -265,7 +266,7 @@ exports.token = function(req, res) {
       }
     ],
     function(err) {
-      res.redirect("/login");
+      res.redirect("/userLogin");
     }
   );
 };
@@ -330,28 +331,33 @@ app.post("/user/image", authMiddleware, async (req, res) => {
   });
 });
 
-app.post("/user", (req, res, next) => {
-  console.log(req.body);
-  var user = new User({
-    _id: mongoose.Types.ObjectId(),
-    userName: req.body.userName,
-    userEmail: req.body.userEmail,
-    userPassword: req.body.userPassword,
-    userMobile: req.body.userMobile
-  });
-  user
-    .save()
-    .then(result => {
-      console.log(result);
-      req.session.user = result;
-      res.redirect("/user");
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({
-        error: err
-      });
+app.post("/user", async (req, res, next) => {
+  var resultUser = await User.findOne({ userEmail: req.body.userEmail });
+  console.log("***************", resultUser);
+  if (resultUser) {
+    res.redirect("/userSignup?emailAlreadyExists=true");
+  } else {
+    var user = new User({
+      _id: mongoose.Types.ObjectId(),
+      userName: req.body.userName,
+      userEmail: req.body.userEmail,
+      userPassword: req.body.userPassword,
+      userMobile: req.body.userMobile
     });
+    user
+      .save()
+      .then(result => {
+        console.log(result);
+        req.session.user = result;
+        res.redirect("/user");
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({
+          error: err
+        });
+      });
+  }
 });
 
 app.post("/delete", (req, res) => {

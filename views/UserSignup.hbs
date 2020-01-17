@@ -39,6 +39,11 @@
 
         <div class="form-right">
           <h2>General Infomation</h2>
+          {{#if emailAlreadyExists}}
+          <div class="alert alert-warning" style="color:red;padding-left: 20px; margin-bottom:30px">
+            Email already exists!
+          </div>
+          {{/if}}
           <div class="form-group">
             <div class="form-row ">
               <input type="text" name="userName" id="name" class="input-text" placeholder="Name" required />

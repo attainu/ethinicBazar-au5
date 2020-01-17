@@ -15,29 +15,29 @@ var userDashboard = (req, res, next) => {
   res.render("profile", req.session.user);
 };
 
-var newUser = (req, res, next) => {
-  var user = new User({
-    _id: mongoose.Types.ObjectId(),
-    userName: req.body.userName,
-    userEmail: req.body.userEmail,
-    userPassword: req.body.userPassword,
-    userMobile: req.body.userMobile
-  });
+///
 
-  user
-    .save()
-    .then(result => {
-      console.log(result);
-      req.session.user = result;
-      res.redirect("/user");
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({
-        error: err
-      });
-    });
-};
+// var resultUser = await User.findOne({ userEmail: req.body.userEmail });
+// if (resultUser.userEmail === req.body.userEmail) {
+//   res.redirect("/userSignup?emailAlreadyExists=true");
+// }else{
+//   user.save()
+
+// user
+//         .save()
+//         .then(result => {
+//           console.log(result);
+//           req.session.user = result;
+//           res.redirect("/user");
+//         })
+//         .catch(err => {
+//           console.log(err);
+//           res.status(500).json({
+//             error: err
+//           });
+//         });
+
+///
 
 var editUser = async (req, res, next) => {
   var updatedUser = await User.findByIdAndUpdate(
@@ -153,7 +153,6 @@ var itemAddedToOrderHistory = async (req, res) => {
 
 module.exports = {
   userDashboard,
-  newUser,
   editUser,
   editUserForm,
   createAddress,
