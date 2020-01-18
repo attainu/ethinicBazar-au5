@@ -17,9 +17,15 @@ var category = (req, res) => {
     if (err) {
       return next(err);
     }
+    if (!req.session.user) {
+      isLoggedIn = false;
+    } else {
+      isLoggedIn = true;
+    }
     console.log(items._id);
     res.render("category", {
-      items: items
+      items: items,
+      isLoggedIn: isLoggedIn
     });
   });
 };
@@ -27,9 +33,15 @@ var category = (req, res) => {
 var product = (req, res) => {
   Product.findById(req.params.id, function(err, product) {
     console.log(product);
+    if (!req.session.user) {
+      isLoggedIn = false;
+    } else {
+      isLoggedIn = true;
+    }
     res.render("single-product.hbs", {
       product: product,
-      addedToCart: req.query.addedToCart
+      addedToCart: req.query.addedToCart,
+      isLoggedIn: isLoggedIn
     });
     console.log("product is", product);
   });

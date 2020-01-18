@@ -412,6 +412,36 @@ app.use("/", sellerRoutes);
 // app.get("/home", (req, res) => {
 //   res.render("index");
 // });
+app.get(
+  "/checkOutSession/:productId",
+  authMiddleware,
+  async (req, res, next) => {
+    try {
+      var product = await Product.findById(req.params.productId);
+
+      var session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        success_url: "/user",
+        cancel_url: "/user",
+        customer_email: req.session.user.userEmail,
+        client_reference_id: req.params.productId,
+        line_items: [
+          {
+            name: product.productName,
+            description: product.productDescription1,
+            images: [product.productImage],
+            amount: product.productPrice * 100,
+            currency: "usd",
+            quantity: 1
+          }
+        ]
+      });
+      res.send(session);
+    } catch (err) {
+      res.send(err);
+    }
+  }
+);
 app.get("*", function(req, res) {
   res.render("notFound");
 });
