@@ -13,6 +13,7 @@ cloudinary.config({
 
 
 var category = (req, res) =>{
+   
     Product.find({subCategory: req.params.category}, function(err, items){
         console.log(items)
         if(err){ return next(err); 
@@ -20,6 +21,20 @@ var category = (req, res) =>{
         console.log(items._id)
         res.render('category',{
             items:items
+        });
+
+    });
+
+}
+
+var productcategory = (req,res) =>{
+    Product.find({category: req.params.productcategory}, function(err, category){
+       console.log(category)
+        if(err){ return next(err); 
+        }
+      
+        res.render('productcategory',{
+            category:category
         });
 
     });
@@ -46,9 +61,9 @@ var search = (req,res) =>{
 
     // var SEARCH = search.toUpperCase()
     Product.find({
-        $or: [{ subcategory: new RegExp(search , "gi") },
-        { name: new RegExp(search, "gi") },
-        {productdescription1: new RegExp(search,"gi")}
+        $or: [{ subCategory: new RegExp(search , "gi") },
+        { productName: new RegExp(search, "gi") },
+        {productDescription1: new RegExp(search,"gi")}
         ]
          })
          
@@ -113,10 +128,32 @@ var productCreate = (req,res)=>{
     res.redirect('/product/register')
 }
 
+// var pagination = (req,res)=>{
+//     console.log(req.query.search)
+//     var pageNo = parseInt(req.query.pageNo)
+//     var size = parseInt(req.query.size)
+//     var query = {}
+
+//     query.skip = size * (pageNo - 1)
+//     query.limit = size
+
+//     Product.find({},{},query,function (err, product) { 
+//         if(err) {
+//             response = {"error" : true,"message" : "Error fetching data"};
+//         } else {
+//             res.render('category.hbs',{
+//                 products:product  
+    
+//             })     
+//         }
+//     })  
+// }
+
 module.exports={
     category,
     product,
     search,
     productRegister,
-    productCreate
+    productCreate,
+    productcategory
 }

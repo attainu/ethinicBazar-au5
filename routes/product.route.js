@@ -8,6 +8,8 @@ router.get('/product/:id',productController.product)
 router.get('/search',productController.search)
 router.get('/product/register',productController.productRegister)
 router.post('/product/create',productController.productCreate)
+router.get('/ethinicBazar/product/category/:productcategory',productController.productcategory)
+
 
 
 module.exports = router;

@@ -25,13 +25,7 @@ var signuploginRoutes = require("./routes/signuplogin.route");
 var sellerRoutes = require("./routes/sellers.route");
 'use strict';
 
-// const express = require('express')
-const app = express()
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
-const path = require('path')
-const config = require('./config');
-const async = require('async')
+
 const homeroutes = require('./routes/home.route');
 const productRoute = require('./routes/product.route')
 const apiRoutes = require('./api/api');
@@ -43,6 +37,11 @@ var Product = require("./models/products.model");
 
 
 const config = require('./config');
+const APIAI_TOKEN = process.env.APIAI_TOKEN;
+const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
+const APIAI_TOKEN = process.env.APIAI_TOKEN;
+const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
+
 
 
 
@@ -80,9 +79,9 @@ hbs.registerHelper('eachUnique1', function(array, options) {
     for( var i=0; i< array.length; i++){
 
       var entry = array[i];
-      var uniqueKey = entry.subcategory 
-      var uniqueKey1 = entry.url
-      var uniqueKey2 = entry.price
+      var uniqueKey = entry.subCategory 
+      var uniqueKey1 = entry.productImage
+      var uniqueKey2 = entry.productPrice
 
       
       console.log(dupCheck[uniqueKey1])
@@ -137,6 +136,8 @@ app.use('/api', apiRoutes);
 
 app.use("/", signuploginRoutes)
 //used for product
+
+
 
 var authMiddleware = function(req, res, next) {
   if (!req.session.user) {
@@ -295,12 +296,15 @@ app.post("/user/image", async (req, res) => {
 
 
 
-app.listen(3000, () => {
-  console.log("Listening on port 4500");
+const server = app.listen(process.env.PORT || 3000, () => {
+  console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
 });
 
 
-
+const io = require('socket.io')(server);
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
 
 // app.use(
 //   session({
