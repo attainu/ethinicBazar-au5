@@ -1,8 +1,8 @@
-const Product = require('../models/products.model')
+const Product = require("../models/products.model");
 var express = require("express");
 var mongoose = require("mongoose");
 var multiparty = require("multiparty");
-const cloudinary = require('cloudinary').v2;
+const cloudinary = require("cloudinary").v2;
 
 // cloudinary.config({
 //     cloud_name: "dlqxpkg7h",
@@ -11,29 +11,33 @@ const cloudinary = require('cloudinary').v2;
 // });
 
 cloudinary.config({
-    cloud_name: "rajvijay",
-    api_key: "228268787423585",
-    api_secret: "8Jjxk0EPNl7jkqqhEe_N_Mmo8AE"
-  });
+  cloud_name: "rajvijay",
+  api_key: "228268787423585",
+  api_secret: "8Jjxk0EPNl7jkqqhEe_N_Mmo8AE"
+});
 
 var homePage = (req, res) => {
-    Product.find({})
+  var isLoggedIn;
+  if (!req.session.user) {
+    isLoggedIn = false;
+  } else {
+    isLoggedIn = true;
+  }
+  Product.find({})
     .exec()
     .then(products => {
-        
-        res.render('index',{
-        
-            products:products
-        });
-        console.log(products)
+      res.render("index", {
+        products: products,
+        isLoggedIn: isLoggedIn
+      });
+      console.log(products);
     })
-    
+
     .catch(err => {
-        console.log(err)
+      console.log(err);
     });
 };
 
-
-module.exports={
-    homePage
-}
+module.exports = {
+  homePage
+};
