@@ -60,9 +60,9 @@ hbs.registerHelper("eachUnique1", function(array, options) {
 
   for (var i = 0; i < array.length; i++) {
     var entry = array[i];
-    var uniqueKey = entry.subcategory;
-    var uniqueKey1 = entry.url;
-    var uniqueKey2 = entry.price;
+    var uniqueKey = entry.subCategory;
+    var uniqueKey1 = entry.productImage;
+    var uniqueKey2 = entry.productPrice;
 
     console.log(dupCheck[uniqueKey1]);
 
@@ -391,6 +391,7 @@ app.use(function(req, res, next) {
 });
 
 app.use("/", sellerRoutes);
+
 
 // app.use("/buyer", authMiddleware, buyerRoutes);
 // app.use("/seller", authMiddleware, sellerRoutes);
