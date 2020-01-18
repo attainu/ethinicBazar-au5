@@ -81,7 +81,7 @@
 
 
     <div class="card mb-3 mt-4 shadow p-3  bg-white rounded">
-      <div class="row no-gutters" style="background-color: #ffa500;">
+      <div class="row no-gutters">
         <form action="/user/image" method="POST" enctype="multipart/form-data" style="width:450px;">
           <div class="col-md-4">
             <img src={{userImage}} style="width: 250px; height: 250px" class="card-img img-rounded" alt="..." />
@@ -91,15 +91,15 @@
         </form>
         <div class="col-md-4">
           <div class="card-body">
-            <h3 class="card-title"><i class="fa fa-user" style="color: #2a1a5e; margin-right: 2px;"> {{userName}}</i></h3>
-            <p class="card-title mt-2 d-inline-block"><i class="fa fa-envelope" style="color: #2a1a5e; margin-right: 2px;"><strong>Email:</strong></i>
+            <h3 class="card-title"><i class="fa fa-user" style="color: #2a1a5e; margin-right: 5px;"> {{userName}}</i></h3>
+            <p class="card-title mt-2 d-inline-block"><i class="fa fa-envelope" style="color: #2a1a5e;padding-right:10px;"><strong>Email:</strong></i>
               <h4 class="d-inline-block">{{userEmail}}</h4>
             </p>
-            <p class="card-title mt-2 d-inline-block ><i class="fa fa-mobile" style="color: #2a1a5e;">Mobile:</i>
+            <p class="card-title mt-2 d-inline-block ><i class="fa fa-mobile" style="color: #2a1a5e; padding-right:10px;">Mobile:</i>
               <h4 class="d-inline-block">{{userMobile}}</h4>
             </p>
 
-            <a href="/user/edit"><button style="width:150px; background-color: #2a1a5e" class="btn btn-primary">Edit
+            <a href="/user/edit"><button style="width:150px; background-color: #2a1a5e; padding-right:10px;" class="btn btn-primary">Edit
                 Profile</button></a>
           </div>
         </div>
