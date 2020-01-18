@@ -28,15 +28,15 @@
         
         }
     </style> --}}
-<body>
+<body style="width: 100%; overflow-x:hidden ;">
 
    
-<div class="top-head pt-1 border" class="header" style="height:80px; background:#ffa500;" id="navbar">
+<div class="top-head pt-1 border" class="header" style="height:80px; background:#ffa500;" id="navbar" style="width: 120%; overflow:hidden;">
      <div class="container">
         <div class="row ">
             <div class="col-md-12 text-right" style="margin-top: 10px;">
             <ul class="list-inline">
-                <img style="border-radius: 20%; width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;" src="/uploads/l.png" alt="logo">
+                <a href = "/"> <img style="border-radius: 20%; width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;" src="/uploads/l.png" alt="logo"></a> 
   
                 <form class="form-inline" >
                    
@@ -50,9 +50,21 @@
                     </div>
                 </div>
                     <div class="id 1" style="margin-top: 10px;">
-                    <a href="#"><li class="list-inline-item" style="font-size: 20px; margin-top: 1px; margin-bottom: 5px; margin-right: 10px;"><small><i class="fas fa-user" style="margin-right: 2px;"></i> </i> <strong style="color: black;">  My Account</strong></small></li></a>
-                    <a href="#"><li class="list-inline-item" style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;"><small><strong style="color:black;">Login / Signup</strong> </small></li></a>
-                    <a href="#"> <i class="fa fa-shopping-cart" style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px; color:black;"></i></a>
+                    <a href="/user"><li class="list-inline-item" style="font-size: 20px; margin-top: 1px; margin-bottom: 5px; margin-right: 10px;"><small><i class="fas fa-user" style="margin-right: 2px;"></i> </i> <strong style="color: black;">  My Account</strong></small></li></a>
+                    {{#if isLoggedIn}}
+                                <a href="/userLogout">
+                                    <li class="list-inline-item"
+                                        style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;">
+                                        <small><strong>Logout</strong> </small></li>
+                                </a>
+                                {{else}}
+                                <a href="/userLogin">
+                                    <li class="list-inline-item"
+                                        style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;">
+                                        <small><strong>Login</strong> </small></li>
+                                </a>
+                                {{/if}}
+                    <a href="/user/cart"> <i class="fa fa-shopping-cart" style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px; color:black;"></i></a>
                     </div>
                 </form>    
                 
@@ -80,11 +92,11 @@
                         <span class="myntraweb-sprite filter-search-closeSearch sprites-remove"></span>
                     </div>
                     <ul class="categories-list">
-{{!--                          
+                         
                          {{#eachUnique category}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="{{subcategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subcategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 -->(<!-- /react-text --><!-- react-text: 41 -->1396<!-- /react-text --><!-- react-text: 42 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="{{subCategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 -->(<!-- /react-text --><!-- react-text: 41 -->1396<!-- /react-text --><!-- react-text: 42 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
                        
-                         {{/eachUnique}} --}}
+                         {{/eachUnique}}
                 
                     </ul>
                  
@@ -97,9 +109,9 @@
                         <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
                     </div>
                     <ul class="brand-list">
-                        {{#each items}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="category" class="custom-control-input" value="Carlton London"> <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{name}}<!-- /react-text --><span class="brand-num"><!-- react-text: 122 -->(<!-- /react-text --><!-- react-text: 123 -->3733<!-- /react-text --><!-- react-text: 124 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                        {{/each}}
+                        {{#eachUnique category}}
+                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="category" class="custom-control-input" value="Carlton London"> <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{productName}}<!-- /react-text --><span class="brand-num"><!-- react-text: 122 -->(<!-- /react-text --><!-- react-text: 123 -->3733<!-- /react-text --><!-- react-text: 124 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                        {{/eachUnique}}
                     </ul>
                     <div class="brand-more"><!-- react-text: 190 -->+ <!-- /react-text --><!-- react-text: 191 -->6<!-- /react-text --><!-- react-text: 192 --> more<!-- /react-text --></div>
                 </div>
@@ -169,23 +181,31 @@
             </div>
         </section>
     </div>
-    <div class="col-md-10" style="background: white; border:1px solid whitesmoke; margin-top:53px; margin:53px -15px 2px 7px;  maxwidth:1700px;">
-      <div class="row" id="printcard"> 
-         
-          
-      </div>
+    <div class="col-md-10" style="background: white;  margin-top:53px; margin:53px -15px 2px 7px;  max-width:800px;">
+        <div>
+
+            <ol class="breadcrumb col-sm-12" style="background-color:transparent;">
+                        <li><a href="#">Home/</a></li>
+                        <li><a href="#">Clothing/</a></li>
+                        <li><a href="#">{{items.0.subCategory}}</a></li>
+
+            </ol>
+           </div>
+     
          
        <div class="row" style="margin-right: -300px;" id="filter">
+           <br>
+           <br>
+           
             {{#each category}}
          
 
-            <div class="col-md-3 ml-5 shadow1  ">
+            <div class="col-md-3  shadow1  ">
+                   <i class="fas fa-heart" style="margin:20px; width:"></i>
+                 <img src=" {{this.productImage}}" alt="" onclick="window.location.href='/product/{{this._id}}'">
                 <div class="row" >
-                    <i class="fas fa-heart" style="margin:20px; width:"></i>
-                    <div class="col-md-9 offset-3">
-                    <img src=" {{this.productImage}}" alt="" onclick="window.location.href='/product/{{this._id}}'">
-
-                    </div>
+                 
+                  
 
                 </div>
                 <ul>
@@ -221,7 +241,8 @@
           
             
              
-         <br>   
+        <br>   
+        <br>
         <br>
              {{/each}}  
             
