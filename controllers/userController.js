@@ -85,7 +85,7 @@ var addItemsToCart = (req, res) => {
     .then(result => {
       req.session.user = result;
       console.log(req.session.user);
-      res.redirect("/user/cart");
+      res.redirect(`/product/${req.body.id}?addedToCart=true`);
     });
 };
 
