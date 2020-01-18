@@ -37,10 +37,7 @@ var Product = require("./models/products.model");
 
 
 const config = require('./config');
-const APIAI_TOKEN = process.env.APIAI_TOKEN;
-const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
-const APIAI_TOKEN = process.env.APIAI_TOKEN;
-const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
+
 
 
 
