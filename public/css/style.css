@@ -4,23 +4,11 @@
 	background-color: #ffa500;
 	}
 a {color:black;}
-img {width:auto;}
+img {width:100%;}
 .twhite {color:#fff;}
 .top-head ul li {padding-right:10px;margin-top: 1px; margin-left: 140px; margin-right: 40px;
 font-size: 20px; 
 }
-
-@media screen and (max-width: 500px) {
-	.header a {
-	  float: none;
-	  display: block;
-	  text-align: left;
-	}
-	
-	.header-right {
-	  float: none;
-	}
-  }
 
 
 /* body */
@@ -28,7 +16,7 @@ font-size: 20px;
 body {
 	font-family: "Open Sans", sans-serif;
 }
-/* h2 {
+h2 {
 	color: #000;
 	font-size: 26px;
 	font-weight: 300;
@@ -36,11 +24,11 @@ body {
 	text-transform: uppercase;
 	position: relative;
 	margin: 30px 0 80px;
-} */
+}
 h2 b {
 	color: #ffc000;
 }
-/* h2::after {
+h2::after {
 	content: "";
 	width: 100px;
 	position: absolute;
@@ -50,7 +38,7 @@ h2 b {
 	left: 0;
 	right: 0;
 	bottom: -20px;
-} */
+}
 .carousel {
 	margin: 50px auto;
 	padding: 0 70px;
@@ -66,7 +54,7 @@ h2 b {
 	position: relative;
 }
 .carousel .item img {	
-	max-width: 100%;
+	max-width: 60%;
 	max-height: 100%;
 	display: inline-block;
 	position: absolute;
