@@ -93,7 +93,7 @@ $(document).ready(function(){
                     var area=data[0].PostOffice[0].District
                     console.log(area)
                     
-                    $('#district').append(area)
+                    $('#pindata').append(area)
                     return;
                 }
                
