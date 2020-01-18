@@ -66,7 +66,7 @@
   border-radius: 50%;
 }
 </style>
-<body >
+<body style="width: 100;">
 
    
 
@@ -296,53 +296,14 @@
 </div>
 <button type="button" class="btn cancel" id="chatbutton">Chat</button>
    
-{{!-- <script>
-(function(t,a,l,k,j,s){
-s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s)
-;k=t.Promise;t.Talk={v:2,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
-.push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
-</script>
 
-<!-- container element in which TalkJS will display a chat UI -->
-<div id="talkjs-container" style="width: 90%; margin: 90px; height: 500px"><i>Loading chat...</i></div>
-
-<!-- TalkJS initialization code, which we'll customize in the next steps -->
-<script>
-Talk.ready.then(function() {
-    var me = new Talk.User({
-        id: "123456",
-        name: "Arvind",
-        email: "alice@example.com",
-        photoUrl: "https://demo.talkjs.com/img/alice.jpg",
-        welcomeMessage: "Hey there! How are you? :-)"
-    });
-    window.talkSession = new Talk.Session({
-        appId: "tHMJyhgF",
-        me: me
-    });
-    var other = new Talk.User({
-        id: "654321",
-        name: "Vivek",
-        email: "Sebastian@example.com",
-        photoUrl: "https://demo.talkjs.com/img/sebastian.jpg",
-        welcomeMessage: "Hey, how can I help?"
-    });
-
-    var conversation = talkSession.getOrCreateConversation(Talk.oneOnOneId(me, other))
-    conversation.setParticipant(me);
-    conversation.setParticipant(other);
-   
-    var inbox = talkSession.createInbox({selected: conversation});
-    inbox.mount(document.getElementById("talkjs-container"));
-});
-</script> --}}
 
    
         <!-- product part ends -->
 
 
         <!-- help you part -->
-       <div class="help py-5 bg-secondary twhite">
+       {{!-- <div class="help py-5 bg-secondary twhite">
             <div class="container py-5">
                 <div class="row text-center">
                     <div class="col-md-12">
@@ -352,53 +313,11 @@ Talk.ready.then(function() {
                         <button type="button" class="btn btn-danger" id="">Ask the Question</button>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- help you part ends -->
 
             <!-- promotional part -->
-        <div class="offer my-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 py-3 border">
-                        <div class="row">
-                            <div class="col-md-3 mt-2">
-                                <img src="http://klbtheme.com/froday/wp-content/uploads/2018/02/tablet.png">
-                            </div>
-                            <div class="col-md-9">
-                                <h5>Deals & Coupons</h5>
-                                <p>Get 50% Off on all using PayPal.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 py-3 border">
-                            <div class="row">
-                                <div class="col-md-3 mt-2">
-                                    <img src="http://klbtheme.com/froday/wp-content/uploads/2018/02/online-shop-6.png">
-                                </div>
-                                <div class="col-md-9">
-                                    <h5>Find Best Offers</h5>
-                                    <p>Download Our App And Win Lots of Discounts</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 py-3 border">
-                            <div class="row">
-                                <div class="col-md-3 mt-2">
-                                    <img src="http://klbtheme.com/froday/wp-content/uploads/2018/02/money.png">
-                                </div>
-                                <div class="col-md-9">
-                                    <h5>Save Money</h5>
-                                    <p>Use The HDFC Bank Card & Get Instant Discount Of 10%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- promotional part ends -->
-
-
-            <!--footer starts here-->
-            <h5 class="text-white">Downloads</h5>
+    
             <footer class="footer">
                 <div class="container bottom_border">
                     <div class="row">
