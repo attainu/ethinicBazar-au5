@@ -70,7 +70,8 @@ $(document).ready(function(){
     $('#pin').hide()
     $('#service').hide()
     console.log("hello")
-    $('#search').click(function(){
+    $('#searchpincode').click(function(){
+        console.log("hehhehe")
     
         $.ajax({
     
@@ -92,7 +93,7 @@ $(document).ready(function(){
                     var area=data[0].PostOffice[0].District
                     console.log(area)
                     
-                    $('#data').append(area)
+                    $('#district').append(area)
                     return;
                 }
                
@@ -117,8 +118,6 @@ $(document).ready(function(){
         window.location.href='/search/?searchText='+Text
 
     })
-    $(window).load(function() {      //Do the code in the {}s when the window has loaded 
-        $("#loader").fadeOut("fast");  //Fade out the #loader div
-    });
+  
     
 })

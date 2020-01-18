@@ -33,6 +33,8 @@ var Product = require("./models/products.model");
 
 const config = require("./config");
 
+
+
 //..........................//external helper function //.................................................................//
 hbs.registerHelper("eachUnique", function(array, options) {
   var dupCheck = {};
@@ -107,6 +109,8 @@ app.use("/api", apiRoutes);
 
 app.use("/", signuploginRoutes);
 //used for product
+
+
 
 var authMiddleware = function(req, res, next) {
   if (!req.session.user) {

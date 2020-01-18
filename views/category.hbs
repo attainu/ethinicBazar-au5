@@ -31,7 +31,7 @@
 <body>
 
    
-<div class="top-head pt-1 border" class="header" style="height:80px;" id="navbar">
+<div class="top-head pt-1 border" class="header" style="height:80px; background:#ffa500;" id="navbar">
      <div class="container">
         <div class="row ">
             <div class="col-md-12 text-right" style="margin-top: 10px;">
@@ -94,7 +94,7 @@
                     <ul class="categories-list">
                          
                          {{#eachUnique items}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="{{subcategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subcategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 -->(<!-- /react-text --><!-- react-text: 41 -->1396<!-- /react-text --><!-- react-text: 42 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="{{subCategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 -->(<!-- /react-text --><!-- react-text: 41 -->1396<!-- /react-text --><!-- react-text: 42 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
                        
                          {{/eachUnique}}
                 
@@ -109,9 +109,9 @@
                         <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
                     </div>
                     <ul class="brand-list">
-                        {{#each items}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="category" class="custom-control-input" value="Carlton London"> <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{name}}<!-- /react-text --><span class="brand-num"><!-- react-text: 122 -->(<!-- /react-text --><!-- react-text: 123 -->3733<!-- /react-text --><!-- react-text: 124 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                        {{/each}}
+                        {{#eachUnique items}}
+                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="category" class="custom-control-input" value="Carlton London"> <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{productName}}<!-- /react-text --><span class="brand-num"><!-- react-text: 122 -->(<!-- /react-text --><!-- react-text: 123 -->3733<!-- /react-text --><!-- react-text: 124 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                        {{/eachUnique}}
                     </ul>
                     <div class="brand-more"><!-- react-text: 190 -->+ <!-- /react-text --><!-- react-text: 191 -->6<!-- /react-text --><!-- react-text: 192 --> more<!-- /react-text --></div>
                 </div>
@@ -244,9 +244,9 @@
         <div class="container">
             <ul class="pagination" style="margin-left:500px;" >
                 
-                <li class="page-item"><a class="page-link" href="/products?pageNo=1&size=9">1</a></li>
-                <li class="page-item"><a class="page-link" href="/products?pageNo=2&size=9">2</a></li>
-                <li class="page-item"><a class="page-link" href="/products?pageNo=3&size=9">3</a></li>
+                <li class="page-item"><a class="page-link" href="/category/{{items.subCategory}}/?pageNo=1&size=6">1</a></li>
+                <li class="page-item"><a class="page-link" href="/category/{{items.subCategory}}/?pageNo=2&size=9">2</a></li>
+                <li class="page-item"><a class="page-link" href="/category/{{items.subCategory}}/?pageNo=3&size=9">3</a></li>
             </ul>
         </div>
     </div>
