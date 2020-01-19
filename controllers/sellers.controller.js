@@ -21,12 +21,6 @@ cloudinary.config({
 
 
 
-exports.getEthnicHub = function(req, res, next) {
-
-    res.render("homepage");
-
-};
-
 exports.getsellerHome = function(req, res, next){
 
     if(req.session.seller)

@@ -28,23 +28,26 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    {{!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> --}}
+    {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+ 
 
-  <style>
-    .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus {
-        color: #fff;
-        background-color: #2a1a5e;
-    }
-    .nav-pills>a.active:hover {
-        color: #fff;
-        background-color: darkblue;
-    }
-  </style>
+    <style>
+      .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus {
+          color: #fff;
+          background-color: #2a1a5e;
+      }
+      .nav-pills>a.active:hover {
+          color: #fff;
+          background-color: darkblue;
+      }
+    </style>
 
 
-  <title>Seller Dashboard</title>
+    <title>Seller Dashboard</title>
 </head>
 
 <body>
@@ -52,8 +55,8 @@
     <nav class="navbar navbar-default ">
         <!-- Brand -->
         
-        <a class="navbar-brand ml-4"  href="/">
-           <img src="/uploads/logo.png" class="logo" width="42" height="42">
+        <a class="navbar-brand ml-5"  href="/">
+           <img src="/uploads/l.png" class="logo" width="50" height="50">
         </a>
 
         <ul class="nav justify-content-center">
@@ -105,7 +108,7 @@
            <h1 class="left">My Account</h1>
           </div>
         
-          <div class="right ml-auto mt-4">
+          <div class="right ml-auto mt-4" >
               <button class="btn btn-lg btn-danger border border-dark shadow"  id ="btndel" value="{{results._id}}" onclick="deleteSelected()" >Delete My Account</button>
           </div>
         <!-- </div> -->
@@ -236,6 +239,65 @@
           </div> 
         </div> 
       </div>
+
+<!--footer starts here-->
+<h5 class="text-white">Downloads</h5>
+<footer class="footer">
+<div class="container bottom_border">
+<div class="row">
+<div class=" col-sm-4 col-md col-sm-4  col-12 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
+<li class="list-inline-item">
+<a href="#" target="_blank"><img src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png" class=" mb-3" alt=""></a>
+</li>
+<li class="list-inline-item">
+<a href="#" target="_blank"><img src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png" class=" mb-3" alt=""></a>
+</li>
+ </ul>
+</div>
+<div class=" col-sm-4 col-md  col-6 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
+<ul class="footer_ul_amrc">
+<li><a href="/">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Pricing</a></li>
+<li><a href="#">Contact Us</a></li>
+<li><a href="login">Sell On EthnicHub</a></li>
+
+</ul>
+
+</div>
+
+
+<div class=" col-sm-4 col-md  col-6 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
+
+<ul class="footer_ul_amrc">
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Policy For Sellers</a></li>
+<li><a href="#">Policy For Buyers</a></li>
+</ul>
+</div>
+<div class=" col-sm-4 col-md  col-12 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
+<a href="#"><img src="images.jfif"></a>
+</div>
+</div>
+</div>
+<div class="container">
+<p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+<ul class="social_footer_ul">
+    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+</footer>
+        </div>
+
+ 
     <script src="/js/script.js"></script>
     <script src="/assets/js/jquery-3.3.1.js"></script>
       

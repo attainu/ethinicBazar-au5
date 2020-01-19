@@ -30,6 +30,7 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -47,8 +48,8 @@
     <nav class="navbar navbar-default ">
         <!-- Brand -->
         
-        <a class="navbar-brand ml-4"  href="/ethnichub">
-            <img src="/uploads/logo.png" class="logo" width="42" height="42">
+        <a class="navbar-brand ml-5"  href="/">
+            <img src="/uploads/l.png" class="logo" width="50" height="50">
         </a>
 
         <ul class="nav justify-content-center">
@@ -123,112 +124,113 @@
         </div>
 
 
-  <div class="col-9">
-    <div class="row">
-      <div class="col-3">
-        <div class="card shadow bg-light  pl-4  mb-3" style="width: 54rem;">
-          <div class="card-body">
-            <div class="e-profile">
-              <ul class="nav nav-tabs">
-                <li class="nav-item" ><a href="" class="active nav-link" style="background-color: #fb9224;"><b>Profile</b></a></li>
-              </ul>
-              <div class="tab-content pt-3">
-                <div class="tab-pane active">
+    <div class="col-9">
+      <div class="row">
+        <div class="col-3">
+          <div class="card shadow bg-light  pl-4  mb-3" style="width: 54rem;">
+            <div class="card-body">
+              <div class="e-profile">
+                <ul class="nav nav-tabs">
+                  <li class="nav-item" ><a href="" class="active nav-link" style="background-color: #fb9224;"><b>Profile</b></a></li>
+                </ul>
+                <div class="tab-content pt-3">
+                  <div class="tab-pane active">
 
-                  <form action="/editprofile" method="POST" >
+                    <form action="/editprofile" method="POST" >
 
-                    <input type="hidden" value="{{data._id}}" name="id">
-                    <div class="row">
-                      <div class="col">
+                      <input type="hidden" value="{{data._id}}" name="id">
+                      <div class="row">
+                        <div class="col">
 
-                        <div class="row">
-                          <div class="col-sm-6">
-                              <div class="form-group">
-                                <label><b>First Name</b></label>
-                                <input class="form-control" type="text" name="firstname" placeholder="" value="{{data.firstname}}">
-                              </div>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-sm-6">
-                              <div class="form-group">
-                                <label><b>Last Name</b></label>
-                                <input class="form-control" type="text" name="lastname" placeholder="" value="{{data.lastname}}">
-                              </div>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <label><b>Email</b></label>
-                              <input class="form-control" type="text" name="email" placeholder="" value="{{data.email}}" disabled>
-                            </div>
-                          </div>
-                        </div>
-
-                      
-                      
-                       <div class="row">
-                              <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-sm-6">
                                 <div class="form-group">
-                                  <label><b>Mobile</b></label>
-                                  <input class="form-control" type="number" name="mobile" placeholder="" value="{{data.mobile}}">
+                                  <label><b>First Name</b></label>
+                                  <input class="form-control" type="text" name="firstname" placeholder="" value="{{data.firstname}}">
                                 </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                  <label><b>Last Name</b></label>
+                                  <input class="form-control" type="text" name="lastname" placeholder="" value="{{data.lastname}}">
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="form-group">
+                                <label><b>Email</b></label>
+                                <input class="form-control" type="text" name="email" placeholder="" value="{{data.email}}" disabled>
                               </div>
-                        </div>
+                            </div>
+                          </div>
 
+                        
+                        
                         <div class="row">
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <label><b>Company</b></label>
-                              <input class="form-control"  type="text"  name="company" placeholder="Company Name" value="{{data.company}}">
+                                <div class="col-sm-6">
+                                  <div class="form-group">
+                                    <label><b>Mobile</b></label>
+                                    <input class="form-control" type="number" name="mobile" placeholder="" value="{{data.mobile}}">
+                                  </div>
+                                </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="form-group">
+                                <label><b>Company</b></label>
+                                <input class="form-control"  type="text"  name="company" placeholder="Company Name" value="{{data.company}}">
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="row">
-                      <div class="col-12 col-sm-6 mb-3">
-                        <div class="mb-2"><b>Change Password</b></div>
-                 
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>New Password</label>
-                              <input class="form-control" type="password"name="password" placeholder="Password" value="{{data.password}}">
+                      <div class="row">
+                        <div class="col-12 col-sm-6 mb-3">
+                          <div class="mb-2"><b>Change Password</b></div>
+                  
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>New Password</label>
+                                <input class="form-control" type="password"name="password" placeholder="Password" value="{{data.password}}">
+                              </div>
+                            </div>
+                          </div>
+                        
+                        </div>
+                        
+                      </div>
+
+                      {{!-- <div class="row">
+                        <div  class="col-12 col-sm-auto mb-1">
+                          <div class="text-center text-sm-left mb-2 mb-sm-0">
+                          
+                            <div class="form-group"> 
+                              <label for="image" class="btn btn-primary">
+                
+                                <i class="fa fa-fw fa-camera"></i>Change Photo
+                              </label>
+                              <input type="file"  name="profileImage" id="image" value="{{data.profileImageUrl}}">
                             </div>
                           </div>
                         </div>
-                      
-                      </div>
-                      
-                    </div>
+                      </div> --}}
 
-                    {{!-- <div class="row">
-                      <div  class="col-12 col-sm-auto mb-1">
-                        <div class="text-center text-sm-left mb-2 mb-sm-0">
-                         
-                          <div class="form-group"> 
-                            <label for="image" class="btn btn-primary">
-              
-                              <i class="fa fa-fw fa-camera"></i>Change Photo
-                            </label>
-                            <input type="file"  name="profileImage" id="image" value="{{data.profileImageUrl}}">
-                          </div>
+                      <div class="row">
+                        <div class="col d-flex justify-content-end">
+                          <button class="btn btn-primary">Save Changes</button>
                         </div>
                       </div>
-                    </div> --}}
+                    </form>
 
-                    <div class="row">
-                      <div class="col d-flex justify-content-end">
-                        <button class="btn btn-primary">Save Changes</button>
-                      </div>
-                    </div>
-                  </form>
-
+                  </div>
                 </div>
               </div>
             </div>
@@ -236,6 +238,6 @@
         </div>
       </div>
     </div>
-  </div>
+    
 </body>
 </html>
