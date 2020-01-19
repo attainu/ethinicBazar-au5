@@ -98,7 +98,7 @@ var deleteCartItem = async (req, res) => {
   console.log(idToDelete);
   var updatedUser = await User.findByIdAndUpdate(
     { _id: req.session.user._id },
-    { $pull: { cart: idToDelete } },
+    { $pull: { cart: idToDelete }, $inc: { cartLength: -1 } },
     { new: true }
   )
     .populate("cart")
@@ -119,6 +119,7 @@ var itemAddedToOrderHistory = async (req, res) => {
     user.orderHistory.push(id);
   });
   user.cart = [];
+  user.cartLength = 0;
 
   var updatedUser = await User.findByIdAndUpdate(req.body.id, user, {
     new: true
