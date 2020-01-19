@@ -76,8 +76,12 @@ var cartPage = (req, res, next) => {
 var addItemsToCart = (req, res) => {
   return User.findByIdAndUpdate(
     { _id: req.session.user._id },
-    { $push: { cart: mongoose.Types.ObjectId(req.body.id) } },
-    { new: true }
+    {
+      $push: { cart: mongoose.Types.ObjectId(req.body.id) },
+      $inc: { cartLength: 1 }
+    },
+
+    { new: true, multi: true }
   )
     .populate("userAddresses")
     .populate("cart")

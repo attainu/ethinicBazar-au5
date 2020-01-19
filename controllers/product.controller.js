@@ -19,14 +19,19 @@ var category = (req, res) => {
     }
     if (!req.session.user) {
       isLoggedIn = false;
+      res.render("category", {
+        items: items,
+        isLoggedIn: isLoggedIn
+      });
     } else {
       isLoggedIn = true;
+      res.render("category", {
+        items: items,
+        isLoggedIn: isLoggedIn,
+        cartLength: req.session.user.cartLength
+      });
     }
     console.log(items._id);
-    res.render("category", {
-      items: items,
-      isLoggedIn: isLoggedIn
-    });
   });
 };
 
@@ -35,68 +40,70 @@ var product = (req, res) => {
     console.log(product);
     if (!req.session.user) {
       isLoggedIn = false;
+      res.render("single-product.hbs", {
+        product: product,
+        addedToCart: req.query.addedToCart,
+        isLoggedIn: isLoggedIn
+      });
     } else {
       isLoggedIn = true;
+      res.render("single-product.hbs", {
+        product: product,
+        addedToCart: req.query.addedToCart,
+        isLoggedIn: isLoggedIn,
+        cartLength: req.session.user.cartLength
+      });
     }
-    res.render("single-product.hbs", {
-      product: product,
-      addedToCart: req.query.addedToCart,
-      isLoggedIn: isLoggedIn
-    });
-    console.log("product is", product);
   });
 };
 
-var search = (req,res) =>{
-    
+var search = (req, res) => {
   var search = req.query.searchText;
 
-  var a = new RegExp('^' + search + '.*', "i")
-
+  var a = new RegExp("^" + search + ".*", "i");
 
   // var SEARCH = search.toUpperCase()
   Product.find({
-      $or: [{ subCategory: new RegExp(search , "gi") },
+    $or: [
+      { subCategory: new RegExp(search, "gi") },
       { productName: new RegExp(search, "gi") },
-      {productdescription1: new RegExp(search,"gi")}
-      ]
-       })
-       
-      .exec()
-      .then(docs => {
-          console.log(docs)
-          return res.render('search-result', {
-              category:"Search results -"+search,
-              products: docs,
-              // category: "Result : " + SEARCH,
-             
-          });
-      })
-      .catch(err => {
-          console.log(err);
-          res.status(500).json({
-              Error: err
-          })
-      })
-}
+      { productdescription1: new RegExp(search, "gi") }
+    ]
+  })
 
-var productcategory = (req,res) =>{
-    Product.find({category: req.params.productcategory}, function(err, category){
-       console.log(category)
-        if(err){ return next(err); 
-        }
-      
-        res.render('productcategory',{
-            category:category
-        });
-
+    .exec()
+    .then(docs => {
+      console.log(docs);
+      return res.render("search-result", {
+        category: "Search results -" + search,
+        products: docs
+        // category: "Result : " + SEARCH,
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        Error: err
+      });
     });
+};
 
-}
+var productcategory = (req, res) => {
+  Product.find({ category: req.params.productcategory }, function(
+    err,
+    category
+  ) {
+    console.log(category);
+    if (err) {
+      return next(err);
+    }
 
-
-
-
+    res.render("productcategory", {
+      category: category,
+      cartLength: req.session.user.cartLength || 0
+    });
+  });
+};
 
 var productCreate = (req, res) => {
   var form = new multiparty.Form({});

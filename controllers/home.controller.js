@@ -20,22 +20,33 @@ var homePage = (req, res) => {
   var isLoggedIn;
   if (!req.session.user) {
     isLoggedIn = false;
+    Product.find({})
+      .exec()
+      .then(products => {
+        res.render("index", {
+          products: products,
+          isLoggedIn: isLoggedIn
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   } else {
     isLoggedIn = true;
-  }
-  Product.find({})
-    .exec()
-    .then(products => {
-      res.render("index", {
-        products: products,
-        isLoggedIn: isLoggedIn
+    Product.find({})
+      .exec()
+      .then(products => {
+        res.render("index", {
+          products: products,
+          isLoggedIn: isLoggedIn,
+          cartLength: req.session.user.cartLength || 0
+        });
+        console.log(products);
+      })
+      .catch(err => {
+        console.log(err);
       });
-      console.log(products);
-    })
-
-    .catch(err => {
-      console.log(err);
-    });
+  }
 };
 
 module.exports = {
