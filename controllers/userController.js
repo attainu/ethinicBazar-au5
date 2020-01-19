@@ -145,7 +145,7 @@ var addItemDirectlyToOrderHistory = (req, res) => {
     .then(result => {
       req.session.user = result;
       console.log(req.session.user);
-      res.redirect("/user/orderHistory");
+      res.redirect("/user/thankYou");
     });
 };
 
