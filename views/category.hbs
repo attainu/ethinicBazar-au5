@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="/uploads/e.ico" sizes="200x200">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{{items.0.subCategory}}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -75,16 +76,18 @@
             </div>
         </div>
 </div>
-<div class="row" >
-    <div class="col-md-2" style="border: 1px solid whitesmoke; background:white; margin-top:53px;" >   
-        <section>
-            <div class="condition-render-verticalFilters condition-render-hung" style="top: 180.4px; bottom: auto;">
-                <div class="vertical-filters-filters header-container" style="background: white; width: 270px; margin-left: 20px;">
+
+
+<div class="row" style="margin-left:200px" >
+    <div class="col-md-2" style=" background:white; margin-top:53px;" >   
+        <section style=""  >
+            <div class="condition-render-verticalFilters condition-render-hung" style="top: 180.4px; bottom: auto; ">
+                <div class="vertical-filters-filters header-container" style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
                     <span class="header-title">FILTERS</span>
                     <span class="header-clearAllBtn">CLEAR ALL</span>
                 </div>
                 
-                <div class="vertical-filters-filters categories-container" style="background: white; width: 270px; margin-left: 20px;">
+                <div class="vertical-filters-filters categories-container" style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
                     <hr>
                     <span class="vertical-filters-header">Categories</span>
                     <div class="filter-search-filterSearchBox filter-search-expanded">
@@ -102,7 +105,7 @@
                  
             <div class="categories-more"><!-- react-text: 108 -->+ <!-- /react-text --><!-- react-text: 109 -->2<!-- /react-text --><!-- react-text: 110 --> more<!-- /react-text --></div>
                 </div>
-                <div class="vertical-filters-filters brand-container"  style="background: white; width: 270px; margin-left: 20px;">
+                <div class="vertical-filters-filters brand-container"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
                     <span class="vertical-filters-header">Brand</span>
                     <div class="filter-search-filterSearchBox"  >
                         <input type="text" class="filter-search-inputBox filter-search-hidden" placeholder="Search for Brand" style="height: 35px;">
@@ -115,7 +118,7 @@
                     </ul>
                     <div class="brand-more"><!-- react-text: 190 -->+ <!-- /react-text --><!-- react-text: 191 -->6<!-- /react-text --><!-- react-text: 192 --> more<!-- /react-text --></div>
                 </div>
-                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px;">
+                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
                     <span class="vertical-filters-header">Price</span>
                 <ul class="price-list">
                     <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="259.0 TO 707.0"><span class="custom-control-indicator"></span><!-- react-text: 199 -->Rs. 259 to Rs. 707<!-- /react-text --><span class="price-num"><!-- react-text: 201 -->(<!-- /react-text --><!-- react-text: 202 -->1259<!-- /react-text --><!-- react-text: 203 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
@@ -124,7 +127,7 @@
                     <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="1603.0 TO 2051.0"><span class="custom-control-indicator"></span><!-- react-text: 226 -->Rs. 1603 to Rs. 2051<!-- /react-text --><span class="price-num"><!-- react-text: 228 -->(<!-- /react-text --><!-- react-text: 229 -->103<!-- /react-text --><!-- react-text: 230 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
                 </ul>
                 </div>
-                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px;">
+                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
                     <span class="vertical-filters-header">Color</span>
                     <div class="filter-search-filterSearchBox">
                         <input type="text" class="filter-search-inputBox filter-search-hidden" placeholder="Search for Color" style="height: 35px;">
@@ -143,7 +146,7 @@
                             <span><!-- react-text: 317 -->+ <!-- /react-text --><!-- react-text: 318 -->26<!-- /react-text --><!-- react-text: 319 --> more<!-- /react-text --></span>
                         </div>
                 </div>
-                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px;">
+                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
                     <span class="vertical-filters-header">Discount Range</span>
                     <ul class="discount-list">
                     <li>
@@ -202,7 +205,7 @@
 
             <div class="col-md-3  shadow1  ">
                    <i class="fas fa-heart" style="margin:20px; width:"></i>
-                 <img src=" {{this.productImage}}" alt="" onclick="window.location.href='/product/{{this._id}}'">
+                 <img src=" {{this.productImage}}" alt="" style="margin:-3px;" onclick="window.location.href='/product/{{this._id}}'">
                 <div class="row" >
                  
                   
@@ -261,6 +264,7 @@
     </div>
     
 </div>   
+
 <!--footer starts here-->
 
 <!--footer starts here-->
