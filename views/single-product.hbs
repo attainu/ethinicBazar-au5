@@ -19,13 +19,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/product.css">
-  
-   
-   <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://kit.fontawesome.com/69bcf6cd54.js" crossorigin="anonymous"></script>
 
     {{!-- starts --}}
@@ -35,7 +33,7 @@
 </head>
 
 <body>
-    <div class="top-head pt-1 border" class="header" style="height:80px; background:#ffa500" >
+    <div class="top-head pt-1 border" class="header" style="height:80px; background:#ffa500">
         <div class="container">
             <div class="row ">
                 <div class="col-md-12 text-right" style="margin-top: 10px;">
@@ -58,7 +56,8 @@
                                 <a href="/user">
                                     <li class="list-inline-item"
                                         style="font-size: 20px; margin-top: 1px; margin-bottom: 5px; margin-right: 10px;">
-                                        <small><i class="fas fa-user" style="margin-right: 2px; color:black"></i> </i> <strong style="color:black"> My
+                                        <small><i class="fas fa-user" style="margin-right: 2px; color:black"></i> </i>
+                                            <strong style="color:black"> My
                                                 Account</strong></small></li>
                                 </a>
                                 {{#if isLoggedIn}}
@@ -75,7 +74,8 @@
                                 </a>
                                 {{/if}}
                                 <a href="/user/cart"> <i class="fa fa-shopping-cart"
-                                        style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px; color:black"></i></a>
+                                        style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px; color:black"><span
+                                            class="badge badge-secondary">{{cartLength}}</span></i></a>
                             </div>
                         </form>
 
@@ -459,62 +459,66 @@
         </div>
     </div>
 
-       
+
+    </div>
+    <h5 class="text-white">Downloads</h5>
+    <footer class="footer" style="background: #263238;">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
+                    <li class="list-inline-item">
+                        <a href="#" target="_blank"><img
+                                src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
+                                class=" mb-3" alt=""></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" target="_blank"><img
+                                src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
+                                class=" mb-3" alt=""></a>
+                    </li>
+                    </ul>
+                </div>
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
+                    <ul class="footer_ul_amrc">
+                        <li><a href="#" style="color: whitesmoke;">Home</a></li>
+                        <li><a href="#" style="color: whitesmoke;">About Us</a></li>
+                        <li><a href="#" style="color: whitesmoke;">Blog</a></li>
+                        <li><a href="#" style="color: whitesmoke;">Careers</a></li>
+                        <li><a href="#" style="color: whitesmoke;">Pricing</a></li>
+                        <li><a href="#" style="color: whitesmoke;">Contact Us</a></li>
+                        <li><a href="login" style="color: whitesmoke;">Sell On EthnicHub</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class=" col-sm-4 col-md  col-6 col" style="">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
+
+                    <ul class="footer_ul_amrc">
+                        <li><a href="#" style="color: whitesmoke;">Terms & Conditions</a></li>
+                        <li><a href="#" style="color: whitesmoke;">Policy For Sellers</a></li>
+                        <li><a href="#" style="color: whitesmoke;">Policy For Buyers</a></li>
+                    </ul>
+                </div>
+                <div class=" col-sm-4 col-md  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
+                    <a href="#"><img src="images.jfif"></a>
+                </div>
+            </div>
         </div>
-        <h5 class="text-white">Downloads</h5>
-<footer class="footer" style="background: #263238;">
-<div class="container bottom_border">
-<div class="row">
-<div class=" col-sm-4 col-md col-sm-4  col-12 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
-<li class="list-inline-item">
-<a href="#" target="_blank"><img src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png" class=" mb-3" alt=""></a>
-</li>
-<li class="list-inline-item">
-<a href="#" target="_blank"><img src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png" class=" mb-3" alt=""></a>
-</li>
- </ul>
-</div>
-<div class=" col-sm-4 col-md  col-6 col" >
-<h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
-<ul class="footer_ul_amrc" >
-<li><a href="#" style="color: whitesmoke;">Home</a></li>
-<li><a href="#" style="color: whitesmoke;" >About Us</a></li>
-<li><a href="#" style="color: whitesmoke;">Blog</a></li>
-<li><a href="#" style="color: whitesmoke;">Careers</a></li>
-<li><a href="#" style="color: whitesmoke;">Pricing</a></li>
-<li><a href="#" style="color: whitesmoke;">Contact Us</a></li>
-<li><a href="login" style="color: whitesmoke;">Sell On EthnicHub</a></li>
-
-</ul>
-
-</div>
-
-
-<div class=" col-sm-4 col-md  col-6 col" style="">
-<h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
-
-<ul class="footer_ul_amrc">
-<li><a href="#" style="color: whitesmoke;">Terms & Conditions</a></li>
-<li><a href="#" style="color: whitesmoke;">Policy For Sellers</a></li>
-<li><a href="#" style="color: whitesmoke;">Policy For Buyers</a></li>
-</ul>
-</div>
-<div class=" col-sm-4 col-md  col-12 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
-<a href="#"><img src="images.jfif"></a>
-</div>
-</div>
-</div>
-<div class="container">
-<p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
-<ul class="social_footer_ul">
-    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-    </ul>
-</footer>
+        <div class="container">
+            <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+            <ul class="social_footer_ul">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+    </footer>
 
 
 

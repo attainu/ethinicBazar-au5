@@ -76,8 +76,12 @@ var cartPage = (req, res, next) => {
 var addItemsToCart = (req, res) => {
   return User.findByIdAndUpdate(
     { _id: req.session.user._id },
-    { $push: { cart: mongoose.Types.ObjectId(req.body.id) } },
-    { new: true }
+    {
+      $push: { cart: mongoose.Types.ObjectId(req.body.id) },
+      $inc: { cartLength: 1 }
+    },
+
+    { new: true, multi: true }
   )
     .populate("userAddresses")
     .populate("cart")
@@ -94,7 +98,7 @@ var deleteCartItem = async (req, res) => {
   console.log(idToDelete);
   var updatedUser = await User.findByIdAndUpdate(
     { _id: req.session.user._id },
-    { $pull: { cart: idToDelete } },
+    { $pull: { cart: idToDelete }, $inc: { cartLength: -1 } },
     { new: true }
   )
     .populate("cart")
@@ -111,10 +115,12 @@ var orderHistoryPage = (req, res, next) => {
 var itemAddedToOrderHistory = async (req, res) => {
   console.log(req.body);
   var user = await User.findById(req.body.id);
+  var billing = [];
   user.cart.forEach(id => {
     user.orderHistory.push(id);
   });
   user.cart = [];
+  user.cartLength = 0;
 
   var updatedUser = await User.findByIdAndUpdate(req.body.id, user, {
     new: true
@@ -124,7 +130,7 @@ var itemAddedToOrderHistory = async (req, res) => {
     .populate("cart");
 
   req.session.user = updatedUser;
-  res.redirect("/user/orderHistory");
+  res.redirect("/user/thankYou");
 };
 
 var addItemDirectlyToOrderHistory = (req, res) => {
@@ -139,7 +145,7 @@ var addItemDirectlyToOrderHistory = (req, res) => {
     .then(result => {
       req.session.user = result;
       console.log(req.session.user);
-      res.redirect("/user/orderHistory");
+      res.redirect("/user/thankYou");
     });
 };
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,9 +31,21 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
     <title>Listings</title>
 </head>
 <body>
@@ -41,8 +53,8 @@
     <nav class="navbar navbar-default ">
         <!-- Brand -->
         
-        <a class="navbar-brand ml-4"  href="ethnichub">
-            <img src="/uploads/logo.png" class="logo" width="42" height="42">
+        <a class="navbar-brand ml-5"  href="/">
+            <img src="/uploads/l.png" class="logo" width="50" height="50">
         </a>
 
         <ul class="nav justify-content-center">
@@ -99,7 +111,7 @@
     <hr style="height:3px;border:none; box-shadow: 0 10px 10px -10px #8c8c8c inset;">
 
     <div class="ml-5 mr-5 ">
-        <table class = "table table-striped" border>
+        <table class = "table table-striped" id="myTable" border>
 
             <thead class = "thead">
                 <tr>
@@ -116,8 +128,8 @@
               {{#each results}}
                 {{#each product}}
                 <tr>
-                  <td class="text-center" width="15%"><div><img src="{{productImage}}" width="80" ></div></td>
-                  <td class=width="50%"><span style="white-space: pre-line;"><div><h5 style="color:darkblue">{{productName}}</h5></span>{{productDescription1}}</div></td>
+                  <td class="text-center" width="15%"><div><img src="{{productImage}}" width="120" height="120" ></div></td>
+                  <td class=width="50%"><span style="white-space: pre-line;"><div style="height:130px;overflow:hidden"><h5 style="color:darkblue">{{productName}}</h5></span>{{productDescription1}}</div></td>
                   <td class="text-center" width="10%"><div>{{availableUnits}}</div></td>
                   <td class="text-center" width="10%"><div>Rs. {{productPrice}}</div></td>
                   <td class="text-center" width="15%"><div><button class="btn btn-primary btnprod pb-1 pt-1 pl-2 pr-2"  value="{{_id}}">Delete</button>   <a href="edititem/{{_id}}"><button class="btn btn-primary pl-3 pr-3 pt-1 pb-1 ml-2">Edit</button></a></div></td>
@@ -128,7 +140,74 @@
             </tbody>
 
         </table>
-    </td>
+    </div>
+
+
+    <script>
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+      } );
+    </script>
+
+    <!--footer starts here-->
+<h5 class="text-white">Downloads</h5>
+<footer class="footer">
+<div class="container bottom_border">
+<div class="row">
+<div class=" col-sm-4 col-md col-sm-4  col-12 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
+<li class="list-inline-item">
+<a href="#" target="_blank"><img src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png" class=" mb-3" alt=""></a>
+</li>
+<li class="list-inline-item">
+<a href="#" target="_blank"><img src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png" class=" mb-3" alt=""></a>
+</li>
+ </ul>
+</div>
+<div class=" col-sm-4 col-md  col-6 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
+<ul class="footer_ul_amrc">
+<li><a href="/">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Pricing</a></li>
+<li><a href="#">Contact Us</a></li>
+<li><a href="login">Sell On EthnicHub</a></li>
+
+</ul>
+
+</div>
+
+
+<div class=" col-sm-4 col-md  col-6 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
+
+<ul class="footer_ul_amrc">
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Policy For Sellers</a></li>
+<li><a href="#">Policy For Buyers</a></li>
+</ul>
+</div>
+<div class=" col-sm-4 col-md  col-12 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
+<a href="#"><img src="images.jfif"></a>
+</div>
+</div>
+</div>
+<div class="container">
+<p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+<ul class="social_footer_ul">
+    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+</footer>
+        </div>
+
+
+
     <script src="/js/script.js"></script>
     <script src="/assets/js/jquery-3.3.1.js"></script> 
      

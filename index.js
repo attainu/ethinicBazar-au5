@@ -33,8 +33,6 @@ var Product = require("./models/products.model");
 
 const config = require("./config");
 
-
-
 //..........................//external helper function //.................................................................//
 hbs.registerHelper("eachUnique", function(array, options) {
   var dupCheck = {};
@@ -109,8 +107,6 @@ app.use("/api", apiRoutes);
 
 app.use("/", signuploginRoutes);
 //used for product
-
-
 
 var authMiddleware = function(req, res, next) {
   if (!req.session.user) {
@@ -275,6 +271,10 @@ app.post("/userReset/:token", function(req, res) {
   );
 });
 
+app.get("/user/thankYou", (req, res) => {
+  res.render("thankYou");
+});
+
 //************Forgot Password ******************************//
 app.post("/userLogin", function(req, res, next) {
   console.log(req.body);
@@ -297,6 +297,7 @@ app.post("/userLogin", function(req, res, next) {
 
       if (updatedUser.userPassword === req.body.userPassword) {
         req.session.user = updatedUser;
+        console.log("*************************: ", req.session.user);
         res.redirect("/");
       } else {
         res.redirect("/userLogin?mismatch=true");
@@ -391,7 +392,6 @@ app.use(function(req, res, next) {
 });
 
 app.use("/", sellerRoutes);
-
 
 // app.use("/buyer", authMiddleware, buyerRoutes);
 // app.use("/seller", authMiddleware, sellerRoutes);
