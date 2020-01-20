@@ -67,6 +67,42 @@
 .round {
   border-radius: 50%;
 }
+
+/*footer*/
+.col_white_amrc { color:#FFF;}
+footer { width:100%; background-color:#263238; min-height:250px; padding:10px 0px 25px 0px ; position: absolute; width: 100%;}
+.pt2 { padding-top:40px ; margin-bottom:20px ;}
+footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+.mb10 { padding-bottom:15px ;}
+.footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
+.footer_ul_amrc li {padding:0px 0px 5px 0px;}
+.footer_ul_amrc li a{ color:#CCC;}
+.footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+.fleft { float:left;}
+.padding-right { padding-right:10px; }
+
+.footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
+.footer_ul2_amrc li p { display:table; }
+.footer_ul2_amrc li a:hover { text-decoration:none;}
+.footer_ul2_amrc li i { margin-top:5px;}
+
+.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
+.foote_bottom_ul_amrc {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.foote_bottom_ul_amrc li { display:inline;}
+.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
+
+.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
+.social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
+.social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
+.social_footer_ul li i {  width:20px; height:20px; text-align:center;}
 </style>
 <body style="width: 100;">
 
@@ -78,7 +114,7 @@
         <div class="row ">
             <div class="col-md-12 text-right" style="margin-top: 10px;">
             <ul class="list-inline">
-                <img style="border-radius: 20%; width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;" src="/uploads/l.png" alt="logo">
+                <img style="border-radius: 20%; width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;" src="/uploads/IMG-20200120-WA0071.jpg" alt="logo">
   
                 <form class="form-inline">
                    
@@ -296,8 +332,8 @@
         <!-- product part ends -->
 
 
-        <!-- help you part -->
-       {{!-- <div class="help py-5 bg-secondary twhite">
+        {{!-- <!-- help you part -->
+        <div class="help py-5 bg-secondary twhite">
             <div class="container py-5">
                 <div class="row text-center">
                     <div class="col-md-12">
@@ -307,71 +343,73 @@
                         <button type="button" class="btn btn-danger" id="">Ask the Question</button>
                     </div>
                 </div>
-            </div> --}}
-            <!-- help you part ends -->
+            </div> 
+             --}}
 
             <!-- promotional part -->
     
-            <footer class="footer">
-                <div class="container bottom_border">
-                    <div class="row">
-                        <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-                            <h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
-                            <li class="list-inline-item">
-                                <a href="#" target="_blank"><img
-                                        src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
-                                        class=" mb-3" alt=""></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" target="_blank"><img
-                                        src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
-                                        class=" mb-3" alt=""></a>
-                            </li>
-                            </ul>
-                        </div>
-                        <div class=" col-sm-4 col-md  col-6 col">
-                            <h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
-                            <ul class="footer_ul_amrc">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Pricing</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="login">Sell On EthnicHub</a></li>
+            <div>
+    <h5 class="text-white">Downloads</h5>
+    <footer class="w-100 footer">
+      <div class="container bottom_border">
+        <div class="row">
+          <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
+            <li class="list-inline-item">
+              <a href="#" target="_blank"><img
+                  src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
+                  class=" mb-3" alt=""></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" target="_blank"><img
+                  src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
+                  class=" mb-3" alt=""></a>
+            </li>
+            </ul>
+          </div>
+          <div class=" col-sm-4 col-md  col-6 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
+            <ul class="footer_ul_amrc">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Sell On EthnicHub</a></li>
 
-                            </ul>
+            </ul>
 
-                        </div>
+          </div>
 
 
-                        <div class=" col-sm-4 col-md  col-6 col">
-                            <h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
+          <div class=" col-sm-4 col-md  col-6 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
 
-                            <ul class="footer_ul_amrc">
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Policy For Sellers</a></li>
-                                <li><a href="#">Policy For Buyers</a></li>
-                            </ul>
-                        </div>
-                        <div class=" col-sm-4 col-md  col-12 col">
-                            <h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
-                            <a href="#"><img src="images.jfif"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
-                    <ul class="social_footer_ul">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-            </footer>
+            <ul class="footer_ul_amrc">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Policy For Sellers</a></li>
+              <li><a href="#">Policy For Buyers</a></li>
+            </ul>
+          </div>
+          <div class=" col-sm-4 col-md  col-12 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
+            <a href="#"><img src="images.jfif"></a>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+      <div class="container">
+        <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+        <ul class="social_footer_ul">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+  </div>
+
+  <!-- footer ends -->
 
 <!-- promotional part ends -->
 
