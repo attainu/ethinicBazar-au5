@@ -271,6 +271,10 @@ app.post("/userReset/:token", function(req, res) {
   );
 });
 
+app.get("/user/thankYou", (req, res) => {
+  res.render("thankYou");
+});
+
 //************Forgot Password ******************************//
 app.post("/userLogin", function(req, res, next) {
   console.log(req.body);

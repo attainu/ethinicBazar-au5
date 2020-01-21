@@ -3,6 +3,7 @@
 
 <head>
   <title>User login form</title>
+  <link rel="icon" href="/uploads/e.ico" sizes="200x200">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" , initial-scale="1" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -22,7 +23,7 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Sign In</h5>
+            <h2 class="text-center mb-4">Sign In</h2>
             <form class="form-signin" action="/userLogin" method="POST">
               {{#if shouldLogin}}
               <div class="alert alert-warning">You must login first to access this page</div>
@@ -55,7 +56,7 @@
               <div class="alert alert-danger">Email password mismatching</div>
               {{/if}}
               <a href="#modalForgot" data-toggle="modal">Forgot your Password?</a>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase signinText" type="submit">
+              <button class="btn btn-lg btn-primary btn-block text-uppercase signinText mt-2" type="submit">
                 Sign in
               </button>
               <hr class="my-2" />
@@ -65,7 +66,7 @@
               </div>
               {{/if}}
 
-              <div class="btn-group">
+              <div class="btn-group" style="margin-left: -15px">
                 <button type="button" class="loginBtn loginBtn--facebook">
                   Login with Facebook
                 </button>
@@ -73,7 +74,7 @@
                   Login with Google
                 </button>
               </div>
-              <p>Not registered yet? <a href="/userSignup">Signup Here</a></p>
+              <p class="m-2">Not registered yet? <a href="/userSignup">Signup Here</a></p>
             </form>
             <div class="modal" id="modalForgot" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
               aria-hidden="true">

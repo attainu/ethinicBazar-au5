@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="./../invoice.css">
+</head>
+
+<body>
+    <!-- header starts -->
+    <div class="top-head pt-1 border" class="header" style="height:80px;">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12 text-right" style="margin-top: 10px;">
+                    <ul class="list-inline">
+                        <a href="/"><img
+                                style=" width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;"
+                                src="/uploads/Untitled.png" alt="logo"></a>
+                        <form class="form-inline">
+                            <div class="input-group" style="margin-top: 5px; width:90;">
+                                <input type="text" class="form-control" style="margin-left: 200px; width:120"
+                                    placeholder="Search">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" style="color: #2a1a5e;"><i
+                                            class="fa fa-search" style="color: #2a1a5e;"></i></button>
+                                </div>
+                            </div>
+                            <div class="id 1" style="margin-top: 10px;">
+                                <a href="/user">
+                                    <li class="list-inline-item"
+                                        style="font-size: 20px; margin-top: 1px; margin-bottom: 5px; margin-right: 10px;">
+                                        <small><i class="fas fa-user" style="margin-right: 2px;"></i> </i> <strong> My
+                                                Account</strong></small></li>
+                                </a>
+                                <a href="/user/orderHistory">
+                                    <li class="list-inline-item"
+                                        style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;">
+                                        <small><strong>Order History</strong> </small></li>
+                                </a>
+                                <a href="/user/cart"> <i class="fa fa-shopping-cart"
+                                        style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px;"><span
+                                            class="badge badge-secondary">{{cartLength}}</span></i></a>
+                            </div>
+                        </form>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header ends -->
+
+ <div class="jumbotron text-center">
+    <h1 class="display-3">Thank You For Shopping With us!</h1>
+    <p class="lead"><strong>Please check your email</strong> for your ordered product details</p>
+    <hr>
+    <p>
+        Having trouble? <a href="">Contact us</a>
+    </p>
+    <p class="lead">
+        <a class="btn btn-primary btn-sm" href="/" role="button">Continue to homepage</a>
+    </p>
+</div>
+
+
+
+
+
+    </div>
+    <div>
+        <h5 class="text-white">Downloads</h5>
+        <footer class="w-100 footer">
+            <div class="container bottom_border">
+                <div class="row">
+                    <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                        <h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
+                        <li class="list-inline-item">
+                            <a href="#" target="_blank"><img
+                                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
+                                    class=" mb-3" alt=""></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" target="_blank"><img
+                                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
+                                    class=" mb-3" alt=""></a>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class=" col-sm-4 col-md  col-6 col">
+                        <h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
+                        <ul class="footer_ul_amrc">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Sell On EthnicHub</a></li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class=" col-sm-4 col-md  col-6 col">
+                        <h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
+
+                        <ul class="footer_ul_amrc">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Policy For Sellers</a></li>
+                            <li><a href="#">Policy For Buyers</a></li>
+                        </ul>
+                    </div>
+                    <div class=" col-sm-4 col-md  col-12 col">
+                        <h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
+                        <a href="#"><img src="./../images.jfif"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+                <ul class="social_footer_ul">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+        </footer>
+    </div>
+
+    <!-- footer ends -->
+
+</body>
+
+</html>

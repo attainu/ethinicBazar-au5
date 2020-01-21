@@ -115,6 +115,7 @@ var orderHistoryPage = (req, res, next) => {
 var itemAddedToOrderHistory = async (req, res) => {
   console.log(req.body);
   var user = await User.findById(req.body.id);
+  var billing = [];
   user.cart.forEach(id => {
     user.orderHistory.push(id);
   });
@@ -129,7 +130,7 @@ var itemAddedToOrderHistory = async (req, res) => {
     .populate("cart");
 
   req.session.user = updatedUser;
-  res.redirect("/user/orderHistory");
+  res.redirect("/user/thankYou");
 };
 
 var addItemDirectlyToOrderHistory = (req, res) => {
@@ -144,7 +145,7 @@ var addItemDirectlyToOrderHistory = (req, res) => {
     .then(result => {
       req.session.user = result;
       console.log(req.session.user);
-      res.redirect("/user/orderHistory");
+      res.redirect("/user/thankYou");
     });
 };
 

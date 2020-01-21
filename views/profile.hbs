@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Profile</title>
-
+  <link rel="icon" href="/uploads/e.ico" sizes="200x200">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
@@ -31,7 +31,7 @@
         <div class="col-md-12 text-right" style="margin-top: 10px;">
           <ul class="list-inline">
             <a href="/"><img style=" width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;"
-                src="/uploads/Untitled.png" alt="logo"></a>
+                src="/uploads/IMG-20200120-WA0071.jpg" alt="logo"></a>
             <form class="form-inline">
               <div class="input-group" style="margin-top: 5px; width:90;">
                 <input type="text" class="form-control" style="margin-left: 200px; width:120" placeholder="Search">
@@ -55,6 +55,7 @@
                 <a href="/user/cart"> <i class="fa fa-shopping-cart"
                     style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px; color:black"></i><span
                     class="badge badge-secondary">{{cartLength}}</span></a>
+                    
               </div>
             </form>
 
@@ -66,44 +67,64 @@
   <!-- header ends -->
 
   <div class="container" style="background-color;">
-    <h1 class="mt-4 d-inline-block">User profile</h1>
+    <h1 class="mt-4 d-inline-block">User Profile</h1>
+
 
     <form action="delete" method="POST">
       <input type="hidden" name="id" value={{_id}}>
-      <button style="margin-left: 78%;" type="submit" class="btn btn-danger">Delete Account</button>
+      <button style="margin-left: 89%;" type="submit" class="btn btn-light border border-dark">Delete Account</button>
+    
     </form>
 
     <br>
 
 
-    <div style="margin-left: 870px" class="d-inline-block"><a href="/userLogout"><button
-          class=" mr-auto btn btn-primary d-inline-block">Logout</button></a></div>
+    <div style="margin-left: 89%" class="d-inline-block"><a href="/userLogout"><button
+          class=" mr-auto btn btn-light border border-dark d-inline-block">Logout</button></a></div>
 
-
-    <div class="card mb-3 mt-4 shadow p-3  bg-white rounded">
+    
+    <div class="card mb-3 mt-4 shadow p-3  bg-white rounded border border-secondary">
       <div class="row no-gutters">
         <form action="/user/image" method="POST" enctype="multipart/form-data" style="width:450px;">
+        
           <div class="col-md-4">
-            <img src={{userImage}} style="width: 250px; height: 250px" class="card-img img-rounded" alt="..." />
-            <input type="file" name="file">
+            <img src={{userImage}} style="width: 250px; height: 250px" class="card-img img-rounded" alt="..." /><br> <br> 
+            <input type="file" name="file"><br><br>
             <button type="submit">Upload</button>
           </div>
+          
         </form>
-        <div class="col-md-4">
+        <div class="col-md-4" style="font-size:small;">
           <div class="card-body">
             <h3 class="card-title"><i class="fa fa-user" style="color: #2a1a5e; margin-right: 5px;"> {{userName}}</i>
             </h3>
+<<<<<<< HEAD
             <p class="card-title mt-2 d-inline-block"><i class="fa fa-envelope"
-                style="color: #2a1a5e;padding-right:10px;"><strong>Email:</strong></i>
+                style="color: #2a1a5e;padding-right:10px; font-size: 28px"><strong></strong></i>
               <h4 class="d-inline-block">{{userEmail}}</h4>
             </p>
-            <p class="card-title mt-2 d-inline-block ><i class=" fa fa-mobile"
-              style="color: #2a1a5e; padding-right:10px;">Mobile:</i>
+            <p class="card-title  d-inline-block"><i class=" fa fa-mobile"
+                style="color: #2a1a5e; padding-right:10px; font-size: 28px"></i>
               <h4 class="d-inline-block">{{userMobile}}</h4>
-            </p>
+=======
+            
+            <br>
 
-            <a href="/user/edit"><button style="width:150px; background-color: #2a1a5e; padding-right:10px;"
-                class="btn btn-primary">Edit
+            <p class="card-title mt-2 d-inline-block"><i class="fa fa-envelope fa-2x"
+                style="color: #2a1a5e;font-size:x -large"> {{userEmail}}</i>
+              
+            </p>
+            <br>
+            <br>
+            <p class="card-title mt-2 d-inline-block"><i class=" fa fa-mobile fa-2x"
+              style="color: #2a1a5e; padding-right:10px"></i>
+              <h4 class="d-inline-block"> {{userMobile}}</h4>
+>>>>>>> 6c3b6eccb2d2fd0b1d9b51a7767c812680ade351
+            </p>
+            <br>
+            <br>
+            <a href="/user/edit"><button style="width:150px; background-color:#ffa500; padding-right:10px;"
+                class="btn btn-light">Edit
                 Profile</button></a>
           </div>
         </div>
@@ -111,9 +132,9 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card shadow p-3  bg-white rounded" style="height: 350px;width: 100%">
+    <div class="row ">
+      <div class="col-md-4 ">
+        <div class="card shadow p-3  bg-white rounded border border-secondary" style="height: 350px;width: 100%">
           <a href="/user/address"><i style="margin-left: 42%; margin-top: 36%; font-size: 60px"
               class="fa fa-plus-circle d-inline-block"></i></a>
           <h5 class="text-center">Add new address</h5>
@@ -121,7 +142,7 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card shadow p-3  bg-white rounded" style="height: 350px;">
+        <div class="card shadow p-3  bg-white rounded border border-secondary" style="height: 350px;">
           <div class="card-body">
             <h5 class="card-title">Default</h5>
             <hr />
