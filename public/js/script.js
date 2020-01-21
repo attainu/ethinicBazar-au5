@@ -3,9 +3,10 @@
     // Password Matching
     $('#confirm_password').on('keyup', function () {
       if ($('#password').val() == $('#confirm_password').val()) {
-          $('#message').html('Password Matching').css('color', 'yellow');
+          
+          $('#message').html('');
       } else 
-          $('#message').html('Not Matching').css('color', 'red');
+          $('#message').html('Not Matching').css('color', 'yellow');
     });
 
     function checkPassword(form) { 
