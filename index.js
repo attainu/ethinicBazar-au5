@@ -41,9 +41,31 @@ hbs.registerHelper("eachUnique", function(array, options) {
   for (var i = 0; i < array.length; i++) {
     var entry = array[i];
     var uniqueKey = entry.subcategory;
+    var uniqueKey1 = entry.productName;
 
-    if (!dupCheck[uniqueKey]) {
+    if (!dupCheck[uniqueKey] && !dupCheck[uniqueKey1] ){
       dupCheck[uniqueKey] = true;
+      dupCheck[uniqueKey1] = true;
+
+      buffer += options.fn(entry);
+    }
+  }
+
+  return buffer;
+});
+
+hbs.registerHelper("eachUnique3", function(array, options) {
+  var dupCheck = {};
+  var buffer = "";
+
+  for (var i = 0; i < array.length; i++) {
+    var entry = array[i];
+   
+    var uniqueKey1 = entry.productName;
+
+    if (!dupCheck[uniqueKey1]  ){
+     
+      dupCheck[uniqueKey1] = true;
 
       buffer += options.fn(entry);
     }
@@ -61,6 +83,7 @@ hbs.registerHelper("eachUnique1", function(array, options) {
     var uniqueKey = entry.subCategory;
     var uniqueKey1 = entry.productImage;
     var uniqueKey2 = entry.productPrice;
+    
 
     console.log(dupCheck[uniqueKey1]);
 
