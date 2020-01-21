@@ -44,8 +44,11 @@
   src="http://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>
+   
+
     <title>Listings</title>
 </head>
 <body>
@@ -118,7 +121,7 @@
                     <th class="text-center">Image</th>
                     <th class="text-center">Description</th>
                     <th class="text-center">Units</th>
-                    <th class="text-center">Price</th>
+                    <th class="text-center">Price (Rs.)</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -131,7 +134,7 @@
                   <td class="text-center" width="15%"><div><img src="{{productImage}}" width="120" height="120" ></div></td>
                   <td class=width="50%"><span style="white-space: pre-line;"><div style="height:130px;overflow:hidden"><h5 style="color:darkblue">{{productName}}</h5></span>{{productDescription1}}</div></td>
                   <td class="text-center" width="10%"><div>{{availableUnits}}</div></td>
-                  <td class="text-center" width="10%"><div>Rs. {{productPrice}}</div></td>
+                  <td class="text-center" width="10%"><div>{{productPrice}}</div></td>
                   <td class="text-center" width="15%"><div><button class="btn btn-primary btnprod pb-1 pt-1 pl-2 pr-2"  value="{{_id}}">Delete</button>   <a href="edititem/{{_id}}"><button class="btn btn-primary pl-3 pr-3 pt-1 pb-1 ml-2">Edit</button></a></div></td>
                 </tr>
                 {{/each}}
@@ -145,7 +148,10 @@
 
     <script>
     $(document).ready( function () {
-        $('#myTable').DataTable();
+        $('#myTable').DataTable({
+          "ordering":false
+
+        } );
       } );
     </script>
 

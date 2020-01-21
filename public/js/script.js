@@ -58,7 +58,7 @@
       
         }
       
-      };
+    };
 
     //Delete a product
     $(".btn.btn-primary.btnprod").click(function() {
@@ -117,4 +117,3 @@
         return true;
       }
     }
-
