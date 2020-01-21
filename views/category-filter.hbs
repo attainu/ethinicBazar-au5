@@ -23,13 +23,27 @@
 
 
 </head>
-    {{!-- <style>
-        div{
-            font-family: Arial, Helvetica, sans-serif;
-        
-        }
-    </style> --}}
-<body style="width: 100%; overflow-x:hidden ;">
+   <style>
+       .filterLabelContainer button {
+    float: left;
+    border: none;
+    border-radius: 1px;
+    margin-bottom: 2px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .4px;
+    color: #fff;
+    
+}
+.mrvoonik-primary-btn, .voonik-primary-btn {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all .2s ease-in-out;
+    border-radius: 2px;
+}
+   </style>
+<body style="width: 100%; overflow-x:hidden ; font-family: Rubik,sans-serif;">
 
    
 <div class="top-head pt-1 border" class="header" style="height:80px; background:#ffa500;" id="navbar" style="width: 120%; overflow:hidden;">
@@ -97,25 +111,25 @@
                     </div>
                     <ul class="categories-list">
                          
-                         {{#eachUnique1 category}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input filtercategory " id="categoryfilter" value="{{subCategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                         {{#eachUnique productfilter}}
+                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input filter" value="{{subCategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
                        
-                    {{/eachUnique1}}
+                        {{/eachUnique}}
                 
                     </ul>
                  
             <div class="categories-more"><!-- react-text: 108 -->+ <!-- /react-text --><!-- react-text: 109 -->2<!-- /react-text --><!-- react-text: 110 --> more<!-- /react-text --></div>
                 </div>
                 <div class="vertical-filters-filters brand-container"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
-                    <span class="vertical-filters-header">Product Name</span>
+                    <span class="vertical-filters-header">Brand</span>
                     <div class="filter-search-filterSearchBox"  >
                         <input type="text" class="filter-search-inputBox filter-search-hidden" placeholder="Search for Brand" style="height: 35px;">
                         <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
                     </div>
                     <ul class="brand-list">
-                        {{#eachUnique1 category}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="productName" class="custom-control-input filtername filterproduct" value="{{productName}}" > <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{productName}}<!-- /react-text --><span class="brand-num"><!-- react-text: 12<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                        {{/eachUnique1}}
+                        {{#eachUnique productfilter}}
+                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="productName" class="custom-control-input " value="{{productName}}" > <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{productName}}<!-- /react-text --><span class="brand-num"><!-- react-text: 12<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                        {{/eachUnique}}
                     </ul>
                     <div class="brand-more"><!-- react-text: 190 -->+ <!-- /react-text --><!-- react-text: 191 -->6<!-- /react-text --><!-- react-text: 192 --> more<!-- /react-text --></div>
                 </div>
@@ -191,17 +205,25 @@
             <ol class="breadcrumb col-sm-12" style="background-color:transparent;">
                         <li><a href="#">Home/</a></li>
                         <li><a href="#">Clothing/</a></li>
-                        <li><a href="#">{{items.0.subCategory}}</a></li>
+                        <li><a href="#" id="subcategory">{{productname.0.subCategory}}</a></li>
 
             </ol>
            </div>
+           <div class="col-sm-12" >
+               <div class="filterLabelList" style="position: relative; display: inline-block;margin-right: 5px;margin-bottom: 5px;padding: 2px 5px;padding-right: 20px;border: 1px solid #e0e0e0;"   >
+                   <p>
+                       <b style="font-style: bold;">{{productfilter.0.subCategory   }}</b>
+                       </p>
+                       </div>
+                       <button class="voonik-primary-btn" data-reactid=".rll5lhd0oi.2.0.0.0.1.1.2.0.2.1.0.6.0.0.1" style=" height:46px; width:114px; position:absolute;top:-2px;  outline: 0!important; background: #ff9800;" id="clearcategory">clear all</button>
+                    </div>
      
          
        <div class="row"  id="filter">
            <br>
            <br>
            
-            {{#each category}}
+            {{#each productfilter}}
          
 
             <div class="col-md-3  shadow1  ">

@@ -5,7 +5,7 @@ body{
 }
 #mainsection{
     height: 2200px;
-    width: 1600px;
+    width: 1800px;
     background: white;
     margin-right: 100px;
 }
@@ -507,4 +507,110 @@ div.offers-bullet{
 
 .pincode-deliveryContainer {
     margin-top: 30px;
+}
+.cont {
+    width: 95vw;
+    margin: 0 auto;
+}
+section.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li.logo-container {
+    padding-left: 15px;
+    padding-top: 13px;
+}
+section.header .logo-container img {
+    width: auto;
+    max-width: 150px;
+    margin-top: -4px;
+}
+.voonik-header .logo-container img {
+    height: 33px;
+    max-height: 33px;
+}
+section.header ul.left-items li.search-area {
+    position: relative;
+    padding-top: 13px;
+    width: 480px;
+    margin-left: 20px;
+}
+section.header ul li {
+    display: inline-block;
+}
+.react-autosuggest__container {
+    position: relative;
+}
+section.header ul.left-items li.search-area i.search-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    height: 35px;
+    line-height: 35px;
+    width: 50px;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+}
+section.header ul.left-items .voonik-search-area i {
+    background-color: #570090;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+section.header ul.left-items li.search-area input {
+    width: 100%;
+    height: 35px;
+    background-color: #fff;
+    padding-left: 15px;
+    padding-right: 50px;
+    font-weight: 500;
+    letter-spacing: .4px;
+    transition: all .3s ease-in-out;
+}
+section.header ul.left-items .voonik-search-area input {
+    border-color: #aaa;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.selectCategoryDisabled input {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+section.header {
+    position: fixed;
+    height: 60px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    top: 40px;
+}
+section.header ul.right-items li>a .header-svg-icons {
+    width: 35px;
+    height: 35px;
+    margin: auto;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+
+p {
+    font-size: 12px;
+    letter-spacing: .4px;
+    margin: 0;
+    text-transform: capitalize;
+    color: #424242;
+    margin-top: -4px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+section.header ul.right-items li {
+    position: relative;
+    padding: 5px 18px;
+}
+section.header ul.right-items li>a {
+    display: block;
+    text-align: center;
 }

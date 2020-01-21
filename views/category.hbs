@@ -4,6 +4,7 @@
     <link rel="icon" href="/uploads/e.ico" sizes="200x200">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{items.0.subCategory}}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -23,12 +24,14 @@
 
 
 </head>
-    {{!-- <style>
+    <style>
         div{
             font-family: Arial, Helvetica, sans-serif;
         
         }
-    </style> --}}
+       
+
+    </style>
 <body style="width: 100%; overflow-x:hidden ;">
 
    
@@ -78,9 +81,10 @@
         </div>
 </div>
 
+<div class="container-fluid">
 
-<div class="row" style="margin-left:200px" >
-    <div class="col-md-2" style=" background:white; margin-top:53px;" >   
+<div class="row" style="margin-left:56px;" >
+    <div class="col-md-2  " style=" background:white; margin-top:53px; margin-right:100px;" >   
         <section style=""  >
             <div class="condition-render-verticalFilters condition-render-hung" style="top: 180.4px; bottom: auto; ">
                 <div class="vertical-filters-filters header-container" style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
@@ -98,34 +102,34 @@
                     <ul class="categories-list">
                          
                          {{#eachUnique items}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="{{subCategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 -->(<!-- /react-text --><!-- react-text: 41 -->1396<!-- /react-text --><!-- react-text: 42 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="{{subCategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
                        
-                         {{/eachUnique}}
+                                                {{/eachUnique}}
                 
                     </ul>
                  
             <div class="categories-more"><!-- react-text: 108 -->+ <!-- /react-text --><!-- react-text: 109 -->2<!-- /react-text --><!-- react-text: 110 --> more<!-- /react-text --></div>
                 </div>
                 <div class="vertical-filters-filters brand-container"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
-                    <span class="vertical-filters-header">Brand</span>
+                    <span class="vertical-filters-header">Product Name</span>
                     <div class="filter-search-filterSearchBox"  >
                         <input type="text" class="filter-search-inputBox filter-search-hidden" placeholder="Search for Brand" style="height: 35px;">
                         <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
                     </div>
                     <ul class="brand-list">
-                        {{#eachUnique items}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="category" class="custom-control-input" value="Carlton London"> <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{productName}}<!-- /react-text --><span class="brand-num"><!-- react-text: 122 -->(<!-- /react-text --><!-- react-text: 123 -->3733<!-- /react-text --><!-- react-text: 124 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                        {{/eachUnique}}
+                        {{#each items}}
+                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="productName" class="custom-control-input filterproduct"  value="{{productName}}" id="one" > <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{productName}}<!-- /react-text --><span class="brand-num"><!-- react-text: 12<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                        {{/each}}
                     </ul>
                     <div class="brand-more"><!-- react-text: 190 -->+ <!-- /react-text --><!-- react-text: 191 -->6<!-- /react-text --><!-- react-text: 192 --> more<!-- /react-text --></div>
                 </div>
                 <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
                     <span class="vertical-filters-header">Price</span>
-                <ul class="price-list">
-                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="259.0 TO 707.0"><span class="custom-control-indicator"></span><!-- react-text: 199 -->Rs. 259 to Rs. 707<!-- /react-text --><span class="price-num"><!-- react-text: 201 -->(<!-- /react-text --><!-- react-text: 202 -->1259<!-- /react-text --><!-- react-text: 203 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="707.0 TO 1155.0"><span class="custom-control-indicator"></span><!-- react-text: 208 -->Rs. 707 to Rs. 1155<!-- /react-text --><span class="price-num"><!-- react-text: 210 -->(<!-- /react-text --><!-- react-text: 211 -->1162<!-- /react-text --><!-- react-text: 212 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="1155.0 TO 1603.0"><span class="custom-control-indicator"></span><!-- react-text: 217 -->Rs. 1155 to Rs. 1603<!-- /react-text --><span class="price-num"><!-- react-text: 219 -->(<!-- /react-text --><!-- react-text: 220 -->668<!-- /react-text --><!-- react-text: 221 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="1603.0 TO 2051.0"><span class="custom-control-indicator"></span><!-- react-text: 226 -->Rs. 1603 to Rs. 2051<!-- /react-text --><span class="price-num"><!-- react-text: 228 -->(<!-- /react-text --><!-- react-text: 229 -->103<!-- /react-text --><!-- react-text: 230 -->)<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                <ul class="price-list"></span><div class="common-checkboxIndicator"></div>
+                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="259.0 TO 707.0"><span class="custom-control-indicator"></span><!-- react-text: 199 -->Rs. 259 to Rs. 707<!-- /react-text --><span class="price-num"><!-- react-text: 201 --></label></li>
+                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="707.0 TO 1155.0"><span class="custom-control-indicator"></span><!-- react-text: 208 -->Rs. 707 to Rs. 1155<!-- /react-text --><span class="price-num"><!-- react-text: 210 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="1155.0 TO 1603.0"><span class="custom-control-indicator"></span><!-- react-text: 217 -->Rs. 1155 to Rs. 1603<!-- /react-text --><span class="price-num"><!-- react-text: 219 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
+                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="1603.0 TO 2051.0"><span class="custom-control-indicator"></span><!-- react-text: 226 -->Rs. 1603 to Rs. 2051<!-- /react-text --><span class="price-num"><!-- react-text: 228 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
                 </ul>
                 </div>
                 <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
@@ -136,12 +140,12 @@
                     </div>
                     <ul>
                         
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="436"><span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(54, 69, 79);"></span><!-- react-text: 252 -->Black<!-- /react-text --><!-- react-text: 253 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 255 -->(<!-- /react-text --><!-- react-text: 256 -->436<!-- /react-text --><!-- react-text: 257 -->)<!-- /react-text --></span><input type="checkbox" value="Black" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="426"><span data-colorhex="navy blue" class="colour-label colour-colorDisplay" style="background-color: rgb(60, 68, 119);"></span><!-- react-text: 263 -->Navy Blue<!-- /react-text --><!-- react-text: 264 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 266 -->(<!-- /react-text --><!-- react-text: 267 -->426<!-- /react-text --><!-- react-text: 268 -->)<!-- /react-text --></span><input type="checkbox" value="Navy Blue" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="246"><span data-colorhex="white" class="colour-label colour-colorDisplay" style="background-color: rgb(255, 255, 255);"></span><!-- react-text: 274 -->White<!-- /react-text --><!-- react-text: 275 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 277 -->(<!-- /react-text --><!-- react-text: 278 -->246<!-- /react-text --><!-- react-text: 279 -->)<!-- /react-text --></span><input type="checkbox" value="White" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="207"><span data-colorhex="grey" class="colour-label colour-colorDisplay" style="background-color: rgb(159, 168, 171);"></span><!-- react-text: 285 -->Grey<!-- /react-text --><!-- react-text: 286 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 288 -->(<!-- /react-text --><!-- react-text: 289 -->207<!-- /react-text --><!-- react-text: 290 -->)<!-- /react-text --></span><input type="checkbox" value="Grey" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="171"><span data-colorhex="olive" class="colour-label colour-colorDisplay" style="background-color: rgb(61, 153, 112);"></span><!-- react-text: 296 -->Olive<!-- /react-text --><!-- react-text: 297 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 299 -->(<!-- /react-text --><!-- react-text: 300 -->171<!-- /react-text --><!-- react-text: 301 -->)<!-- /react-text --></span><input type="checkbox" value="Olive" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="100"><span data-colorhex="maroon" class="colour-label colour-colorDisplay" style="background-color: rgb(176, 48, 96);"></span><!-- react-text: 307 -->Maroon<!-- /react-text --><!-- react-text: 308 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 310 -->(<!-- /react-text --><!-- react-text: 311 -->100<!-- /react-text --><!-- react-text: 312 -->)<!-- /react-text --></span><input type="checkbox" value="Maroon" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="436"><span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(54, 69, 79);"></span><!-- react-text: 252 -->Black<!-- /react-text --><!-- react-text: 253 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 255 --><!-- /react-text --></span><input type="checkbox" value="Black" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="426"><span data-colorhex="navy blue" class="colour-label colour-colorDisplay" style="background-color: rgb(60, 68, 119);"></span><!-- react-text: 263 -->Navy Blue<!-- /react-text --><!-- react-text: 264 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 266 --><!-- /react-text --></span><input type="checkbox" value="Navy Blue" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="246"><span data-colorhex="white" class="colour-label colour-colorDisplay" style="background-color: rgb(255, 255, 255);"></span><!-- react-text: 274 -->White<!-- /react-text --><!-- react-text: 275 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 277 --><!-- /react-text --></span><input type="checkbox" value="White" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="207"><span data-colorhex="grey" class="colour-label colour-colorDisplay" style="background-color: rgb(159, 168, 171);"></span><!-- react-text: 285 -->Grey<!-- /react-text --><!-- react-text: 286 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 288 --><!-- /react-text --></span><input type="checkbox" value="Grey" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="171"><span data-colorhex="olive" class="colour-label colour-colorDisplay" style="background-color: rgb(61, 153, 112);"></span><!-- react-text: 296 -->Olive<!-- /react-text --><!-- react-text: 297 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 299 --><!-- /react-text --></span><input type="checkbox" value="Olive" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
+                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="100"><span data-colorhex="maroon" class="colour-label colour-colorDisplay" style="background-color: rgb(176, 48, 96);"></span><!-- react-text: 307 -->Maroon<!-- /react-text --><!-- react-text: 308 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 310 --><!-- /react-text --></span><input type="checkbox" value="Maroon" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
                         </ul>
                         <div class="colour-more">
                             <span><!-- react-text: 317 -->+ <!-- /react-text --><!-- react-text: 318 -->26<!-- /react-text --><!-- react-text: 319 --> more<!-- /react-text --></span>
@@ -185,10 +189,10 @@
             </div>
         </section>
     </div>
-    <div class="col-md-10" style="background: white;  margin-top:53px; margin:53px -15px 2px 7px;  max-width:800px;">
+    <div class=" col-md-10  " style="background: white;  max-width:1300px;">
         <div>
 
-            <ol class="breadcrumb col-sm-12" style="background-color:transparent;">
+            <ol class="breadcrumb col-12 col-sm-12" style="background-color:transparent;">
                         <li><a href="#">Home/</a></li>
                         <li><a href="#">Clothing/</a></li>
                         <li><a href="#">{{items.0.subCategory}}</a></li>
@@ -196,22 +200,19 @@
             </ol>
            </div>
      
-         
-       <div class="row" style="margin-right: -300px;" id="filter">
+         <div class="container-fluid">
+
+       <div class="row"  id="filter">       
            <br>
            <br>
            
             {{#each items}}
          
 
-            <div class="col-md-3  shadow1  ">
-                   <i class="fas fa-heart" style="margin:20px; width:"></i>
+            <div class=" col-md-3  shadow1  ">
+                
                  <img src=" {{this.productImage}}" alt="" style="margin:-3px;" onclick="window.location.href='/product/{{this._id}}'">
-                <div class="row" >
-                 
-                  
-
-                </div>
+                
                 <ul>
                     <li>
                         <p class="product-title " >{{this.productName}}</p>
@@ -253,6 +254,7 @@
 
             
        </div>
+         </div>
 
         <div class="container">
             <ul class="pagination" style="margin-left:500px;" >
@@ -265,6 +267,7 @@
     </div>
     
 </div>   
+</div>
 
 <!--footer starts here-->
 
