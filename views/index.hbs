@@ -223,8 +223,9 @@
         <form class="form-inline my-2 my-lg-0">
           <div class="wrap">
             <div class="search mr-5" style="float: right">
-              <input type="text" class="searchTerm" placeholder="What are you looking for?" />
-              <button type="submit" style="background-color: #ffa500; border-color: #ffa500;" class="searchButton mt-1">
+              <input type="text" class="searchTerm" id="search" placeholder="What are you looking for?" />
+              <button type="button" id="data" style="background-color: #ffa500; border-color: #ffa500;"
+                class="searchButton mt-1">
                 <i class="fa fa-search"></i>
               </button>
             </div>
@@ -293,24 +294,66 @@
           </form>
 
 
+<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <span class="navbar-toggler-icon"></span> -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a href="/" class="navbar-brand"><img src="./../icon.png"
+                    style="margin-top: 0; margin-left: -15px; height: 60px; width: 160px" /> </a>
+            <form class="form-inline my-2 my-lg-0">
+                <div class="wrap">
+                    <div class="search mr-5" style="float: right">
+                        <input type="text" class="searchTerm" placeholder="What are you looking for?" />
+                        <button type="submit" style="background-color: #ffa500; border-color: #ffa500;"
+                            class="searchButton mt-1">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
+                            style="font-size: 15px;"> My Account</span></a>
+                </li>
 
-        </ul>
-      </div>
+                <li class="nav-item">
+                    <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
+                            class="text-dark" style="font-size: 15px;">Order
+                            History</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
+                            style="font-size: 15px;">Cart</span></a>
+                </li>
+
+            </ul>
+        </div>
     </div>
+<<<<<<< HEAD
 
   </div> --}}
 
+
+
+
   <!-- header ends -->
   <!-- nav bar starts -->
-  <section class="sub-header voonik-sub-header" style="top:62x !important; margin-top:-21px;">
+  <section class="sub-header voonik-sub-header"
+    style="top:62x !important; margin-top:-40px; background:rgb(255, 255, 255)">
     <div class="cont">
       <ul class="main-menu">
         <li>
           <a class="menu_item_10" href="/ethinicBazar/product/category/Women">
-            Women</a>
+            <span style="color: black">Women</span> </a>
         </li>
-        <li style="color: black;;">
-          <a class="menu_item_10" href="/ethinicBazar/product/category/Men">Men</a>
+        <li>
+          <a class="menu_item_10" href="/ethinicBazar/product/category/Men"><span style="color: black">Men</span></a>
         </li>
       </ul>
   </section>
@@ -489,7 +532,7 @@
   <div class="chat">
 
 
-    <iframe allow="microphone;" width="290" height="430" style="float:right;"
+    <iframe allow="microphone;" width="290" height="430"
       src="https://console.dialogflow.com/api-client/demo/embedded/0f2878c3-ffd1-4369-83e0-33f81e588736">
     </iframe>
     <button type="button" class="btn cancel" id="closebutton">Close</button>
