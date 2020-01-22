@@ -61,7 +61,8 @@
         <div class="form-group">
 
           <div class="form-row " style="height: 45px;">
-            <input type="number" name="userMobile" class="phone" id="phone" placeholder="Phone Number" required />
+            <input type="number" name="userMobile" minlength="10" maxlength="10" class="phone" id="phone"
+              placeholder="Phone Number" required />
           </div>
         </div>
         <div class="form-row" style="height: 45px;">
@@ -69,7 +70,7 @@
             pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email" />
         </div>
         <div class="form-row" style="height: 45px;">
-          <input type="password" name="userPassword" id="password" class="input-text" required
+          <input type="password" name="userPassword" id="password" minlength="8" class="input-text" required
             placeholder="Your password" />
         </div>
         <div class="form-row" style="height: 45px;">
