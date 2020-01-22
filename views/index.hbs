@@ -236,15 +236,27 @@
             <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
                 style="font-size: 15px;"> My Account</span></a>
           </li>
-
+          {{#if isLoggedIn}}
           <li class="nav-item">
+            <a href="/userLogout" class="nav-link mr-3"><i class="fa fa-sign-out-alt"></i> <span class="text-dark"
+                style="font-size: 15px;">
+                Logout</span></a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a href="/userLogin" class="nav-link mr-3"><i class="fa fa-sign-in-alt"></i> <span class="text-dark"
+                style="font-size: 15px;">
+                Login</span></a>
+          </li>
+          {{/if}}
+          {{!-- <li class="nav-item">
             <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
                 class="text-dark" style="font-size: 15px;">Order
                 History</span></a>
-          </li>
+          </li> --}}
           <li class="nav-item">
-            <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
-                style="font-size: 15px;">Cart</span></a>
+            <a href="/user/cart" class="nav-link "><span class="badge badge-secondary">{{cartLength}}</span><i
+                class="fa fa-shopping-cart"></i><span class="text-dark" style="font-size: 15px;">Cart</span></a>
           </li>
 
         </ul>
@@ -253,91 +265,6 @@
   </nav>
 
 
-  {{!-- <div class="top-head pt-1 border" class="header"
-    style="height:80px; background:#ffffff; position:fixed; z-index:9; width:100% !important; top:0px; box-shadow: 0 4px 12px 0 rgba(0,0,256); border:2px whitesmoke;"
-    id="navbar">
-
-    <div class="row ">
-      <div class="col-md-12 text-right" style="margin-top: 10px;">
-        <ul class="list-inline">
-          <img
-            style="border-radius: 20%; max-width: 100px; height:80px; float: left; margin-top: -4px; margin-bottom: 2px;"
-            src="/uploads/logo1.png" alt="logo">
-
-          <form class="form-inline">
-
-            <div class="input-group ui-widget" style="margin-top: 5px; width:90;">
-
-
-
-              <input type="text" class="form-control" style="margin-left: 29px; width:500px;" placeholder="Search"
-                id="search">
-              <div class="input-group-append">
-                <button type="button" class="btn btn-secondary" style="color: #2a1a5e;"><i class="fa fa-search"
-                    style="color: #2a1a5e;" id="data"></i></button>
-              </div>
-            </div>
-            <div class="id 1" style="        margin-top: -77px;margin: 1px;margin-left: 764px;position: absolute;">
-              <a href="/user">
-                <li class="list-inline-item"
-                  style="font-size: 20px; margin-top: 1px; margin-bottom: 5px; margin-right: 10px;"><small><i
-                      class="fas fa-user" style="margin-right: 2px;"></i> </i> <strong> My Account</strong></small></li>
-              </a>
-              <a href="/userLogin">
-                <li class="list-inline-item"
-                  style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;"><small><strong>Login
-                      / Signup</strong> </small></li>
-              </a>
-              <a href="/user/cart"> <i class="fa fa-shopping-cart"
-                  style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px;"></i></a>
-            </div>
-          </form>
-
-
-<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a href="/" class="navbar-brand"><img src="./../icon.png"
-                    style="margin-top: 0; margin-left: -15px; height: 60px; width: 160px" /> </a>
-            <form class="form-inline my-2 my-lg-0">
-                <div class="wrap">
-                    <div class="search mr-5" style="float: right">
-                        <input type="text" class="searchTerm" placeholder="What are you looking for?" />
-                        <button type="submit" style="background-color: #ffa500; border-color: #ffa500;"
-                            class="searchButton mt-1">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
-                            style="font-size: 15px;"> My Account</span></a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
-                            class="text-dark" style="font-size: 15px;">Order
-                            History</span></a>
-                </li>
-                <li class="nav-item">
-                    <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
-                            style="font-size: 15px;">Cart</span></a>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-<<<<<<< HEAD
-
-  </div> --}}
 
 
 
@@ -345,12 +272,12 @@
   <!-- header ends -->
   <!-- nav bar starts -->
   <section class="sub-header voonik-sub-header"
-    style="top:62x !important; margin-top:-40px; background:rgb(255, 255, 255)">
+    style="border-color:white; top:62x !important; margin-top:-40px; background: #FBE555">
     <div class="cont">
       <ul class="main-menu">
         <li>
           <a class="menu_item_10" href="/ethinicBazar/product/category/Women">
-            <span style="color: black">Women</span> </a>
+            <span style="color: black; margin-left: 130px">Women</span> </a>
         </li>
         <li>
           <a class="menu_item_10" href="/ethinicBazar/product/category/Men"><span style="color: black">Men</span></a>
@@ -499,19 +426,11 @@
 
           <img src="{{productImage}}" class="image" class="img-responsive " style="max-height:500px; opacity: 1;" alt=""
             onclick="window.location.href='/category/{{subCategory}}'">
-          <p class="item-price" style="text-align: center;"><strike>INR 2589.00</strike> <span
-              style="text-align: center; font-family:Arial, Helvetica, sans-serif; font-size:24px;">{{productPrice}}</span>
-          </p>
+           <h4
+              style="text-align: center; font-family:Arial, Helvetica, sans-serif; font-size:24px;">₹ {{productPrice}}</h4>
+          
           <h4 style="text-align: center;">{{subCategory}}</h4>
-          <div class="star-rating">
-            <ul class="list-inline" style="text-align: center;">
-              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-              <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-            </ul>
-          </div>
+         
         </div>
       </div>
     </div>
