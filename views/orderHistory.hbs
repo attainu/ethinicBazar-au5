@@ -17,51 +17,54 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
     integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="stylesheet" href="./../styleHome.css">
+  <link rel="stylesheet" href="./../search.css">
 </head>
 
 <body>
   <!-- header starts -->
-  <div class="top-head pt-1 border" class="header" style="height:80px;">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
     <div class="container">
-      <div class="row ">
-        <div class="col-md-12 text-right" style="margin-top: 10px;">
-          <ul class="list-inline">
-            <a href="/"><img style=" width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;"
-                src="/uploads/Untitled.png" alt="logo"></a>
-            <form class="form-inline">
-              <div class="input-group" style="margin-top: 5px; width:90;">
-                <input type="text" class="form-control" style="margin-left: 200px; width:120" placeholder="Search">
-                <div class="input-group-append">
-                  <button type="button" class="btn btn-secondary" style="color: #2a1a5e;"><i class="fa fa-search"
-                      style="color: #2a1a5e;"></i></button>
-                </div>
-              </div>
-              <div class="id 1" style="margin-top: 10px;">
-                <a href="/user">
-                  <li class="list-inline-item"
-                    style="font-size: 20px; margin-top: 1px; margin-bottom: 5px; margin-right: 10px;">
-                    <small><i class="fas fa-user" style="margin-right: 2px;"></i> </i> <strong> My
-                        Account</strong></small></li>
-                </a>
-                <a href="/user/orderHistory">
-                  <li class="list-inline-item"
-                    style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;">
-                    <small><strong>Order History</strong> </small></li>
-                </a>
-                <a href="/user/cart"> <i class="fa fa-shopping-cart"
-                    style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px;"><span
-                      class="badge badge-secondary">{{cartLength}}</span></i></a>
-              </div>
-            </form>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a href="/" class="navbar-brand"><img src="./../icon.png" /> </a>
+        <form class="form-inline my-2 my-lg-0">
+          <div class="wrap">
+            <div class="search mr-5" style="float: right">
+              <input type="text" class="searchTerm" placeholder="What are you looking for?" />
+              <button type="submit" style="background-color: #ffa500; border-color: #ffa500;" class="searchButton mt-1">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
+                style="font-size: 15px;"> My Account</span></a>
+          </li>
 
-          </ul>
-        </div>
+          <li class="nav-item">
+            <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
+                class="text-dark" style="font-size: 15px;">Order
+                History</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
+                style="font-size: 15px;">Cart</span></a>
+          </li>
+
+        </ul>
       </div>
     </div>
-  </div>
+  </nav>
   <!-- header ends -->
   <div class="container">
-    <h1 class="mt-4">Order History</h1>
+    <h1 style="margin-top: 80px">Order History</h1>
     {{#each orderHistory}}
     <!--- Product Card starts -->
 

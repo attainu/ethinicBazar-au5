@@ -70,7 +70,12 @@ var deleteAddress = async function(req, res) {
 
 var cartPage = (req, res, next) => {
   var itemDeleted = req.query.itemDeleted;
-  res.render("cart.hbs", { ...req.session.user, itemDeleted: itemDeleted });
+  var cartLength = req.session.user.cartLength;
+  if (cartLength !== 0) {
+    res.render("cart.hbs", { ...req.session.user, itemDeleted: itemDeleted });
+  } else {
+    res.render("emptyCart.hbs");
+  }
 };
 
 var addItemsToCart = (req, res) => {

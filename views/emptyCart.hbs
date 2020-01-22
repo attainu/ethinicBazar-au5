@@ -15,9 +15,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-
-    <link rel="stylesheet" href="./../invoice.css">
+    <link rel="stylesheet" href="./../styleHome.css">
     <link rel="stylesheet" href="./../search.css">
 </head>
 
@@ -67,23 +65,13 @@
 
     <!-- header ends -->
     <!-- header ends -->
+    <div class="container">
+        <h1 style="margin-top: 80px">Shopping Cart</h1>
 
-    <div class="jumbotron text-center">
-        <h1 class="display-3">Thank You For Shopping With us!</h1>
-        <p class="lead"><strong>Please check your email</strong> for your ordered product details</p>
-        <hr>
-        <p>
-            Having trouble? <a href="">Contact us</a>
-        </p>
-        <p class="lead">
-            <a class="btn btn-primary btn-sm" href="/" role="button">Continue to homepage</a>
-        </p>
-    </div>
-
-
-
-
-
+        <div class="jumbotron rext-center">
+            <h1>Your cart is empty</h1>
+            <a href="/">Go shopping</a>
+        </div>
     </div>
     <div>
         <h5 class="text-white">Downloads</h5>
@@ -148,6 +136,24 @@
 
     <!-- footer ends -->
 
+
+    <script>
+        window.onload = function () {
+            console.log("Wired")
+            var price = document.getElementsByClassName("price")
+            var total = 0
+            for (let i of price) {
+                total = total + parseInt(i.innerHTML)
+            }
+            var totalPrice = document.getElementsByClassName("finalPrice")
+            for (let items of totalPrice) {
+                items.innerHTML = total
+            }
+
+        }
+
+
+    </script>
 </body>
 
 </html>

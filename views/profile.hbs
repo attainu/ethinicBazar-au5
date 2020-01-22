@@ -19,107 +19,100 @@
   <link href="https://fonts.googleapis.com/css?family=Long+Cang&display=swap" rel="stylesheet" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-
+  <link rel="stylesheet" href="./../search.css">
 
 </head>
 
 <body>
   <!-- header starts -->
-  <div class="top-head pt-1 border" class="header" style="height:80px;">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
     <div class="container">
-      <div class="row ">
-        <div class="col-md-12 text-right" style="margin-top: 10px;">
-          <ul class="list-inline">
-            <a href="/"><img style=" width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;"
-                src="/uploads/IMG-20200120-WA0071.jpg" alt="logo"></a>
-            <form class="form-inline">
-              <div class="input-group" style="margin-top: 5px; width:90;">
-                <input type="text" class="form-control" style="margin-left: 200px; width:120" placeholder="Search">
-                <div class="input-group-append">
-                  <button type="button" class="btn btn-secondary" style="color: #2a1a5e;"><i class="fa fa-search"
-                      style="color: #2a1a5e;"></i></button>
-                </div>
-              </div>
-              <div class="id 1" style="margin-top: 10px;">
-                <a href="/user">
-                  <li class="list-inline-item"
-                    style="font-size: 20px; margin-top: 1px; margin-bottom: 5px; margin-right: 10px; color:black">
-                    <small><i class="fas fa-user" style="margin-right: 2px;"></i> </i> <strong> My
-                        Account</strong></small></li>
-                </a>
-                <a href="/user/orderHistory">
-                  <li class="list-inline-item"
-                    style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;color:black">
-                    <small><strong>Order History</strong> </small></li>
-                </a>
-                <a href="/user/cart"> <i class="fa fa-shopping-cart"
-                    style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px; color:black"></i><span
-                    class="badge badge-secondary">{{cartLength}}</span></a>
-                    
-              </div>
-            </form>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a href="/" class="navbar-brand"><img src="icon.png" /> </a>
+        <form class="form-inline my-2 my-lg-0">
+          <div class="wrap">
+            <div class="search mr-5" style="float: right">
+              <input type="text" class="searchTerm" placeholder="What are you looking for?" />
+              <button type="submit" style="background-color: #ffa500; border-color: #ffa500;" class="searchButton mt-1">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
+                style="font-size: 15px;"> My Account</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
+                class="text-dark" style="font-size: 15px;">Order
+                History</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="/user/cart" class="nav-link"> <i class="fa fa-shopping-cart"></i><span class="text-dark"
+                style="font-size: 15px;">Cart</span></a>
+          </li>
 
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
-  </div>
+  </nav>
   <!-- header ends -->
 
   <div class="container" style="background-color;">
-    <h1 class="mt-4 d-inline-block">User Profile</h1>
+    <h1 class="d-inline-block" style="margin-top: 80px"> User Profile</h1>
 
 
-    <form action="delete" method="POST">
+    <form action="delete" method="POST" class="d-inline-block" style="margin-left: 58%">
       <input type="hidden" name="id" value={{_id}}>
       <button style="margin-left: 89%;" type="submit" class="btn btn-light border border-dark">Delete Account</button>
-    
+
     </form>
 
     <br>
 
 
-    <div style="margin-left: 89%" class="d-inline-block"><a href="/userLogout"><button
-          class=" mr-auto btn btn-light border border-dark d-inline-block">Logout</button></a></div>
+    {{!-- <div style="margin-left: 89%" class="d-inline-block"><a href="/userLogout"><button
+          class=" mr-auto btn btn-light border border-dark d-inline-block">Logout</button></a></div> --}}
 
-    
+
     <div class="card mb-3 mt-4 shadow p-3  bg-white rounded border border-secondary">
       <div class="row no-gutters">
         <form action="/user/image" method="POST" enctype="multipart/form-data" style="width:450px;">
-        
+
           <div class="col-md-4">
-            <img src={{userImage}} style="width: 250px; height: 250px" class="card-img img-rounded" alt="..." /><br> <br> 
+            <img src={{userImage}} style="width: 250px; height: 250px" class="card-img img-rounded" alt="..." /><br>
+            <br>
             <input type="file" name="file"><br><br>
             <button type="submit">Upload</button>
           </div>
-          
+
         </form>
         <div class="col-md-4" style="font-size:small;">
           <div class="card-body">
-            <h3 class="card-title"><i class="fa fa-user" style="color: #2a1a5e; margin-right: 5px;"> {{userName}}</i>
-            </h3>
-<<<<<<< HEAD
-            <p class="card-title mt-2 d-inline-block"><i class="fa fa-envelope"
-                style="color: #2a1a5e;padding-right:10px; font-size: 28px"><strong></strong></i>
-              <h4 class="d-inline-block">{{userEmail}}</h4>
+            <p class="card-title mt-2 d-inline-block"><i class="fa fa-user fa-2x"
+                style="color: #2a1a5e;font-size:x -large"> {{userName}}</i>
+
             </p>
-            <p class="card-title  d-inline-block"><i class=" fa fa-mobile"
-                style="color: #2a1a5e; padding-right:10px; font-size: 28px"></i>
-              <h4 class="d-inline-block">{{userMobile}}</h4>
-=======
-            
+
             <br>
 
             <p class="card-title mt-2 d-inline-block"><i class="fa fa-envelope fa-2x"
                 style="color: #2a1a5e;font-size:x -large"> {{userEmail}}</i>
-              
+
             </p>
             <br>
             <br>
             <p class="card-title mt-2 d-inline-block"><i class=" fa fa-mobile fa-2x"
-              style="color: #2a1a5e; padding-right:10px"></i>
+                style="color: #2a1a5e; padding-right:10px"></i>
               <h4 class="d-inline-block"> {{userMobile}}</h4>
->>>>>>> 6c3b6eccb2d2fd0b1d9b51a7767c812680ade351
             </p>
             <br>
             <br>
