@@ -7,6 +7,8 @@ router.get('/category/:category',productController.category)
 router.get('/product/:id',productController.product)
 router.get('/search',productController.search)
 router.post('/product/create',productController.productCreate)
+router.get('/filter/product',productController.brand)
+router.get('/filter/category',productController.filtercategory)
 router.get('/ethinicBazar/product/category/:productcategory',productController.productcategory)
 
 
