@@ -226,8 +226,8 @@
             <form class="form-inline my-2 my-lg-0">
                 <div class="wrap">
                     <div class="search mr-5" style="float: right">
-                        <input type="text" class="searchTerm" placeholder="What are you looking for?" />
-                        <button type="submit" style="background-color: #ffa500; border-color: #ffa500;"
+                        <input type="text" class="searchTerm" id="search" placeholder="What are you looking for?" />
+                        <button type="button" id="data" style="background-color: #ffa500; border-color: #ffa500;"
                             class="searchButton mt-1">
                             <i class="fa fa-search"></i>
                         </button>
@@ -411,19 +411,11 @@
 
           <img src="{{productImage}}" class="image" class="img-responsive " style="max-height:500px; opacity: 1;" alt=""
             onclick="window.location.href='/category/{{subCategory}}'">
-          <p class="item-price" style="text-align: center;"><strike>INR 2589.00</strike> <span
-              style="text-align: center; font-family:Arial, Helvetica, sans-serif; font-size:24px;">{{productPrice}}</span>
-          </p>
+           <h4
+              style="text-align: center; font-family:Arial, Helvetica, sans-serif; font-size:24px;">₹ {{productPrice}}</h4>
+          
           <h4 style="text-align: center;">{{subCategory}}</h4>
-          <div class="star-rating">
-            <ul class="list-inline" style="text-align: center;">
-              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-              <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-            </ul>
-          </div>
+         
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ body{
 }
 #mainsection{
     height: 2200px;
-    width: 1800px;
+    width: auto;
     background: white;
     margin-right: 100px;
 }
@@ -20,6 +20,14 @@ body{
     width: 200px;
 }
 /* section css */
+.product-details-page .product-details .available-sizes .btn-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.product-details-page .product-details .available-sizes .btn-container ul li {
+    display: inline-block;
+}
 
 .pincode-tick {
     position: absolute;
