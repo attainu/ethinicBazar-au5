@@ -43,7 +43,7 @@ hbs.registerHelper("eachUnique", function(array, options) {
     var uniqueKey = entry.subcategory;
     var uniqueKey1 = entry.productName;
 
-    if (!dupCheck[uniqueKey] && !dupCheck[uniqueKey1] ){
+    if (!dupCheck[uniqueKey] && !dupCheck[uniqueKey1]) {
       dupCheck[uniqueKey] = true;
       dupCheck[uniqueKey1] = true;
 
@@ -60,11 +60,10 @@ hbs.registerHelper("eachUnique3", function(array, options) {
 
   for (var i = 0; i < array.length; i++) {
     var entry = array[i];
-   
+
     var uniqueKey1 = entry.productName;
 
-    if (!dupCheck[uniqueKey1]  ){
-     
+    if (!dupCheck[uniqueKey1]) {
       dupCheck[uniqueKey1] = true;
 
       buffer += options.fn(entry);
@@ -83,7 +82,6 @@ hbs.registerHelper("eachUnique1", function(array, options) {
     var uniqueKey = entry.subCategory;
     var uniqueKey1 = entry.productImage;
     var uniqueKey2 = entry.productPrice;
-    
 
     console.log(dupCheck[uniqueKey1]);
 
@@ -392,6 +390,10 @@ app.post("/user", async (req, res, next) => {
   }
 });
 
+app.get("/contactUs", (req, res) => {
+  res.render("contactUs");
+});
+
 app.post("/delete", (req, res) => {
   console.log(req.body);
   User.findByIdAndDelete({ _id: req.body.id })
@@ -413,6 +415,8 @@ app.use(function(req, res, next) {
     res.redirect("/login");
   }
 });
+
+
 
 app.use("/", sellerRoutes);
 
