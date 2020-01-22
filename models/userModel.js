@@ -24,7 +24,8 @@ var userSchema = mongoose.Schema({
   },
   userImage: {
     type: String,
-    default: "blank.jfif"
+    default:
+      "https://res.cloudinary.com/dgq5a8zjh/image/upload/v1579671007/default-user-image_yvgeay.png"
   },
   userAddresses: [
     {
