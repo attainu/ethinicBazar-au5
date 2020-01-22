@@ -226,7 +226,7 @@ exports.postLogin = function(req, res,next){
         password: req.body.password
     };
 
-    const RECAPTCHA_SECRET = "6LcpXcUUAAAAABi6OcRsG4mpS3ylTlxk3sQl1ibr";
+    const RECAPTCHA_SECRET = "6Lfi1NEUAAAAAKIuILSqZxpAdsfP2LwWVmiS374q";
     var recaptcha_url = "https://www.google.com/recaptcha/api/siteverify?";
     recaptcha_url += "secret=" + RECAPTCHA_SECRET + "&";
     recaptcha_url += "response=" + req.body["g-recaptcha-response"] + "&";
