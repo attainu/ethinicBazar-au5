@@ -46,8 +46,8 @@
             <form class="form-inline my-2 my-lg-0">
                 <div class="wrap">
                     <div class="search mr-5" style="float: right">
-                        <input type="text" class="searchTerm" placeholder="What are you looking for?" />
-                        <button type="submit" style="background-color: #ffa500; border-color: #ffa500;"
+                        <input type="text" class="searchTerm" id="search" placeholder="What are you looking for?" />
+                        <button type="button" id="data"style="background-color: #ffa500; border-color: #ffa500;"
                             class="searchButton mt-1">
                             <i class="fa fa-search"></i>
                         </button>
@@ -84,7 +84,7 @@
                 <div class="vertical-filters-filters header-container"
                     style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
                     <span class="header-title">FILTERS</span>
-                    <span class="header-clearAllBtn">CLEAR ALL</span>
+                  
                 </div>
 
                 <div class="vertical-filters-filters categories-container"
@@ -112,14 +112,7 @@
 
                     </ul>
 
-                    <div class="categories-more">
-                        <!-- react-text: 108 -->+
-                        <!-- /react-text -->
-                        <!-- react-text: 109 -->2
-                        <!-- /react-text -->
-                        <!-- react-text: 110 --> more
-                        <!-- /react-text -->
-                    </div>
+                   
                 </div>
                 <div class="vertical-filters-filters brand-container"
                     style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
@@ -140,174 +133,9 @@
                             </label></li>
                         {{/each}}
                     </ul>
-                    <div class="brand-more">
-                        <!-- react-text: 190 -->+
-                        <!-- /react-text -->
-                        <!-- react-text: 191 -->6
-                        <!-- /react-text -->
-                        <!-- react-text: 192 --> more
-                        <!-- /react-text -->
-                    </div>
+                   
                 </div>
-                <div class="vertical-filters-filters"
-                    style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <span class="vertical-filters-header">Price</span>
-                    <ul class="price-list"></span>
-                        <div class="common-checkboxIndicator"></div>
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox"
-                                    class="custom-control-input" value="259.0 TO 707.0"><span
-                                    class="custom-control-indicator"></span><!-- react-text: 199 -->Rs. 259 to Rs. 707
-                                <!-- /react-text --><span class="price-num">
-                                    <!-- react-text: 201 --></label></li>
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox"
-                                    class="custom-control-input" value="707.0 TO 1155.0"><span
-                                    class="custom-control-indicator"></span><!-- react-text: 208 -->Rs. 707 to Rs. 1155
-                                <!-- /react-text --><span class="price-num">
-                                    <!-- react-text: 210 -->
-                                    <!-- /react-text --></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox"
-                                    class="custom-control-input" value="1155.0 TO 1603.0"><span
-                                    class="custom-control-indicator"></span><!-- react-text: 217 -->Rs. 1155 to Rs. 1603
-                                <!-- /react-text --><span class="price-num">
-                                    <!-- react-text: 219 -->
-                                    <!-- /react-text --></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox"
-                                    class="custom-control-input" value="1603.0 TO 2051.0"><span
-                                    class="custom-control-indicator"></span><!-- react-text: 226 -->Rs. 1603 to Rs. 2051
-                                <!-- /react-text --><span class="price-num">
-                                    <!-- react-text: 228 -->
-                                    <!-- /react-text --></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-                    </ul>
-                </div>
-                <div class="vertical-filters-filters"
-                    style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <span class="vertical-filters-header">Color</span>
-                    <div class="filter-search-filterSearchBox">
-                        <input type="text" class="filter-search-inputBox filter-search-hidden"
-                            placeholder="Search for Color" style="height: 35px;">
-                        <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
-                    </div>
-                    <ul>
-
-                        <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="436"><span
-                                    data-colorhex="black" class="colour-label colour-colorDisplay"
-                                    style="background-color: rgb(54, 69, 79);"></span><!-- react-text: 252 -->Black
-                                <!-- /react-text -->
-                                <!-- react-text: 253 -->
-                                <!-- /react-text --><span class="colour-num">
-                                    <!-- react-text: 255 -->
-                                    <!-- /react-text --></span><input type="checkbox" value="Black"
-                                    class="custom-control-input"><span class="custom-control-indicator"></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-                        <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="426"><span
-                                    data-colorhex="navy blue" class="colour-label colour-colorDisplay"
-                                    style="background-color: rgb(60, 68, 119);"></span><!-- react-text: 263 -->Navy Blue
-                                <!-- /react-text -->
-                                <!-- react-text: 264 -->
-                                <!-- /react-text --><span class="colour-num">
-                                    <!-- react-text: 266 -->
-                                    <!-- /react-text --></span><input type="checkbox" value="Navy Blue"
-                                    class="custom-control-input"><span class="custom-control-indicator"></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-                        <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="246"><span
-                                    data-colorhex="white" class="colour-label colour-colorDisplay"
-                                    style="background-color: rgb(255, 255, 255);"></span><!-- react-text: 274 -->White
-                                <!-- /react-text -->
-                                <!-- react-text: 275 -->
-                                <!-- /react-text --><span class="colour-num">
-                                    <!-- react-text: 277 -->
-                                    <!-- /react-text --></span><input type="checkbox" value="White"
-                                    class="custom-control-input"><span class="custom-control-indicator"></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-                        <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="207"><span
-                                    data-colorhex="grey" class="colour-label colour-colorDisplay"
-                                    style="background-color: rgb(159, 168, 171);"></span><!-- react-text: 285 -->Grey
-                                <!-- /react-text -->
-                                <!-- react-text: 286 -->
-                                <!-- /react-text --><span class="colour-num">
-                                    <!-- react-text: 288 -->
-                                    <!-- /react-text --></span><input type="checkbox" value="Grey"
-                                    class="custom-control-input"><span class="custom-control-indicator"></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-                        <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="171"><span
-                                    data-colorhex="olive" class="colour-label colour-colorDisplay"
-                                    style="background-color: rgb(61, 153, 112);"></span><!-- react-text: 296 -->Olive
-                                <!-- /react-text -->
-                                <!-- react-text: 297 -->
-                                <!-- /react-text --><span class="colour-num">
-                                    <!-- react-text: 299 -->
-                                    <!-- /react-text --></span><input type="checkbox" value="Olive"
-                                    class="custom-control-input"><span class="custom-control-indicator"></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-                        <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="100"><span
-                                    data-colorhex="maroon" class="colour-label colour-colorDisplay"
-                                    style="background-color: rgb(176, 48, 96);"></span><!-- react-text: 307 -->Maroon
-                                <!-- /react-text -->
-                                <!-- react-text: 308 -->
-                                <!-- /react-text --><span class="colour-num">
-                                    <!-- react-text: 310 -->
-                                    <!-- /react-text --></span><input type="checkbox" value="Maroon"
-                                    class="custom-control-input"><span class="custom-control-indicator"></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-                    </ul>
-                    <div class="colour-more">
-                        <span>
-                            <!-- react-text: 317 -->+
-                            <!-- /react-text -->
-                            <!-- react-text: 318 -->26
-                            <!-- /react-text -->
-                            <!-- react-text: 319 --> more
-                            <!-- /react-text --></span>
-                    </div>
-                </div>
-                <div class="vertical-filters-filters"
-                    style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <span class="vertical-filters-header">Discount Range</span>
-                    <ul class="discount-list">
-                        <li>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="customRadio" name="example1">
-                                <label class="custom-control-label" for="customRadio">10% and above</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="customRadio1" name="example1">
-                                <label class="custom-control-label" for="customRadio1">20% and above</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="customRadio2" name="example1">
-                                <label class="custom-control-label" for="customRadio2">30% and above</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="customRadio3" name="example1">
-                                <label class="custom-control-label" for="customRadio3">40% and above</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" id="customRadio4" name="example1">
-                                <label class="custom-control-label" for="customRadio4">50% and above</label>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                
             </div>
         </section>
     </div>
@@ -344,27 +172,13 @@
                             <p class="discount-container" style="text-align: center;">
 
                                 <span class="after-discount"> <strong
-                                        style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px;">{{this.productPrice}}</strong>
+                                        style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px;">₹{{this.productPrice}}</strong>
                                 </span></b> </h2>
-                                <span class="discount-mrp"><s>
-                                        <!-- react-text: 60 -->Rs.5555
-                                        <!-- /react-text -->
-                                        <!-- react-text: 61 -->
-                                        <!-- /react-text --></s></span>
-                                <span class="discount">(40% OFF)</span>
+                                
                             </p>
                         </div>
                     </li>
-                    <li>
-                        <div class="filled-stars" style="width:84.00000000000001%; text-align:center;">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-
-                    </li>
+                   
                 </ul>
 
 
@@ -384,17 +198,7 @@
         </div>
 
 
-        <div class="container">
-            <ul class="pagination" style="margin-left:500px;">
-
-                <li class="page-item"><a class="page-link" href="/category/{{items.subCategory}}/?pageNo=1&size=6">1</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="/category/{{items.subCategory}}/?pageNo=2&size=9">2</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="/category/{{items.subCategory}}/?pageNo=3&size=9">3</a>
-                </li>
-            </ul>
-        </div>
+        
     </div>
 
 </div>

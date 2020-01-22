@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" href="/uploads/e.ico" sizes="200x200">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{items.0.subCategory}}</title>
-      <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/main.css">
-  
+
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -24,323 +26,271 @@
 
 
 </head>
-    {{!-- <style>
+{{!-- <style>
         div{
             font-family: Arial, Helvetica, sans-serif;
         
         }
     </style> --}}
+
 <body style="width: 100%; overflow-x:hidden ;">
 
-   
-<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a href="/" class="navbar-brand"><img src="./../1.jpg"
-            style="margin-top: 0; margin-left: -15px; height: 60px; width: 160px" /> </a>
-            <form class="form-inline my-2 my-lg-0">
-                <div class="wrap">
-                    <div class="search mr-5" style="float: right">
-                        <input type="text" class="searchTerm" placeholder="What are you looking for?" />
-                        <button type="submit" style="background-color: #ffa500; border-color: #ffa500;"
-                            class="searchButton mt-1">
-                            <i class="fa fa-search"></i>
-                        </button>
+
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a href="/" class="navbar-brand"><img src="/uploads/icon.png"
+                        style="margin-top: 0; margin-left: -15px; height: 60px; width: 160px" /> </a>
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="wrap">
+                        <div class="search mr-5" style="float: right">
+                            <input type="text" class="searchTerm" placeholder="What are you looking for?" />
+                            <button type="submit" style="background-color: #ffa500; border-color: #ffa500;"
+                                class="searchButton mt-1">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
-                            style="font-size: 15px;"> My Account</span></a>
-                </li>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
+                                style="font-size: 15px;"> My Account</span></a>
+                    </li>
 
-                <li class="nav-item">
-                    <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
-                            class="text-dark" style="font-size: 15px;">Order
-                            History</span></a>
-                </li>
-                <li class="nav-item">
-                    <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
-                            style="font-size: 15px;">Cart</span></a>
-                </li>
+                    <li class="nav-item">
+                        <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
+                                class="text-dark" style="font-size: 15px;">Order
+                                History</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span
+                                class="text-dark" style="font-size: 15px;">Cart</span></a>
+                    </li>
 
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
-<div class="row" style="margin-left:56px;" >
-    <div class="col-md-2" style=" background:white; margin-top:53px; margin-right:100px;" >   
-        <section style=""  >
-            <div class="condition-render-verticalFilters condition-render-hung" style="top: 180.4px; bottom: auto; ">
-                <div class="vertical-filters-filters header-container" style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <span class="header-title">FILTERS</span>
-                    <span class="header-clearAllBtn">CLEAR ALL</span>
-                </div>
-                
-                <div class="vertical-filters-filters categories-container" style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <hr>
-                    <span class="vertical-filters-header">Categories</span>
-                    <div class="filter-search-filterSearchBox filter-search-expanded">
-                        <input type="text" class="filter-search-inputBox" placeholder="Search for Categories" style="height: 35px;">
-                        <span class="myntraweb-sprite filter-search-closeSearch sprites-remove"></span>
-                    </div>
-                    <ul class="categories-list">
-                         
-                         {{#eachUnique1 category}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input filtercategory " id="categoryfilter" value="{{subCategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                       
-                    {{/eachUnique1}}
-                
-                    </ul>
-                 
-            <div class="categories-more"><!-- react-text: 108 -->+ <!-- /react-text --><!-- react-text: 109 -->2<!-- /react-text --><!-- react-text: 110 --> more<!-- /react-text --></div>
-                </div>
-                <div class="vertical-filters-filters brand-container"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
-                    <span class="vertical-filters-header">Product Name</span>
-                    <div class="filter-search-filterSearchBox"  >
-                        <input type="text" class="filter-search-inputBox filter-search-hidden" placeholder="Search for Brand" style="height: 35px;">
-                        <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
-                    </div>
-                    <ul class="brand-list">
-                        {{#eachUnique1 category}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="productName" class="custom-control-input filtername filterproduct" value="{{productName}}" > <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{productName}}<!-- /react-text --><span class="brand-num"><!-- react-text: 12<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                        {{/eachUnique1}}
-                    </ul>
-                    <div class="brand-more"><!-- react-text: 190 -->+ <!-- /react-text --><!-- react-text: 191 -->6<!-- /react-text --><!-- react-text: 192 --> more<!-- /react-text --></div>
-                </div>
-                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <span class="vertical-filters-header">Price</span>
-                <ul class="price-list"></span><div class="common-checkboxIndicator"></div>
-                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="259.0 TO 707.0"><span class="custom-control-indicator"></span><!-- react-text: 199 -->Rs. 259 to Rs. 707<!-- /react-text --><span class="price-num"><!-- react-text: 201 --></label></li>
-                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="707.0 TO 1155.0"><span class="custom-control-indicator"></span><!-- react-text: 208 -->Rs. 707 to Rs. 1155<!-- /react-text --><span class="price-num"><!-- react-text: 210 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="1155.0 TO 1603.0"><span class="custom-control-indicator"></span><!-- react-text: 217 -->Rs. 1155 to Rs. 1603<!-- /react-text --><span class="price-num"><!-- react-text: 219 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                    <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" value="1603.0 TO 2051.0"><span class="custom-control-indicator"></span><!-- react-text: 226 -->Rs. 1603 to Rs. 2051<!-- /react-text --><span class="price-num"><!-- react-text: 228 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
                 </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="row" style="margin-left:56px;">
+        <div class="col-md-2" style=" background:white; margin-top:53px; margin-right:100px;">
+            <section style="">
+                <div class="condition-render-verticalFilters condition-render-hung"
+                    style="top: 180.4px; bottom: auto; ">
+                    <div class="vertical-filters-filters header-container"
+                        style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
+                        <span class="header-title">FILTERS</span>
+
+                    </div>
+
+                    <div class="vertical-filters-filters categories-container"
+                        style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
+                        <hr>
+                        <span class="vertical-filters-header">Categories</span>
+                        <div class="filter-search-filterSearchBox filter-search-expanded">
+                            <input type="text" class="filter-search-inputBox" placeholder="Search for Categories"
+                                style="height: 35px;">
+                            <span class="myntraweb-sprite filter-search-closeSearch sprites-remove"></span>
+                        </div>
+                        <ul class="categories-list">
+
+                            {{#eachUnique1 category}}
+                            <li><label class="custom-control custom-checkbox"><input type="checkbox"
+                                        class="custom-control-input filtercategory " id="categoryfilter"
+                                        value="{{subCategory}}" name="category"><span
+                                        class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}}
+                                    <!-- /react-text --><span class="categories-num">
+                                        <!-- react-text: 40 -->
+                                        <!-- /react-text --></span>
+                                    <div class="common-checkboxIndicator"></div>
+                                </label></li>
+
+                            {{/eachUnique1}}
+
+                        </ul>
+
+                    </div>
+                    <div class="vertical-filters-filters brand-container"
+                        style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
+                        <span class="vertical-filters-header">Product Name</span>
+                        <div class="filter-search-filterSearchBox">
+                            <input type="text" class="filter-search-inputBox filter-search-hidden"
+                                placeholder="Search for Brand" style="height: 35px;">
+                            <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
+                        </div>
+                        <ul class="brand-list">
+                            {{#eachUnique1 category}}
+                            <li><label class="custom-control custom-checkbox"><input type="checkbox" name="productName"
+                                        class="custom-control-input filtername filterproduct" value="{{productName}}">
+                                    <span class="custom-control-indicator"></span>
+                                    <!-- react-text: 120 -->{{productName}}
+                                    <!-- /react-text --><span class="brand-num">
+                                        <!-- react-text: 12<!-- /react-text --></span>
+                                    <div class="common-checkboxIndicator"></div>
+                                </label></li>
+                            {{/eachUnique1}}
+                        </ul>
+                    </div>
+
                 </div>
-                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <span class="vertical-filters-header">Color</span>
-                    <div class="filter-search-filterSearchBox">
-                        <input type="text" class="filter-search-inputBox filter-search-hidden" placeholder="Search for Color" style="height: 35px;">
-                        <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
+            </section>
+        </div>
+        <div class="col-md-8" style="background: white;  max-width:1300px;">
+            <div>
+
+                <ol class="breadcrumb col-sm-12" style="background-color:transparent;">
+                    <li><a href="#">Home/</a></li>
+                    <li><a href="#">Clothing/</a></li>
+                    <li><a href="#">{{items.0.subCategory}}</a></li>
+
+                </ol>
+            </div>
+
+
+            <div class="row" id="filter">
+                <br>
+                <br>
+
+                {{#each category}}
+
+
+                <div class="col-md-3  shadow1  ">
+
+                    <img src=" {{this.productImage}}" alt="" style="margin:-3px;"
+                        onclick="window.location.href='/product/{{this._id}}'">
+                    <div class="row">
+
+
+
                     </div>
                     <ul>
-                        
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="436"><span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(54, 69, 79);"></span><!-- react-text: 252 -->Black<!-- /react-text --><!-- react-text: 253 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 255 --><!-- /react-text --></span><input type="checkbox" value="Black" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="426"><span data-colorhex="navy blue" class="colour-label colour-colorDisplay" style="background-color: rgb(60, 68, 119);"></span><!-- react-text: 263 -->Navy Blue<!-- /react-text --><!-- react-text: 264 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 266 --><!-- /react-text --></span><input type="checkbox" value="Navy Blue" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="246"><span data-colorhex="white" class="colour-label colour-colorDisplay" style="background-color: rgb(255, 255, 255);"></span><!-- react-text: 274 -->White<!-- /react-text --><!-- react-text: 275 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 277 --><!-- /react-text --></span><input type="checkbox" value="White" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="207"><span data-colorhex="grey" class="colour-label colour-colorDisplay" style="background-color: rgb(159, 168, 171);"></span><!-- react-text: 285 -->Grey<!-- /react-text --><!-- react-text: 286 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 288 --><!-- /react-text --></span><input type="checkbox" value="Grey" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="171"><span data-colorhex="olive" class="colour-label colour-colorDisplay" style="background-color: rgb(61, 153, 112);"></span><!-- react-text: 296 -->Olive<!-- /react-text --><!-- react-text: 297 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 299 --><!-- /react-text --></span><input type="checkbox" value="Olive" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                                <li class="colour-listItem"><label class="custom-control custom-checkbox" data-count="100"><span data-colorhex="maroon" class="colour-label colour-colorDisplay" style="background-color: rgb(176, 48, 96);"></span><!-- react-text: 307 -->Maroon<!-- /react-text --><!-- react-text: 308 --> <!-- /react-text --><span class="colour-num"><!-- react-text: 310 --><!-- /react-text --></span><input type="checkbox" value="Maroon" class="custom-control-input"><span class="custom-control-indicator"></span><div class="common-checkboxIndicator"></div></label></li>
-                        </ul>
-                        <div class="colour-more">
-                            <span><!-- react-text: 317 -->+ <!-- /react-text --><!-- react-text: 318 -->26<!-- /react-text --><!-- react-text: 319 --> more<!-- /react-text --></span>
-                        </div>
+                        <li>
+                            <p class="product-title ">{{this.productName}}</p>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="discount-container" style="text-align: center;">
+
+                                    <span class="after-discount"> <strong
+                                            style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px;">₹-{{this.productPrice}}</strong>
+                                    </span></b> </h2>
+
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+
                 </div>
-                <div class="vertical-filters-filters"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <span class="vertical-filters-header">Discount Range</span>
-                    <ul class="discount-list">
-                    <li>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customRadio" name="example1">
-                            <label class="custom-control-label" for="customRadio">10% and above</label>
-                        </div>  
-                    </li>
-                    <li>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customRadio1" name="example1">
-                            <label class="custom-control-label" for="customRadio1">20% and above</label>
-                        </div>  
-                    </li>
-                    <li>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customRadio2" name="example1">
-                            <label class="custom-control-label" for="customRadio2">30% and above</label>
-                        </div>  
-                    </li>
-                    <li>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customRadio3" name="example1">
-                            <label class="custom-control-label" for="customRadio3">40% and above</label>
-                        </div>  
-                    </li>
-                    <li>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="customRadio4" name="example1">
-                            <label class="custom-control-label" for="customRadio4">50% and above</label>
-                        </div>  
-                    </li>
+
+
+
+
+
+                <br>
+                <br>
+                <br>
+                {{/each}}
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!--footer starts here-->
+    <footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Download Our App</h5>
+
+                    <ul class="footer_ul_amrc">
+                        <div class="row" style="margin-left: -50px;">
+
+                            <li>
+                                <a href="#" target="_blank"><img
+                                        src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
+                                        alt=""></a>
+
+                            </li>
+                            <li>
+                                <a href="#" target="_blank"><img
+                                        src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
+                                        alt=""></a>
+                            </li>
+                        </div>
                     </ul>
                 </div>
-            </div>
-        </section>
-    </div>
-    <div class="col-md-8" style="background: white;  max-width:1300px;">
-        <div>
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Our Company</h5>
+                    <ul class="footer_ul_amrc">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="/login">Sell On EthnicHub</a></li>
 
-            <ol class="breadcrumb col-sm-12" style="background-color:transparent;">
-                        <li><a href="#">Home/</a></li>
-                        <li><a href="#">Clothing/</a></li>
-                        <li><a href="#">{{items.0.subCategory}}</a></li>
-
-            </ol>
-           </div>
-     
-         
-       <div class="row"  id="filter">
-           <br>
-           <br>
-           
-            {{#each category}}
-         
-
-            <div class="col-md-3  shadow1  ">
-                
-                 <img src=" {{this.productImage}}" alt="" style="margin:-3px;" onclick="window.location.href='/product/{{this._id}}'">
-                <div class="row" >
-                 
-                  
+                    </ul>
 
                 </div>
-                <ul>
-                    <li>
-                        <p class="product-title " >{{this.productName}}</p>
-                    </li>
-                    <li>
-                        <div>
-                        <p class="discount-container" style="text-align: center;"> 
-                        
-                            <span class="after-discount"> <strong style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px;">{{this.productPrice}}</strong> </span></b> </h2>
-                            <span class="discount-mrp"><s><!-- react-text: 60 -->Rs.5555 <!-- /react-text --><!-- react-text: 61 --><!-- /react-text --></s></span>
-                            <span class="discount">(40% OFF)</span>
-                        </p>
-                    </div>
-                    </li>
-                    <li>
-                         <div class="filled-stars" style="width:84.00000000000001%; text-align:center;">
-                        <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                    </div>
 
-                    </li>
-                </ul>
-               
-               
+
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Privacy Policies</h5>
+
+                    <ul class="footer_ul_amrc">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Policy For Sellers</a></li>
+                        <li><a href="#">Policy For Buyers</a></li>
+                    </ul>
+                </div>
+                <div class=" col-sm-4 col-md  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Payment Options</h5>
+                    <<<<<<< HEAD <a href="#"><img src="./images.jfif" style="margin-left:-46px;"></a>
+                        =======
+                        <a href="#"><img src="/uploads/images.jfif" style="margin-left:-46px;"></a>
+                        >>>>>>> ad197acff822bda0366f6653408c604ea4bf8309
+                </div>
             </div>
-           
-            
-          
-            
-             
-        <br>   
-        <br>
-        <br>
-             {{/each}}  
-            
-
-            
-       </div>
-
+        </div>
         <div class="container">
-            <ul class="pagination" style="margin-left:500px;" >
-                
-                <li class="page-item"><a class="page-link" href="/category/{{items.subCategory}}/?pageNo=1&size=6">1</a></li>
-                <li class="page-item"><a class="page-link" href="/category/{{items.subCategory}}/?pageNo=2&size=9">2</a></li>
-                <li class="page-item"><a class="page-link" href="/category/{{items.subCategory}}/?pageNo=3&size=9">3</a></li>
+            <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+            <ul class="social_footer_ul">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
             </ul>
-        </div>
+    </footer>
     </div>
-    
-</div>   
-
-<!--footer starts here-->
-<footer class="footer">
-    <div class="container bottom_border">
-      <div class="row">
-        <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-          <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Download Our App</h5>
-
-          <ul class="footer_ul_amrc">
-            <div class="row" style="margin-left: -50px;">
-
-              <li>
-                <a href="#" target="_blank"><img
-                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
-                    alt=""></a>
-
-              </li>
-              <li>
-                <a href="#" target="_blank"><img
-                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
-                    alt=""></a>
-              </li>
-            </div>
-          </ul>
-        </div>
-        <div class=" col-sm-4 col-md  col-6 col">
-          <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Our Company</h5>
-          <ul class="footer_ul_amrc">
-            <li><a href="/">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="/login">Sell On EthnicHub</a></li>
-
-          </ul>
-
-        </div>
-
-
-        <div class=" col-sm-4 col-md  col-6 col">
-          <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Privacy Policies</h5>
-
-          <ul class="footer_ul_amrc">
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Policy For Sellers</a></li>
-            <li><a href="#">Policy For Buyers</a></li>
-          </ul>
-        </div>
-        <div class=" col-sm-4 col-md  col-12 col">
-          <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Payment Options</h5>
-          <a href="#"><img src="./images.jfif" style="margin-left:-46px;"></a>
-        </div>
-      </div>
     </div>
     <div class="container">
-      <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
-      <ul class="social_footer_ul">
-        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-      </ul>
-  </footer>
-  </div>
-  </div>
-  <div class="container">
-    <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
-    <ul class="social_footer_ul">
-      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-    </ul>
-    </footer>
-  </div>
-<!--footer starts here-->
-</div>
+        <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+        <ul class="social_footer_ul">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        </footer>
+    </div>
+    <!--footer starts here-->
+    </div>
 </body>
+
 </html>
