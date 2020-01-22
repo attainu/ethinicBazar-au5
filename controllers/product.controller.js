@@ -94,11 +94,7 @@ var brand = (req, res) => {
 
   Product.find({
     $or: [
-<<<<<<< HEAD
-      { productName: new RegExp(productName, "gi") }
-=======
       { productName: new RegExp("^" + productName + ".*", "gi") },
->>>>>>> ad197acff822bda0366f6653408c604ea4bf8309
       // {subCategory:new RegExp(category,"gi")}
     ]
   })
