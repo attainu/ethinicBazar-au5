@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{items.0.subCategory}}</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -65,7 +66,8 @@
                             History</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
+                    <a href="/user/cart" class="nav-link "><span class="badge badge-secondary">{{cartLength}}</span><i
+                            class="fa fa-shopping-cart"></i><span class="text-dark"
                             style="font-size: 15px;">Cart</span></a>
                 </li>
 
@@ -406,12 +408,27 @@
     <div class="container bottom_border">
         <div class="row">
             <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-                <h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
+                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Download Our App</h5>
 
+                <ul class="footer_ul_amrc">
+                    <div class="row" style="margin-left: -50px;">
+
+                        <li>
+                            <a href="#" target="_blank"><img
+                                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
+                                    alt=""></a>
+
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img
+                                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
+                                    alt=""></a>
+                        </li>
+                    </div>
                 </ul>
             </div>
             <div class=" col-sm-4 col-md  col-6 col">
-                <h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
+                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Our Company</h5>
                 <ul class="footer_ul_amrc">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
@@ -419,7 +436,7 @@
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Pricing</a></li>
                     <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Sell On EthnicHub</a></li>
+                    <li><a href="login">Sell On EthnicHub</a></li>
 
                 </ul>
 
@@ -427,7 +444,7 @@
 
 
             <div class=" col-sm-4 col-md  col-6 col">
-                <h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
+                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Privacy Policies</h5>
 
                 <ul class="footer_ul_amrc">
                     <li><a href="#">Terms & Conditions</a></li>
@@ -436,8 +453,8 @@
                 </ul>
             </div>
             <div class=" col-sm-4 col-md  col-12 col">
-                <h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
-                <a href="#"><img src="images.jfif"></a>
+                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Payment Options</h5>
+                <a href="#"><img src="./../images.jfif" style="margin-left:-46px;"></a>
             </div>
         </div>
     </div>
@@ -450,6 +467,17 @@
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
         </ul>
 </footer>
+</div>
+</div>
+<div class="container">
+    <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+    <ul class="social_footer_ul">
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+    </footer>
 </div>
 </body>
 

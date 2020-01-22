@@ -7,7 +7,7 @@ body {
   color: black;
 }
 
-.wrap .search  {
+.wrap .search {
   width: 100%;
   position: relative;
   display: flex;
@@ -64,6 +64,11 @@ body {
 }
 
 .fa-truck-loading {
+  font-size: 20px;
+  color: darkslategrey;
+}
+
+.fa-sign-in-alt {
   font-size: 20px;
   color: darkslategrey;
 }
