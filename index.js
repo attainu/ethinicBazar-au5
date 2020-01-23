@@ -363,7 +363,7 @@ app.post("/user/image", authMiddleware, async (req, res) => {
 
 app.post("/user", async (req, res, next) => {
   var resultUser = await User.findOne({ userEmail: req.body.userEmail });
-  console.log("***************", resultUser);
+
   if (resultUser) {
     res.redirect("/userSignup?emailAlreadyExists=true");
   } else {
@@ -395,15 +395,12 @@ app.get("/contactUs", (req, res) => {
 });
 
 app.post("/delete", (req, res) => {
-  console.log(req.body);
   User.findByIdAndDelete({ _id: req.body.id })
     .exec()
     .then(result => {
-      console.log(result);
       res.status(200).redirect("/userSignup");
     })
     .catch(err => {
-      console.log("err");
       res.status(500).json(err);
     });
 });
@@ -416,34 +413,8 @@ app.use(function(req, res, next) {
   }
 });
 
-
-
 app.use("/", sellerRoutes);
 
-// app.use("/buyer", authMiddleware, buyerRoutes);
-// app.use("/seller", authMiddleware, sellerRoutes);
-
-// app.get("/product", (req, res) => {
-//   res.render("product");
-// });
-// app.post("/product", (req, res) => {
-//   Product.create(req.body)
-//     .then(product => {
-//       res.send(product);
-//     })
-//     .catch(err => {
-//       res.send(err);
-//     });
-// });
-// app.get("/productList", async (req, res) => {
-//   var products = await Product.find();
-//   res.render("productList", {
-//     products: products
-//   });
-// // });
-// app.get("/home", (req, res) => {
-//   res.render("index");
-// });
 app.get(
   "/checkOutSession/:productId",
   authMiddleware,
@@ -481,16 +452,3 @@ app.get("*", function(req, res) {
 app.listen(3000, () => {
   console.log("Listening on port 3000");
 });
-
-// app.use(
-//   session({
-//     secret: "kdjfwjef wefhkwjef wkej fhwkejf",
-//     cookie: {
-//       maxAge: 1000 * 500,
-//       path: "/",
-//       httpOnly: true
-//     }
-//   })
-// );
-// var buyerRoutes = require("./routes/buyer");
-// var sellerRoutes = require("./routes/seller");

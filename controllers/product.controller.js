@@ -15,7 +15,7 @@ var category = (req, res) => {
   Product.find({ subCategory: req.params.category }, function(err, items) {
     console.log(items);
     if (err) {
-      return next(err);
+      console.log(err);
     }
     if (!req.session.user) {
       isLoggedIn = false;
@@ -29,7 +29,6 @@ var category = (req, res) => {
         items: items,
         isLoggedIn: isLoggedIn,
         cartLength: req.session.user.cartLength
-        // cartLength: req.session.user.cartLength
       });
     }
     console.log(items._id);
@@ -63,7 +62,6 @@ var search = (req, res) => {
 
   var a = new RegExp("^" + search + ".*", "i");
 
-  // var SEARCH = search.toUpperCase()
   Product.find({
     $or: [
       { subCategory: new RegExp(search, "gi") },
@@ -74,15 +72,12 @@ var search = (req, res) => {
 
     .exec()
     .then(docs => {
-      console.log(docs);
       return res.render("search-result", {
         category: "Search results -" + search,
         products: docs
-        // category: "Result : " + SEARCH,
       });
     })
     .catch(err => {
-      console.log(err);
       res.status(500).json({
         Error: err
       });
@@ -90,32 +85,27 @@ var search = (req, res) => {
 };
 var brand = (req, res) => {
   var productName = req.query.productName;
-  // var category = req.query.category
 
   Product.find({
     $or: [
-      { productName: new RegExp("^" + productName + ".*", "gi") },
+      { productName: new RegExp("^" + productName + ".*", "gi") }
       // {subCategory:new RegExp(category,"gi")}
     ]
   })
     .exec()
     .then(docs => {
-      console.log(docs);
       return res.render("product-filter", {
         product: "Search results -" + productName,
         productname: docs
-        // category: "Result : " + SEARCH,
       });
     })
     .catch(err => {
-      console.log(err);
       res.status(500).json({
         Error: err
       });
     });
 };
 var filtercategory = (req, res) => {
-  console.log("hello");
   var category = req.query.category;
   // var category = req.query.category
 
@@ -127,14 +117,13 @@ var filtercategory = (req, res) => {
   })
     .exec()
     .then(docs => {
-      console.log(docs);
       return res.render("category-filter", {
-        productfilter: docs
+        productfilter: docs,
+        cartLength: req.session.user.cartLength
         // category: "Result : " + SEARCH,
       });
     })
     .catch(err => {
-      console.log(err);
       res.status(500).json({
         Error: err
       });
@@ -145,14 +134,12 @@ var productcategory = (req, res) => {
     err,
     category
   ) {
-    console.log(category);
     if (err) {
       return next(err);
     }
 
     res.render("productcategory", {
       category: category
-      // cartLength: req.session.user.cartLength || 0
     });
   });
 };

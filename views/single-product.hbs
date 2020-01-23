@@ -17,7 +17,7 @@
 
     <!--jQuery library-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <!--Latest compiled and minified JavaScript-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,6 +38,7 @@
         html {
             overflow-x: hidden;
             max-width: 100%;
+            font-family: "Lato", sans-serif;
         }
 
         .fa-shopping-cart {
@@ -85,9 +86,9 @@
     }
 </style>
 
-<body style="overflow: auto;">
-    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-        <div class="container">
+<body style="overflow: auto ">
+    <nav class=" navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
+        <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -96,7 +97,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <a href="/" class="navbar-brand"><img src="./../icon.png"
-                        style="margin-left: -15px; height: 60px; width: 160px; margin-top: -8px;" /> </a>
+                        style=" height: 60px; width: 160px; margin-top: -8px;" /> </a>
                 <form class="form-inline my-2 my-lg-0">
                     <div class="wrap">
                         <div class="search mr-5" style="float: right">
@@ -112,7 +113,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
-                                style="font-size: 15px;"> My Account</span></a>
+                                style="font-size: 15px;  font-family: " Lato", sans-serif;"> My Account</span></a>
                     </li>
 
                     <li class="nav-item">
@@ -120,7 +121,7 @@
                                 class="text-dark" style="font-size: 15px;">Order
                                 History</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-right: 25px">
                         <a href="/user/cart" class="nav-link "><span style="font-size: 11px;"
                                 class="badge badge-secondary">{{cartLength}}</span><i
                                 class="fa fa-shopping-cart"></i><span class="text-dark"
@@ -242,10 +243,10 @@
                             </div>
                         </div>
 
-                        <div style="font-size: 16px" class="pincode-checkServiceAbilityhalfCard">
+                        <div class="pincode-checkServiceAbilityhalfCard">
                             <span>
                                 <div class="pincode-deliveryContainer">
-                                    <h4> <b> Delivery Options</b>
+                                    <h4 style="font-size: 20px"> <b> Delivery Options</b>
                                         <span
                                             class="myntraweb-sprite pincode-deliveryOptionsIcon sprites-deliveryOptionsIcon">
 
@@ -255,22 +256,23 @@
                                     <div class="row">
                                         <div class="form-group col-lg-3 ">
 
-                                            <input type="text" placeholder="Enter pincode" class="form-control" value=""
-                                                name="pincode" class="" id="pincode">
+                                            <input type="text" placeholder="Enter pincode" style="font-size: 14px"
+                                                class="form-control" value="" name="pincode" class="" id="pincode">
                                             <div class="pincode-tickcontainer" id="pin">
                                                 <div class="pincode-tick sprites-lightTick" id="hide"><i
                                                         class="material-icons">&#xe567;</i></div>
                                             </div>
                                         </div>
                                         <div class="form-group col-lg-2 ">
-                                            <input type="button" value="Check" class="btn btn-default"
-                                                id="searchpincode">
+                                            <input type="button" value="Check" style="font-size: 14px"
+                                                class="btn btn-default" id="searchpincode">
                                         </div>
                                     </div>
 
                                     <p id="pindata" style="font-size: 20px;"></p>
                                     <div id="error"></div>
-                                    <p class="pincode-enterPincode" id="message">Please enter PIN code to check delivery
+                                    <p class="pincode-enterPincode" style="font-size: 16px" id="message">Please enter
+                                        PIN code to check delivery
                                         time &amp; Cash/Card on Delivery Availability
 
                                     </p>
