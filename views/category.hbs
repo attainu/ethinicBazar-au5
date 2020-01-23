@@ -26,7 +26,14 @@
     <link rel="stylesheet" href="./../search.css">
 
 </head>
+<style>
+ 
 
+
+
+</style>
+    <body style="overflow-x:hidden ;">
+        
 <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -90,9 +97,11 @@
     </div>
 </nav>
 
+<br>
 
-<div class="row" style="margin-left:56px;">
-    <div class=" col-2 col-md-2" style=" background:white; margin-top:53px; margin-right:100px;">
+<div class="row" style="margin-left:56px;" id="main">
+
+    <div class=" col-md-2 "  id="one" style=" background:white; margin-top:53px; margin-right:100px;">
         <section style="">
             <div class="condition-render-verticalFilters condition-render-hung" style="top: 180.4px; bottom: auto; ">
                 <div class="vertical-filters-filters header-container"
@@ -153,7 +162,8 @@
             </div>
         </section>
     </div>
-    <div class=" col-8 col-md-8" style="background: white;  max-width:1300px;">
+    <div class="  col-md-8 " id="two" style="background: white;  max-width:1300px;">
+        <br>    
         <div>
 
             <ol class="breadcrumb col-12 col-sm-12" style="background-color:transparent;">
@@ -177,16 +187,16 @@
                 <img src=" {{this.productImage}}" alt="" style="margin:-3px;"
                     onclick="window.location.href='/product/{{this._id}}'">
 
+                        <h4 class="product-title " style="text-align:center;">{{this.productName}}</h4>
                 <ul>
-                    <li>
-                        <p class="product-title ">{{this.productName}}</p>
-                    </li>
+                    
+                    
                     <li>
                         <div>
                             <p class="discount-container" style="text-align: center;">
 
                                 <span class="after-discount"> <strong
-                                        style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px;">₹{{this.productPrice}}</strong>
+                                        style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px; margin-right:56px;">₹{{this.productPrice}}</strong>
                                 </span></b> </h2>
 
                             </p>
@@ -217,6 +227,8 @@
 
 </div>
 
+<br>
+<br>
 
 <!--footer starts here-->
 
@@ -286,17 +298,7 @@
         </ul>
 </footer>
 </div>
-</div>
-<div class="container">
-    <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
-    <ul class="social_footer_ul">
-        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-    </ul>
-    </footer>
-</div>
-</body>
+    </body>
+
 
 </html>
