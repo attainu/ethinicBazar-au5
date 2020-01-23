@@ -217,7 +217,7 @@
 
 
   <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-    <div class="container">
+    <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -226,7 +226,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <a href="/" class="navbar-brand"><img src="./../icon.png"
-            style="margin-top: 0; margin-left: -15px; height: 60px; width: 160px" /> </a>
+            style="margin-top: 0; margin-left: 3px; height: 50px; width: 140px" /> </a>
         <form class="form-inline my-2 my-lg-0">
           <div class="wrap">
             <div class="search mr-5" style="float: right">
@@ -238,21 +238,41 @@
             </div>
           </div>
         </form>
+
+        {{#if isLoggedIn}}
+
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
                 style="font-size: 15px;"> My Account</span></a>
           </li>
-
           <li class="nav-item">
+            <a href="/userLogout" class="nav-link mr-3"><i class="fa fa-sign-out-alt"></i> <span class="text-dark"
+                style="font-size: 15px;">
+                Logout</span></a>
+          </li>
+
+          <li class="nav-item" style="margin-right: 14px;">
+            <a href="/user/cart" class="nav-link "><span class="badge badge-secondary">{{cartLength}}</span><i
+                class="fa fa-shopping-cart"></i><span class="text-dark"
+                style="font-size: 15px; margin-right: 22px;">Cart</span></a>
+          </li>
+        </ul>
+        {{else}}
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="/userLogin" class="nav-link mr-3"><i class="fa fa-sign-in-alt"></i> <span class="text-dark"
+                style="font-size: 20px; margin-right: 22px;">
+                Login</span></a>
+          </li>
+        </ul>
+        {{/if}}
+        {{!-- <li class="nav-item">
             <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
                 class="text-dark" style="font-size: 15px;">Order
                 History</span></a>
-          </li>
-          <li class="nav-item">
-            <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
-                style="font-size: 15px;">Cart</span></a>
-          </li>
+          </li> --}}
+
 
         </ul>
       </div>
@@ -264,16 +284,15 @@
 
 
 
-
   <!-- header ends -->
   <!-- nav bar starts -->
   <section class="sub-header voonik-sub-header"
-    style="top:62x !important; margin-top:-40px; background:rgb(255, 255, 255)">
+    style="border-color:white; top:62x !important; margin-top:-40px; background: #FBE555">
     <div class="cont">
       <ul class="main-menu">
         <li>
           <a class="menu_item_10" href="/ethinicBazar/product/category/Women">
-            <span style="color: black">Women</span> </a>
+            <span style="color: black; margin-left: 130px; margin-right: 65px;">Women</span> </a>
         </li>
         <li>
           <a class="menu_item_10" href="/ethinicBazar/product/category/Men"><span style="color: black">Men</span></a>

@@ -23,7 +23,7 @@
 <body>
   <!-- header starts -->
   <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-    <div class="container">
+    <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
       <!-- <span class="navbar-toggler-icon"></span> -->
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <a href="/" class="navbar-brand"><img src="./../icon.png" /> </a>
+        <a href="/" class="navbar-brand"><img style="margin-left: 10px" src="./../icon.png" /> </a>
         <form class="form-inline my-2 my-lg-0">
           <div class="wrap">
             <div class="search mr-5" style="float: right">
@@ -53,9 +53,9 @@
                 class="text-dark" style="font-size: 15px;">Order
                 History</span></a>
           </li>
-          <li class="nav-item">
-            <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
-                style="font-size: 15px;">Cart</span></a>
+          <li class="nav-item" style="margin-right: 25px">
+            <a href="/user/cart" class="nav-link "><span class="badge badge-secondary">{{cartLength}}</span><i
+                class="fa fa-shopping-cart"></i><span class="text-dark" style="font-size: 15px;">Cart</span></a>
           </li>
 
         </ul>
@@ -65,6 +65,9 @@
   <!-- header ends -->
   <div class="container">
     <h1 style="margin-top: 80px">Order History</h1>
+    {{#if orderHistory}}
+
+
     {{#each orderHistory}}
     <!--- Product Card starts -->
 
@@ -79,25 +82,39 @@
             <div class="col-md-8">
               <div class="card-body">
                 <a href="#">
-                  <h5 class="card-title">{{productName}}</h5>
+                  <h5 class="card-title text-primary">{{productName}}</h5>
                 </a>
-                <p>{{productDescription}}</p>
-                <p>{{productPrice}}</p>
-                <h5 class="card-title mt-2">Sold by: <a href="#">Appario</a></h5>
+                <p>{{productDescription1}}</p>
+                <p class="text-primary">Rs. {{productPrice}}</p>
+
                 <button style="width:150px; background-color: #2a1a5e" class="btn btn-primary">Buy Again</button>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <button style=" border-color: lightgray; margin-top:100px;" class="btn btn-light btn-block">Add Product
+          <button style=" border-color: #FBE555;background-color: #FBE555;  margin-top:100px;"
+            class="btn btn-light btn-block">Add Product
             Review</button>
-          <button style=" border-color: lightgray;" class="btn btn-light btn-block">Add Seller Review</button>
+          <button style=" border-color: #FBE555; background-color: #FBE555" class="btn btn-light btn-block">Add Seller
+            Review</button>
         </div>
       </div>
     </div>
     <!--- Product Card starts -->
     {{/each}}
+    {{else}}
+
+    <div class="jumbotron text-center w-100">
+      <h1 class="display-3">Your order history is empty</h1>
+
+      <hr>
+
+      <p class="lead">
+        <a class="btn btn-primary btn-sm" href="/" role="button">Continue to homepage</a>
+      </p>
+    </div>
+    {{/if}}
 
   </div>
   <div>

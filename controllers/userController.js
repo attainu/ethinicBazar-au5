@@ -42,7 +42,7 @@ var createAddress = async function(req, res) {
   ).populate("userAddresses");
   // var populatedUser = await updatedUser.populate("addresses");
   req.session.user = updatedUser;
-  console.log("session data: ", req.session.user);
+
   res.redirect("/user");
 };
 
@@ -54,7 +54,6 @@ var createAddressForm = (req, res) => {
 
 var deleteAddress = async function(req, res) {
   var idToDelete = req.params.id;
-  console.log(idToDelete);
   var updatedUser = await User.findByIdAndUpdate(
     { _id: req.session.user._id },
     { $pull: { userAddresses: idToDelete } },
@@ -64,13 +63,13 @@ var deleteAddress = async function(req, res) {
     .populate("cart")
     .populate("orderHistory");
   req.session.user = updatedUser;
-  console.log(updatedUser);
   res.redirect("/user");
 };
 
 var cartPage = (req, res, next) => {
   var itemDeleted = req.query.itemDeleted;
   var cartLength = req.session.user.cartLength;
+
   if (cartLength !== 0) {
     res.render("cart.hbs", { ...req.session.user, itemDeleted: itemDeleted });
   } else {
@@ -93,18 +92,16 @@ var addItemsToCart = (req, res) => {
     .populate("orderHistory")
     .then(result => {
       req.session.user = result;
-      console.log(req.session.user);
       res.redirect(`/product/${req.body.id}?addedToCart=true`);
     });
 };
 
 var deleteCartItem = async (req, res) => {
   var idToDelete = req.params.id;
-  console.log(idToDelete);
-  var updatedUser = await User.findByIdAndUpdate(
+  var updatedUser = await User.findById(
     { _id: req.session.user._id },
     { $pull: { cart: idToDelete }, $inc: { cartLength: -1 } },
-    { new: true }
+    { new: true, multi: true }
   )
     .populate("cart")
     .populate("userAddresses");
@@ -149,7 +146,6 @@ var addItemDirectlyToOrderHistory = (req, res) => {
     .populate("orderHistory")
     .then(result => {
       req.session.user = result;
-      console.log(req.session.user);
       res.redirect("/user/thankYou");
     });
 };

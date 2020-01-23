@@ -12,10 +12,10 @@ cloudinary.config({
 });
 
 var category = (req, res) => {
-  Product.find({ subCategory: req.params.category },function(err, items) {
+  Product.find({ subCategory: req.params.category }, function(err, items) {
     console.log(items);
     if (err) {
-      return next(err);
+      console.log(err);
     }
     if (!req.session.user) {
       isLoggedIn = false;
@@ -23,13 +23,12 @@ var category = (req, res) => {
         items: items,
         isLoggedIn: isLoggedIn
       });
-
     } else {
       isLoggedIn = true;
       res.render("category", {
         items: items,
         isLoggedIn: isLoggedIn,
-        // cartLength: req.session.user.cartLength
+        cartLength: req.session.user.cartLength
       });
     }
     console.log(items._id);
@@ -63,7 +62,6 @@ var search = (req, res) => {
 
   var a = new RegExp("^" + search + ".*", "i");
 
-  // var SEARCH = search.toUpperCase()
   Product.find({
     $or: [
       { subCategory: new RegExp(search, "gi") },
@@ -74,98 +72,96 @@ var search = (req, res) => {
 
     .exec()
     .then(docs => {
-      console.log(docs);
       return res.render("search-result", {
         category: "Search results -" + search,
         products: docs
-        // category: "Result : " + SEARCH,
       });
     })
     .catch(err => {
-      console.log(err);
       res.status(500).json({
         Error: err
       });
     });
 };
-var brand =(req,res)=>{
+var brand = (req, res) => {
   var productName = req.query.productName;
-  // var category = req.query.category
 
   Product.find({
-    
     $or: [
-      { productName: new RegExp("^" + productName + ".*", "gi") },
+      { productName: new RegExp("^" + productName + ".*", "gi") }
       // {subCategory:new RegExp(category,"gi")}
-      
-      
     ]
   })
     .exec()
     .then(docs => {
-      console.log(docs);
       return res.render("product-filter", {
         product: "Search results -" + productName,
         productname: docs
-        // category: "Result : " + SEARCH,
       });
-    
     })
     .catch(err => {
-      console.log(err);
       res.status(500).json({
         Error: err
       });
     });
-   
-  
-}
-var filtercategory = (req,res)=>{
-console.log("hello")
+};
+var filtercategory = (req, res) => {
   var category = req.query.category;
   // var category = req.query.category
 
   Product.find({
-    
     $or: [
-      { subCategory: new RegExp(category, "gi") },
+      { subCategory: new RegExp(category, "gi") }
       // {subCategory:new RegExp(category,"gi")}
-      
-      
     ]
   })
     .exec()
     .then(docs => {
-      console.log(docs);
-      return res.render("category-filter", {
-      
-        productfilter: docs
-        // category: "Result : " + SEARCH,
-      });
-    
+      if (!req.session.user) {
+        var isLoggedIn = false;
+        res.render("category-filter", {
+          productfilter: docs,
+          cartLength: req.session.user.cartLength,
+          isLoggedIn: isLoggedIn
+          // category: "Result : " + SEARCH,
+        });
+      } else {
+        var isLoggedIn = true;
+        res.render("category-filter", {
+          productfilter: docs,
+          cartLength: req.session.user.cartLength,
+          isLoggedIn: isLoggedIn
+          // category: "Result : " + SEARCH,
+        });
+      }
     })
     .catch(err => {
-      console.log(err);
       res.status(500).json({
         Error: err
       });
     });
-
-}
+};
 var productcategory = (req, res) => {
   Product.find({ category: req.params.productcategory }, function(
     err,
     category
   ) {
-    console.log(category);
     if (err) {
       return next(err);
     }
-
-    res.render("productcategory", {
-      category: category,
-      // cartLength: req.session.user.cartLength || 0
-    });
+    if (!req.session.user) {
+      var isLoggedIn = false;
+      res.render("productcategory", {
+        category: category,
+        isLoggedIn: isLoggedIn
+      });
+    } else {
+      var isLoggedIn = true;
+      res.render("productcategory", {
+        category: category,
+        isLoggedIn: isLoggedIn
+      });
+    }
   });
 };
 
@@ -216,5 +212,5 @@ module.exports = {
   productCreate,
   productcategory,
   brand,
-  filtercategory,
+  filtercategory
 };

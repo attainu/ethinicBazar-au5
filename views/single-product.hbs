@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{product.productName}}</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -21,85 +22,129 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/product.css">
-    
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://kit.fontawesome.com/69bcf6cd54.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../search.css">
 
     {{!-- starts --}}
     <script src="/js/custom.js"></script>
+    <style>
+        body,
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+            font-family: "Lato", sans-serif;
+        }
+
+        .fa-shopping-cart {
+            font-size: 20px;
+            color: darkslategrey;
+        }
+
+        .fa-user {
+            font-size: 20px;
+            color: darkslategrey;
+        }
+
+        .fa-sign-out-alt {
+            font-size: 20px;
+            color: darkslategrey;
+        }
+
+        .fa-truck-loading {
+            font-size: 20px;
+            color: darkslategrey;
+        }
+    </style>
 
 
 </head>
 <style>
     .product-details-page .product-details .available-sizes .btn-container ul li {
-    display: inline-block;
-}
-.product-details-page .product-details .available-sizes .btn-container ul li {
-    display: inline-block;
-    
-element.style {
-}
-.product-details-page .product-details .available-sizes .btn-container ul li button {
-    float: left;
-    padding: 0 40px;
-    height: 45px;
-    margin-right: 10px;
-    position: relative;
-    padding-left: 60px;
-}
+        display: inline-block;
+    }
 
-}
+    .product-details-page .product-details .available-sizes .btn-container ul li {
+        display: inline-block;
+
+        element.style {}
+
+        .product-details-page .product-details .available-sizes .btn-container ul li button {
+            float: left;
+            padding: 0 40px;
+            height: 45px;
+            margin-right: 10px;
+            position: relative;
+            padding-left: 60px;
+        }
+
+    }
 </style>
 
-<body style="overflow: auto;">
-  <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a href="/" class="navbar-brand"><img src="./../icon.png"
-                    style="margin-top: 0; margin-left: -15px; height: 40px; width: 160px" /> </a>
-            <form class="form-inline my-2 my-lg-0">
-                <div class="wrap">
-                    <div class="search mr-5" style="float: right">
-                        <input type="text" class="searchTerm" placeholder="What are you looking for?" />
-                        <button type="submit" style="background-color: #ffa500; border-color: #ffa500;"
-                            class="searchButton mt-1">
-                            <i class="fa fa-search"></i>
-                        </button>
+<body style="overflow: auto ">
+    <nav class=" navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a href="/" class="navbar-brand"><img src="./../icon.png"
+                        style="margin-top: -3px; margin-left: 3px; height: 50px; width: 140px" /> </a>
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="wrap">
+                        <div class="search mr-5" style="float: right">
+                            <input style="font-size: 18px;" type="text" class="searchTerm"
+                                placeholder="What are you looking for?" />
+                            <button type="submit" style="background-color: #ffa500; border-color: #ffa500;"
+                                class="searchButton mt-1">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
-                            style="font-size: 15px;"> My Account</span></a>
-                </li>
+                </form>
+                {{#if isLoggedIn}}
 
-                <li class="nav-item">
-                    <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
-                            class="text-dark" style="font-size: 15px;">Order
-                            History</span></a>
-                </li>
-                <li class="nav-item">
-                    <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
-                            style="font-size: 15px;">Cart</span></a>
-                </li>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
+                                style="font-size: 18px;"> My Account</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/userLogout" class="nav-link mr-3"><i class="fa fa-sign-out-alt"></i> <span
+                                class="text-dark" style="font-size: 18px;">
+                                Logout</span></a>
+                    </li>
 
-            </ul>
+                    <li class="nav-item" style="margin-right: 14px;">
+                        <a href="/user/cart" class="nav-link "><span style="font-size: 14px;"
+                                class="badge badge-secondary">{{cartLength}}</span><i
+                                class="fa fa-shopping-cart"></i><span class="text-dark"
+                                style="font-size: 18px; margin-right: 22px;">Cart</span></a>
+                    </li>
+                </ul>
+                {{else}}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/userLogin" class="nav-link mr-3"><i class="fa fa-sign-in-alt"></i> <span
+                                class="text-dark" style="font-size: 20px; margin-right: 22px;">
+                                Login</span></a>
+                    </li>
+                </ul>
+                {{/if}}
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-    <div class="" id="mainsection" style="margin-top: 30px;">
+    <div class="" id="mainsection" style="margin-top: 30px; height: 1650px;">
         <div class="row" style="margin-top: 100px;">
             <!-- Product picture -->
             <div class="col-sm-4 cart" style="width: 200px;">
@@ -110,32 +155,33 @@ element.style {
                             d="M8.695 16.682C4.06 12.382 1 9.536 1 6.065 1 3.219 3.178 1 5.95 1c1.566 0 3.069.746 4.05 1.915C10.981 1.745 12.484 1 14.05 1 16.822 1 19 3.22 19 6.065c0 3.471-3.06 6.316-7.695 10.617L10 17.897l-1.305-1.215z"
                             fill="#2874F0" class="_35Y7Yo" stroke="#FFF" fill-rule="evenodd" opacity=".9"></path>
                     </svg>
-                    <img src="{{product.productImage}}" class="img-responsive" alt="" style="height: 600px;" id="zoomimg">
+                    <img src="{{product.productImage}}" class="img-responsive" alt="" style="height: 600px;"
+                        id="zoomimg">
 
                 </div>
                 <div class="caption" style="width: 500px; margin-left:-50px; margin-top:100px;">
                     <div class="row buttons" style="margin-left: 120px;">
-                   
 
 
-                      
+
+
 
                     </div>
 
                 </div>
                 <div class="row" style="margin-top:0px; margin-left:70px;">
-                     <form method="POST" action="/user/cart">
-                            <input type="hidden" name="id" value={{product._id}}>
-                            <button type="submit" class="btn   "
-                                style="    background-color: blue;color: #fff;font-size: 1em;width: 234px;height: 48px;max-width: 524px;float: left; "><span
-                                    class="glyphicon glyphicon-shopping-cart" id="addto"></span>&nbsp;ADD TO CART</button>
-                        </form>
-                          <form style="width: 260px" method="POST" action="/user/addToOrderHistory">
-                            <input type="hidden" name="id" value={{product._id}}>
-                            <button type="submit" class="btn col-md-6 offset-1 "
-                                style="background-color: #fb641b;color: #fff;font-size: 1em;height: 48px;max-width: 235px;margin-top: -46px; margin-left:270px;"><i class="fa fa-bolt"
-                                    style="font-size:1.2em;" id=""></i> BUY NOW</button>
-                        </form>
+                    <form method="POST" action="/user/cart">
+                        <input type="hidden" name="id" value={{product._id}}>
+                        <button type="submit" class="btn btn-lg  "
+                            style="background-color:blue; color:#fff;font-size:1.7em; max-width:500px; float:left; margin-left: 33px; margin-top: -46px;"><span
+                                class="glyphicon glyphicon-shopping-cart"></span>&nbsp;ADD TO CART</button>
+                    </form>
+
+                    <form style="width: 260px" method="POST" action="/user/addToOrderHistory">
+                        <input type="hidden" name="id" value={{product._id}}>
+                        <button type="submit" class="btn btn-lg" style="background-color:#fb641b; color:#fff;font-size:1.7em;     margin-left: 265px;
+    margin-top: -76px;"><i class="fa fa-bolt" style="font-size:1em;"></i> BUY NOW</button>
+                    </form>
 
                 </div>
 
@@ -143,13 +189,15 @@ element.style {
 
             <div class="col-sm-6 desc" style="margin-left: 617px; margin-bottom:900px; margin: 2px 120px;">
                 {{#if addedToCart}}
-                <div class="alert alert-success">One item added to the cart</div>
+                <div class="alert alert-success">
+                    <h1>One item added to the cart</h1>
+                </div>
                 {{/if}}
                 <div>
                     <ol class="breadcrumb col-sm-12" style="background-color:transparent;">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Clothing</a></li>
-                        <li><a href="">{{product.subCategory}}</a></li>
+                        <li style="font-size: 18px;"><a href="/">Home</a></li>
+                        <li style="font-size: 18px;"><a href="#">Clothing</a></li>
+                        <li style="font-size: 18px;"><a href="">{{product.subCategory}}</a></li>
 
                     </ol>
                     <h2 style="margin-right: 100px;">{{product.productName}}</h2>
@@ -159,98 +207,10 @@ element.style {
                         <span class="after-discount"> <strong
                                 style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 30px;">
                                 ₹-{{product.productPrice}}</strong> </span></b> </h2>
-                       
+
                     </p>
                     <br>
-                    <br>
-                   
-                    <br>
-                    <div class="pdp-offers-container">
-                        <h4>
-                            <!-- react-text: 186 --> <b>BEST OFFERS
-                                <span class="offers-price">
-                                    <!-- react-text: 338 -->Rs.
-                                    <!-- /react-text -->
-                                    <!-- react-text: 339 -->6888
-                                    <!-- /react-text --></span>
-                            </b> </h4>
-                        <ul class="offers-offerDesc">
 
-                            <li>
-                                <div class="offers-bullet"></div>
-                                <div class="offers-labelMarkup" style="font-size: 20px;">
-                                    <!-- react-text: 344 -->Applicable on:
-                                    <!-- /react-text -->
-                                    <!-- react-text: 345 -->
-                                    <!-- /react-text --><span class="">Orders above Rs. 2999 (only on first
-                                        purchase)</span></div>
-                                <br>
-                            </li>
-                            <li>
-                                <div class="offers-bullet"></div>
-                                <div class="offers-labelMarkup" style="font-size: 20px;">
-                                    <!-- react-text: 350 -->Coupon code:
-                                    <!-- /react-text -->
-                                    <!-- react-text: 351 -->
-                                    <!-- /react-text --><span class="pdp-offers-boldText">ETHNICNEW1000</span></div>
-                                <br>
-                            </li>
-                            <li>
-                                <div class="offers-bullet"></div>
-                                <div class="offers-labelMarkup" style="font-size: 20px;">
-                                    <!-- react-text: 356 -->Coupon Discount:
-                                    <!-- /react-text -->
-                                    <!-- react-text: 357 -->
-                                    <!-- /react-text --><span class=""> Rs. 1000 off (check cart for final
-                                        savings)</span></div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="pdp-offers-extraOffer">
-                        <br>
-                        <a class="pdp-offers-offer" target="_blank" href="https://www.myntra.com/shop/hdfc-offer19">
-                            <div>
-                                <div class="pdp-offers-offerColumn">
-                                    <div class="pdp-offers-offerColumnText">
-                                        <div class="pdp-offers-offerTitle" style="font-size: 20px;">
-                                            <b>10% Instant Discount with HDFC Credit Card</b>
-                                        </div>
-                                        <span class="pdp-offers-offerDesc" style="font-size: 20px;">Min spend Rs 5000,
-                                            max discount Rs 750</span>
-                                    </div>
-                                    <div class="pdp-offers-viewMoreLink">
-                                        <span class="pdp-offers-showOfferLink">
-                                            <span class="pdp-offers-arrow"></span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <div class="pdp-offers-offer">
-
-                            <div>
-                                <div class="pdp-offers-offerColumn">
-                                    <div class="pdp-offers-offerColumnText" style="margin-left:-15px;">
-                                        <div class="pdp-offers-offerTitle" style="font-size: 20px; ">
-                                            <b>EMI option available</b>
-                                        </div>
-                                        <span class="pdp-offers-offerDesc" style="font-size: 20px; ">EMI starting from
-                                            Rs. 370/month</span>
-                                    </div>
-                                    <div class="pdp-offers-viewMoreLink">
-                                        <span>
-                                            <span class="pdp-offers-showOfferLink">
-                                                <span class="pdp-offers-arrow">
-
-                                                </span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <br>
                     <hr>
@@ -265,11 +225,7 @@ element.style {
                         </div>
                         <div class="pdp-sizeFitDesc">
                             <br>
-                            <h4 class="pdp-sizeFitDescTitle pdp-product-description-title" style="font-size: 24px;">
-                                <b>Size &amp; Fit</b> </h4>
-                            <p class="pdp-sizeFitDescContent pdp-product-description-content" style="font-size: 20px;">
-                                <p style="font-size: 20px" ;>Slim Fit<br>The model (height 6") is wearing size M</p>
-                            </p>
+
                         </div>
                         <div class="pdp-sizeFitDesc">
                             <h4 class="pdp-sizeFitDescTitle pdp-product-description-title" style="font-size: 24px;"> <b>
@@ -290,245 +246,179 @@ element.style {
 
                                     </div>
                                 </div>
-                                <div class="index-row">
-                                    <div class="index-rowKey" style="font-size: 22px;">Fabric
 
-                                    </div>
-                                    <div class="index-rowValue" style="font-size: 22px;">Polyester
 
-                                    </div>
-                                </div>
-                                <div class="index-row">
-                                    <div class="index-rowKey" style="font-size: 22px;">Collar
 
-                                    </div>
-                                    <div class="index-rowValue" style="font-size: 22px;">Notched Lapel
 
-                                    </div>
-                                </div>
-                                <div class="index-row">
-                                    <div class="index-rowKey" style="font-size: 22px;">Occasion
 
-                                    </div>
-                                    <div class="index-rowValue" style="font-size: 22px;">Formal
-
-                                    </div>
-                                </div>
-                                <div class="index-row">
-                                    <div class="index-rowKey" style="font-size: 22px;">Fit
-
-                                    </div>
-                                    <div class="index-rowValue" style="font-size: 22px;">Slim Fit
-
-                                    </div>
-                                </div>
-                                <div class="index-row">
-                                    <div class="index-rowKey" style="font-size: 22px;">Sleeve Length
-
-                                    </div>
-                                    <div class="index-rowValue" style="font-size: 22px;">Long Sleeves
-
-                                    </div>
-                                </div>
-                                <div class="index-row">
-                                    <div class="index-rowKey" style="font-size: 22px;">Bottom Closure</div>
-                                    <div class="index-rowValue" style="font-size: 22px;">Button</div>
-                                </div>
-                                <div class="index-row">
-                                    <div class="index-rowKey" style="font-size: 22px;">Add-Ons</div>
-                                    <div class="index-rowValue" style="font-size: 22px;">Brooch</div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="index-tableContainer">
-                                    <div class="index-row">
-                                        <div class="index-rowKey" style="font-size: 22px;">Front Styling</div>
-                                        <div class="index-rowValue" style="font-size: 22px;">Single-Breasted</div>
-                                    </div>
-                                    <div class="index-row">
-                                        <div class="index-rowKey" style="font-size: 22px;">Type</div>
-                                        <div class="index-rowValue" style="font-size: 22px;">Blazer and Waistcoat with
-                                            Trousers</div>
-                                    </div>
-                                </div>
-                                <div class="index-sizeFitDesc" style="margin-top: 0px;">
-                                    <h4 class="index-sizeFitDescTitle index-product-description-title"
-                                        style="font-size: 24px;"> <b> Complete The Look</b></h4>
-                                    <p class="index-sizeFitDescContent index-product-description-content">
-                                        <p style="font-size: 20px;">Create a sauve look by donning this suit from Louis
-                                            Philippe. Team it with a formal shirt and a pair of Oxford shoes to get that
-                                            coveted suave look.</p>
-                                    </p>
-                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="pincode-checkServiceAbilityhalfCard">
-                        <span>
-                            <div class="pincode-deliveryContainer">
-                                <h4> <b> Delivery Options</b>
-                                    <span
-                                        class="myntraweb-sprite pincode-deliveryOptionsIcon sprites-deliveryOptionsIcon">
+                        <div class="pincode-checkServiceAbilityhalfCard">
+                            <span>
+                                <div class="pincode-deliveryContainer">
+                                    <h4 style="font-size: 20px"> <b> Delivery Options</b>
+                                        <span
+                                            class="myntraweb-sprite pincode-deliveryOptionsIcon sprites-deliveryOptionsIcon">
 
-                                    </span>
-                                </h4>
+                                        </span>
+                                    </h4>
 
-                                <div class="row">
-                                    <div class="form-group col-lg-3 ">
+                                    <div class="row">
+                                        <div class="form-group col-lg-3 ">
 
-                                        <input type="text" placeholder="Enter pincode" class="form-control" value=""
-                                            name="pincode" class="" id="pincode">
-                                        <div class="pincode-tickcontainer" id="pin">
-                                            <div class="pincode-tick sprites-lightTick" id="hide"><i
-                                                    class="material-icons">&#xe567;</i></div>
+                                            <input type="text" placeholder="Enter pincode" style="font-size: 14px"
+                                                class="form-control" value="" name="pincode" class="" id="pincode">
+                                            <div class="pincode-tickcontainer" id="pin">
+                                                <div class="pincode-tick sprites-lightTick" id="hide"><i
+                                                        class="material-icons">&#xe567;</i></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-2 ">
+                                            <input type="button" value="Check" style="font-size: 14px"
+                                                class="btn btn-default" id="searchpincode">
                                         </div>
                                     </div>
-                                    <div class="form-group col-lg-2 ">
-                                        <input type="button" value="Check" class="btn btn-default" id="searchpincode">
-                                    </div>
+
+                                    <p id="pindata" style="font-size: 20px;"></p>
+                                    <div id="error"></div>
+                                    <p class="pincode-enterPincode" style="font-size: 16px" id="message">Please enter
+                                        PIN code to check delivery
+                                        time &amp; Cash/Card on Delivery Availability
+
+                                    </p>
+                                    <ul class="pincode-serviceability-list" id="service">
+                                        <li>
+                                            <div class="pincode-tickSmallContainer">
+                                                <div class="pincode-tickSmall pincode-tick sprites-lightTick"></div>
+                                            </div>
+                                            <div class="pincode-serviceabilityContainer">
+                                                <h4>Expected Delivery Time</h4>
+                                                <p>9 days; Actual time may vary depending on other items in your order
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pincode-tickSmallContainer">
+                                                <div class="pincode-tickSmall pincode-tick sprites-lightTick"></div>
+                                            </div>
+                                            <div class="pincode-serviceabilityContainer">
+                                                <h4>Cash/Card on delivery available</h4>
+                                                <p>Available for orders between Rs. 299- Rs. 20,000</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pincode-tickSmallContainer">
+                                                <div class="pincode-tickSmall pincode-tick sprites-lightTick"></div>
+                                            </div>
+                                            <div class="pincode-serviceabilityContainer">
+                                                <h4>Easy 30 days returns and exchanges</h4>
+                                                <p>Choose to return or exchange for a different size (if available)
+                                                    within
+                                                    30 days.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
                                 </div>
-
-                                <p id="pindata" style="font-size: 20px;"></p>
-                                <div id="error"></div>
-                                <p class="pincode-enterPincode" id="message">Please enter PIN code to check delivery
-                                    time &amp; Cash/Card on Delivery Availability
-
-                                </p>
-                                <ul class="pincode-serviceability-list" id="service">
-                                    <li>
-                                        <div class="pincode-tickSmallContainer">
-                                            <div class="pincode-tickSmall pincode-tick sprites-lightTick"></div>
-                                        </div>
-                                        <div class="pincode-serviceabilityContainer">
-                                            <h4>Expected Delivery Time</h4>
-                                            <p>9 days; Actual time may vary depending on other items in your order</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pincode-tickSmallContainer">
-                                            <div class="pincode-tickSmall pincode-tick sprites-lightTick"></div>
-                                        </div>
-                                        <div class="pincode-serviceabilityContainer">
-                                            <h4>Cash/Card on delivery available</h4>
-                                            <p>Available for orders between Rs. 299- Rs. 20,000</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pincode-tickSmallContainer">
-                                            <div class="pincode-tickSmall pincode-tick sprites-lightTick"></div>
-                                        </div>
-                                        <div class="pincode-serviceabilityContainer">
-                                            <h4>Easy 30 days returns and exchanges</h4>
-                                            <p>Choose to return or exchange for a different size (if available) within
-                                                30 days.</p>
-                                        </div>
-                                    </li>
-                                </ul>
-
-                            </div>
-                        </span>
-                    </div>
+                            </span>
+                        </div>
 
 
-                    <br>
-                    <br>
-                    <div style="border-top: 2px solid #f0f0f0;">
-
+                        <br>
+                        <br>
                         <div style="border-top: 2px solid #f0f0f0;">
-                            <br>
+
+                            <div style="border-top: 2px solid #f0f0f0;">
+                                <br>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
     </div>
-   
-<!--footer starts here-->
-  <footer class="footer">
-    <div class="container bottom_border">
-      <div class="row">
-        <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-          <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Download Our App</h5>
 
-          <ul class="footer_ul_amrc">
-            <div class="row" style="margin-left: -50px;">
+    <!--footer starts here-->
+    <footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Download Our App</h5>
 
-              <li>
-                <a href="#" target="_blank"><img
-                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
-                    alt=""></a>
+                    <ul class="footer_ul_amrc">
+                        <div class="row" style="margin-left: -50px;">
 
-              </li>
-              <li>
-                <a href="#" target="_blank"><img
-                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
-                    alt=""></a>
-              </li>
+                            <li>
+                                <a href="#" target="_blank"><img
+                                        src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
+                                        alt=""></a>
+
+                            </li>
+                            <li>
+                                <a href="#" target="_blank"><img
+                                        src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
+                                        alt=""></a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Our Company</h5>
+                    <ul class="footer_ul_amrc">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="login">Sell On EthnicHub</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Privacy Policies</h5>
+
+                    <ul class="footer_ul_amrc">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Policy For Sellers</a></li>
+                        <li><a href="#">Policy For Buyers</a></li>
+                    </ul>
+                </div>
+                <div class=" col-sm-4 col-md  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Payment Options</h5>
+                    <a href="#"><img src="./../images.jfif" style="margin-left:-46px;"></a>
+                </div>
             </div>
-          </ul>
-        </div>
-        <div class=" col-sm-4 col-md  col-6 col">
-          <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Our Company</h5>
-          <ul class="footer_ul_amrc">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="login">Sell On EthnicHub</a></li>
-
-          </ul>
 
         </div>
-
-
-        <div class=" col-sm-4 col-md  col-6 col">
-          <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Privacy Policies</h5>
-
-          <ul class="footer_ul_amrc">
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Policy For Sellers</a></li>
-            <li><a href="#">Policy For Buyers</a></li>
-          </ul>
         </div>
-        <div class=" col-sm-4 col-md  col-12 col">
-          <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Payment Options</h5>
-          <a href="#"><img src="images.jfif" style="margin-left:-46px;"></a>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
-      <ul class="social_footer_ul">
-        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-      </ul>
-  </footer>
-  </div>
-  </div>
-  <div class="container">
-    <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
-    <ul class="social_footer_ul">
-      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-    </ul>
+        <div class="container">
+            <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+            <ul class="social_footer_ul">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
     </footer>
-  </div>
+    </div>
+
+    <!-- footer ends -->
+
+    </div>
 
 
-<script>
-    $(document).ready(function(){
 
-</script>
+    <script>
+        $(document).ready(function () {
+
+    </script>
 
 </body>
 

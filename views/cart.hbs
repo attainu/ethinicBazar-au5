@@ -20,58 +20,17 @@
 </head>
 
 <body>
-  {{!-- <!-- header starts -->
-  <div class="top-head pt-1 border" class="header" style="height:80px;">
-    <div class="container">
-      <div class="row ">
-        <div class="col-md-12 text-right" style="margin-top: 10px;">
-          <ul class="list-inline">
-            <a href="/"><img
-                style="border-radius: 20%; width: 100px; height:60px; float: left; margin-top: 1px; margin-bottom: 2px;"
-                src="./../l.png" alt="logo"></a>
-            <form class="form-inline">
-              <div class="input-group" style="margin-top: 5px; width:90;">
-                <input type="text" class="form-control" style="margin-left: 200px; width:120" placeholder="Search">
-                <div class="input-group-append">
-                  <button type="button" class="btn btn-secondary" style="color: #2a1a5e;"><i class="fa fa-search"
-                      style="color: #2a1a5e;"></i></button>
-                </div>
-              </div>
-              <div class="id 1" style="margin-top: 10px;">
-                <a href="/user">
-                  <li class="list-inline-item"
-                    style="font-size: 20px; margin-top: 1px; margin-bottom: 5px; margin-right: 10px;">
-                    <small><i class="fas fa-user" style="margin-right: 2px;"></i> </i> <strong> My
-                        Account</strong></small></li>
-                </a>
-                <a href="/user/orderHistory">
-                  <li class="list-inline-item"
-                    style="font-size: 20px; margin-left: 30px; margin-top: 1px; margin-bottom: 5px;">
-                    <small><strong>Order History</strong> </small></li>
-                </a>
-                <a href="/user/cart"> <i class="fa fa-shopping-cart"
-                    style="font-size:20px; margin-right:-10px; margin-top: 1px; margin-bottom: 5px;"><span
-                      class="badge badge-secondary">{{cartLength}}</span></i></a>
-              </div>
-            </form>
 
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- header ends --> --}}
 
   <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-    <div class="container">
+    <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- <span class="navbar-toggler-icon"></span> -->
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <a href="/" class="navbar-brand"><img src="./../icon.png" /> </a>
+        <a href="/" class="navbar-brand"><img style="margin-left: 10px" src="./../icon.png" /> </a>
         <form class="form-inline my-2 my-lg-0">
           <div class="wrap">
             <div class="search mr-5" style="float: right">
@@ -93,9 +52,9 @@
                 class="text-dark" style="font-size: 15px;">Order
                 History</span></a>
           </li>
-          <li class="nav-item">
-            <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
-                style="font-size: 15px;">Cart</span></a>
+          <li class="nav-item" style="margin-right: 40px">
+            <a href="/user/cart" class="nav-link "> <span class="badge badge-secondary">{{cartLength}}</span><i
+                class="fa fa-shopping-cart"></i><span class="text-dark" style="font-size: 15px;">Cart</span></a>
           </li>
 
         </ul>
@@ -111,12 +70,16 @@
     {{/if}}
 
 
-    <div style="margin-left:81%">
-      <h2 class="mr-auto">Subtotal: Rs. <span class="finalPrice">0</span></h2>
-      <form action="/user/orderHistory" method="POST">
+    <div style="margin-left:81%; height: 122px;">
+      <h2 class="mr-auto" style="margin-top: 0">Subtotal: Rs. <strong><span class="finalPrice">0</span></strong>
+      </h2>
+      <form class="d-inline-block" action="/user/orderHistory" method="POST">
         <input type="hidden" value={{_id}} name="id">
-        <button type="submit" id="buyNow" style="width:150px; background-color: #2a1a5e; margin-left: 28%"
-          class="btn btn-primary">Buy
+        <button type="submit" id="buyNow" style="width: 150px;
+    background-color: #2a1a5e;
+    margin-left: 17%;
+    margin-bottom: -21px;
+    margin-top: -154px;" class="btn btn-primary">Buy
           Now</button>
       </form>
 
@@ -126,22 +89,20 @@
 
 
     {{#each cart}}
-    <div class="card mb-3 mt-5 shadow p-3 mb-5 bg-white rounded">
+    <div class="card mb-3 shadow p-3 mb-2 bg-white rounded">
       <div class="row no-gutters">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <img src={{productImage}} class="card-img img-rounded" alt="..." style="height: 200px;width: 200px" />
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
           <div class="card-body">
             <h3 class="card-title text-primary">{{productName}}</h3>
-            <h5 class="card-title  text-primary mt-4">{{productDescription}}</h5>
-            <h5 class="card-title mt-4">Sold by: <p class="d-inline-block text-primary">Appario</p>
-            </h5>
+            <h5 class="card-title  text-dark mt-4">{{productDescription1}}</h5>
             <h5 class="card-title price d-inline-block text-primary mt-4">{{productPrice}}</h5>
 
 
             <form action="/user/cart/{{_id}}" method="POST">
-              <button value={{_id}} style="margin-left: 70%" class="btn btn-danger d-inline-block ">Delete
+              <button value={{_id}} style="margin-left: 83%" class="btn btn-danger d-inline-block ">Delete
                 Item</button>
             </form>
 

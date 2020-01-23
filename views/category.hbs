@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{items.0.subCategory}}</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -22,7 +23,7 @@
     <script src="https://kit.fontawesome.com/69bcf6cd54.js" crossorigin="anonymous"></script>
     <script src="/js/custom.js"></script>
 
-    {{!-- <link rel="stylesheet" href="./../search.css"> --}}
+    <link rel="stylesheet" href="./../search.css">
 
 </head>
 <style>
@@ -34,7 +35,7 @@
     <body style="overflow-x:hidden ;">
         
 <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-    <div class="container">
+    <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,33 +44,53 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <a href="/" class="navbar-brand"><img src="./../icon.png"
-                    style="margin-top: 0; margin-left: -15px; height: 60px; width: 160px" /> </a>
+                    style="margin-top: 0; margin-left: 3px; height: 55px; width: 150px" /> </a>
             <form class="form-inline my-2 my-lg-0">
                 <div class="wrap">
                     <div class="search mr-5" style="float: right">
                         <input type="text" class="searchTerm" id="search" placeholder="What are you looking for?" />
-                        <button type="button" id="data"style="background-color: #ffa500; border-color: #ffa500;"
+                        <button type="button" id="data" style="background-color: #ffa500; border-color: #ffa500;"
                             class="searchButton mt-1">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
                 </div>
             </form>
+
+            {{#if isLoggedIn}}
+
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
                             style="font-size: 15px;"> My Account</span></a>
                 </li>
+                <li class="nav-item">
+                    <a href="/userLogout" class="nav-link mr-3"><i class="fa fa-sign-out-alt"></i> <span
+                            class="text-dark" style="font-size: 15px;">
+                            Logout</span></a>
+                </li>
 
-                <li class="nav-item">
-                    <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
-                            class="text-dark" style="font-size: 15px;">Order
-                            History</span></a>
+                <li class="nav-item" style="margin-right: 14px;">
+                    <a href="/user/cart" class="nav-link "><span class="badge badge-secondary">{{cartLength}}</span><i
+                            class="fa fa-shopping-cart"></i><span class="text-dark"
+                            style="font-size: 15px; margin-right: 22px;">Cart</span></a>
                 </li>
+            </ul>
+            {{else}}
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
-                            style="font-size: 15px;">Cart</span></a>
+                    <a href="/userLogin" class="nav-link mr-3"><i class="fa fa-sign-in-alt"></i> <span class="text-dark"
+                            style="font-size: 20px; margin-right: 22px;">
+                            Login</span></a>
                 </li>
+            </ul>
+            {{/if}}
+            {{!-- <li class="nav-item">
+            <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
+                class="text-dark" style="font-size: 15px;">Order
+                History</span></a>
+          </li> --}}
+
 
             </ul>
         </div>
@@ -86,7 +107,7 @@
                 <div class="vertical-filters-filters header-container"
                     style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
                     <span class="header-title">FILTERS</span>
-                  
+
                 </div>
 
                 <div class="vertical-filters-filters categories-container"
@@ -114,7 +135,7 @@
 
                     </ul>
 
-                   
+
                 </div>
                 <div class="vertical-filters-filters brand-container"
                     style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
@@ -135,9 +156,9 @@
                             </label></li>
                         {{/each}}
                     </ul>
-                   
+
                 </div>
-                
+
             </div>
         </section>
     </div>
@@ -177,11 +198,11 @@
                                 <span class="after-discount"> <strong
                                         style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px; margin-right:56px;">₹{{this.productPrice}}</strong>
                                 </span></b> </h2>
-                                
+
                             </p>
                         </div>
                     </li>
-                   
+
                 </ul>
 
 
@@ -201,7 +222,7 @@
         </div>
 
 
-        
+
     </div>
 
 </div>
@@ -217,12 +238,27 @@
     <div class="container bottom_border">
         <div class="row">
             <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-                <h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
+                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Download Our App</h5>
 
+                <ul class="footer_ul_amrc">
+                    <div class="row" style="margin-left: -50px;">
+
+                        <li>
+                            <a href="#" target="_blank"><img
+                                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
+                                    alt=""></a>
+
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><img
+                                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
+                                    alt=""></a>
+                        </li>
+                    </div>
                 </ul>
             </div>
             <div class=" col-sm-4 col-md  col-6 col">
-                <h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
+                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Our Company</h5>
                 <ul class="footer_ul_amrc">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
@@ -230,7 +266,7 @@
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Pricing</a></li>
                     <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Sell On EthnicHub</a></li>
+                    <li><a href="login">Sell On EthnicHub</a></li>
 
                 </ul>
 
@@ -238,7 +274,7 @@
 
 
             <div class=" col-sm-4 col-md  col-6 col">
-                <h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
+                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Privacy Policies</h5>
 
                 <ul class="footer_ul_amrc">
                     <li><a href="#">Terms & Conditions</a></li>
@@ -247,8 +283,8 @@
                 </ul>
             </div>
             <div class=" col-sm-4 col-md  col-12 col">
-                <h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
-                <a href="#"><img src="images.jfif"></a>
+                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Payment Options</h5>
+                <a href="#"><img src="./../images.jfif" style="margin-left:-46px;"></a>
             </div>
         </div>
     </div>

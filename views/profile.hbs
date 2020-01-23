@@ -26,7 +26,7 @@
 <body>
   <!-- header starts -->
   <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-    <div class="container">
+    <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
       <!-- <span class="navbar-toggler-icon"></span> -->
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <a href="/" class="navbar-brand"><img src="icon.png" /> </a>
+        <a href="/" class="navbar-brand"><img style="margin-left: 10px;" src="icon.png" /> </a>
         <form class="form-inline my-2 my-lg-0">
           <div class="wrap">
             <div class="search mr-5" style="float: right">
@@ -55,9 +55,9 @@
                 class="text-dark" style="font-size: 15px;">Order
                 History</span></a>
           </li>
-          <li class="nav-item">
-            <a href="/user/cart" class="nav-link"> <i class="fa fa-shopping-cart"></i><span class="text-dark"
-                style="font-size: 15px;">Cart</span></a>
+          <li class="nav-item" style="margin-right: 30px">
+            <a href="/user/cart" class="nav-link"><span class="badge badge-secondary">{{cartLength}}</span><i
+                class="fa fa-shopping-cart"></i><span class="text-dark" style="font-size: 15px;">Cart</span></a>
           </li>
 
         </ul>
@@ -98,12 +98,12 @@
         <div class="col-md-4" style="font-size:small;">
           <div class="card-body">
             <p class="card-title mt-2 d-inline-block"><i class="fa fa-user fa-2x"
-                style="color: #2a1a5e;font-size:x -large"> {{userName}}</i>
+                style="color: #2a1a5e;font-size: 26px;"> {{userName}}</i>
 
             </p>
 
             <br>
-
+            <br>
             <p class="card-title mt-2 d-inline-block"><i class="fa fa-envelope fa-2x"
                 style="color: #2a1a5e;font-size:x -large"> {{userEmail}}</i>
 
@@ -134,29 +134,10 @@
 
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow p-3  bg-white rounded border border-secondary" style="height: 350px;">
-          <div class="card-body">
-            <h5 class="card-title">Default</h5>
-            <hr />
-            <h5 class="card-title">State: <p class="d-inline-block lead text-dark">Assam</p>
-            </h5>
-            <h5 class="card-title mt-2">City: <p class="d-inline-block lead text-dark">Guwahati</p>
-            </h5>
-            <h5 class="card-title mt-2">Pin: <p class="d-inline-block lead text-dark">782413</p>
-            </h5>
-            <h5 class="card-title mt-2">Landmark: <p class="d-inline-block lead text-dark">Janakpur</p>
-            </h5>
-            <h5 class="card-title mt-2">Locality: <p class="d-inline-block lead text-dark">Ganeshguri</p>
-            </h5>
 
-
-          </div>
-        </div>
-      </div>
       {{#each userAddresses}}
       <div class="col-md-4">
-        <div class="card shadow p-3 mt-2  bg-white rounded" style="height: 350px;">
+        <div class="card mb-2" style="height: 350px;">
           <div class="card-body ">
             <h5 class="card-title">State: <p class="d-inline-block lead text-dark">{{state}}</p>
             </h5>

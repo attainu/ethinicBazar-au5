@@ -24,21 +24,24 @@
     <div class="form-v10-content">
       <form class="form-detail" onsubmit=" return userCheckPassword(this)" action="/user" method="POST" id="myform">
         <div class="form-row form-header">
-          <div>
-            <img src="/uploads/Untitled.png" alt="ecommerce logo" width="380" height="400" class="rounded" style="margin-top: 63px;
-    margin-left: 130px;" />
-          </div>
+          <a href="/">
+            <div>
+              <a href="/"><img src="/uploads/logo.png" style="margin-top: 34px;
+    margin-left: 50px;" alt="ecommerce logo" width="380" height="400" class="rounded"></a>
+            </div>
+          </a>
           <div class="form-row form-header">
-            <h1>
+            <h1 style="font-size: 18px;
+    margin-right: 280px;">
               Register to access our unique and huge range of handmade
               products
             </h1>
           </div>
-          <p style="margin-left:35%">Already Registered? <a href="/userLogin">Login</a></p>
+          <p style="margin-left:17%">Already Registered? <a href="/userLogin">Login</a></p>
         </div>
 
 
-        <div class="form-right" style="background-color: #2a1a5e;">
+        <div class="form-right" style="background-color: #2a1a5e;     margin-left: -113px;">
           <h2>General Infomation</h2>
           {{#if emailAlreadyExists}}
           <div class="alert alert-warning" style="color:red;padding-left: 20px; margin-bottom:30px">
@@ -49,36 +52,28 @@
             <div class="form-row ">
               <input type="text" name="userName" id="name" class="input-text" placeholder="Name" required />
             </div>
-            <!-- <div class="form-row form-row-2">
-                <input
-                  type="text"
-                  name="last_name"
-                  id="last_name"
-                  class="input-text"
-                  placeholder="Last Name"
-                  required
-                />
-              </div> -->
+
           </div>
 
-          <h2>Contact Details</h2>
+
 
 
           <div class="form-group">
 
-            <div class="form-row ">
-              <input type="number" name="userMobile" class="phone" id="phone" placeholder="Phone Number" required />
+            <div class="form-row " style="height: 45px;">
+              <input type="number" name="userMobile" minlength="10" maxlength="10" class="phone" id="phone"
+                placeholder="Phone Number" required />
             </div>
           </div>
-          <div class="form-row">
+          <div class="form-row" style="height: 45px;">
             <input type="text" name="userEmail" id="your_email" class="input-text" required
               pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email" />
           </div>
-          <div class="form-row">
-            <input type="password" name="userPassword" id="password" class="input-text" required
+          <div class="form-row" style="height: 45px;">
+            <input type="password" name="userPassword" id="password" minlength="8" class="input-text" required
               placeholder="Your password" />
           </div>
-          <div class="form-row">
+          <div class="form-row" style="height: 45px;">
             <input type="password" name="confirm_password" id="confirm-password" class="input-text" required
               placeholder="Confirm password" />
           </div>
@@ -86,19 +81,18 @@
             Password Mismatch
           </div>
 
-          <div class="form-checkbox">
+          <div class="form-checkbox" style="height: 45px;">
             <label class="container">
               <p>
                 I do accept the
-                <a href="#" class="text">Terms and Conditions</a> of your
-                site.
+                <a href="#" class="text">Terms and Conditions</a>
               </p>
-              <input type="checkbox" name="checkbox" />
               <span class="checkmark"></span>
             </label>
           </div>
           <div class="form-row-last">
-            <input type="submit" name="register" class="register" id="submit-button" value="Form submit" />
+            <button type="submit" name="register" class="register" id="submit-button"
+              style="height: 55px" />Signup</button>
           </div>
 
         </div>
