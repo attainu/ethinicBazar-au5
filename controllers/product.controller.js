@@ -117,11 +117,23 @@ var filtercategory = (req, res) => {
   })
     .exec()
     .then(docs => {
-      return res.render("category-filter", {
-        productfilter: docs,
-        cartLength: req.session.user.cartLength
-        // category: "Result : " + SEARCH,
-      });
+      if (!req.session.user) {
+        var isLoggedIn = false;
+        res.render("category-filter", {
+          productfilter: docs,
+          cartLength: req.session.user.cartLength,
+          isLoggedIn: isLoggedIn
+          // category: "Result : " + SEARCH,
+        });
+      } else {
+        var isLoggedIn = true;
+        res.render("category-filter", {
+          productfilter: docs,
+          cartLength: req.session.user.cartLength,
+          isLoggedIn: isLoggedIn
+          // category: "Result : " + SEARCH,
+        });
+      }
     })
     .catch(err => {
       res.status(500).json({
@@ -137,10 +149,19 @@ var productcategory = (req, res) => {
     if (err) {
       return next(err);
     }
-
-    res.render("productcategory", {
-      category: category
-    });
+    if (!req.session.user) {
+      var isLoggedIn = false;
+      res.render("productcategory", {
+        category: category,
+        isLoggedIn: isLoggedIn
+      });
+    } else {
+      var isLoggedIn = true;
+      res.render("productcategory", {
+        category: category,
+        isLoggedIn: isLoggedIn
+      });
+    }
   });
 };
 

@@ -98,7 +98,7 @@ var addItemsToCart = (req, res) => {
 
 var deleteCartItem = async (req, res) => {
   var idToDelete = req.params.id;
-  var updatedUser = await User.findByIdAndUpdate(
+  var updatedUser = await User.findById(
     { _id: req.session.user._id },
     { $pull: { cart: idToDelete }, $inc: { cartLength: -1 } },
     { new: true, multi: true }

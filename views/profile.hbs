@@ -98,12 +98,12 @@
         <div class="col-md-4" style="font-size:small;">
           <div class="card-body">
             <p class="card-title mt-2 d-inline-block"><i class="fa fa-user fa-2x"
-                style="color: #2a1a5e;font-size:x -large"> {{userName}}</i>
+                style="color: #2a1a5e;font-size: 26px;"> {{userName}}</i>
 
             </p>
 
             <br>
-
+            <br>
             <p class="card-title mt-2 d-inline-block"><i class="fa fa-envelope fa-2x"
                 style="color: #2a1a5e;font-size:x -large"> {{userEmail}}</i>
 
@@ -134,29 +134,10 @@
 
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow p-3  bg-white rounded border border-secondary" style="height: 350px;">
-          <div class="card-body">
-            <h5 class="card-title">Default</h5>
-            <hr />
-            <h5 class="card-title">State: <p class="d-inline-block lead text-dark">Assam</p>
-            </h5>
-            <h5 class="card-title mt-2">City: <p class="d-inline-block lead text-dark">Guwahati</p>
-            </h5>
-            <h5 class="card-title mt-2">Pin: <p class="d-inline-block lead text-dark">782413</p>
-            </h5>
-            <h5 class="card-title mt-2">Landmark: <p class="d-inline-block lead text-dark">Janakpur</p>
-            </h5>
-            <h5 class="card-title mt-2">Locality: <p class="d-inline-block lead text-dark">Ganeshguri</p>
-            </h5>
 
-
-          </div>
-        </div>
-      </div>
       {{#each userAddresses}}
       <div class="col-md-4">
-        <div class="card shadow p-3 mt-2  bg-white rounded" style="height: 350px;">
+        <div class="card mb-2" style="height: 350px;">
           <div class="card-body ">
             <h5 class="card-title">State: <p class="d-inline-block lead text-dark">{{state}}</p>
             </h5>

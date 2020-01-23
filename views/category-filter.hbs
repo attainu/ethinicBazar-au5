@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" href="/uploads/e.ico" sizes="200x200">
     <meta charset="UTF-8">
@@ -7,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{items.0.subCategory}}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -23,239 +25,288 @@
 
 
 </head>
-   <style>
-       .filterLabelContainer button {
-    float: left;
-    border: none;
-    border-radius: 1px;
-    margin-bottom: 2px;
-    padding: 4px 10px;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: .4px;
-    color: #fff;
-    
-}
-.mrvoonik-primary-btn, .voonik-primary-btn {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all .2s ease-in-out;
-    border-radius: 2px;
-}
-   </style>
+<style>
+    .filterLabelContainer button {
+        float: left;
+        border: none;
+        border-radius: 1px;
+        margin-bottom: 2px;
+        padding: 4px 10px;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: .4px;
+        color: #fff;
+
+    }
+
+    .mrvoonik-primary-btn,
+    .voonik-primary-btn {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all .2s ease-in-out;
+        border-radius: 2px;
+    }
+</style>
+
 <body style="width: 100%; overflow-x:hidden ; font-family: Rubik,sans-serif;">
 
-   
-<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a href="/" class="navbar-brand"><img src="/uploads/icon.png"
-                    style="margin-top: 0; margin-left: -15px; height: 60px; width: 160px" /> </a>
-            <form class="form-inline my-2 my-lg-0">
-                <div class="wrap">
-                    <div class="search mr-5" style="float: right">
-                        <input type="text" class="searchTerm" id="search" placeholder="What are you looking for?" />
-                        <button type="button" id="data"style="background-color: #ffa500; border-color: #ffa500;"
-                            class="searchButton mt-1">
-                            <i class="fa fa-search"></i>
-                        </button>
+
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a href="/" class="navbar-brand"><img src="/uploads/icon.png"
+                        style="margin-top: 0; margin-left: -15px; height: 60px; width: 160px" /> </a>
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="wrap">
+                        <div class="search mr-5" style="float: right">
+                            <input type="text" class="searchTerm" id="search" placeholder="What are you looking for?" />
+                            <button type="button" id="data" style="background-color: #ffa500; border-color: #ffa500;"
+                                class="searchButton mt-1">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
-                            style="font-size: 15px;"> My Account</span></a>
-                </li>
+                </form>
+                {{#if isLoggedIn}}
 
-                <li class="nav-item">
-                    <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
-                            class="text-dark" style="font-size: 15px;">Order
-                            History</span></a>
-                </li>
-                <li class="nav-item">
-                    <a href="/user/cart" class="nav-link "> <i class="fa fa-shopping-cart"></i><span class="text-dark"
-                            style="font-size: 15px;">Cart</span></a>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
-<div class="row" style="margin-left:56px;" >
-    <div class="col-md-2" style=" background:white; margin-top:53px; margin-right:100px;" >   
-        <section style=""  >
-            <div class="condition-render-verticalFilters condition-render-hung" style="top: 180.4px; bottom: auto; ">
-                <div class="vertical-filters-filters header-container" style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <span class="header-title">FILTERS</span>
-                 
-                </div>
-                
-                <div class="vertical-filters-filters categories-container" style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <hr>
-                    <span class="vertical-filters-header">Categories</span>
-                    <div class="filter-search-filterSearchBox filter-search-expanded">
-                        <input type="text" class="filter-search-inputBox" placeholder="Search for Categories" style="height: 35px;">
-                        <span class="myntraweb-sprite filter-search-closeSearch sprites-remove"></span>
-                    </div>
-                    <ul class="categories-list">
-                         
-                         {{#eachUnique productfilter}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input filter" value="{{subCategory}}" name="category"><span class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}} <!-- /react-text --><span class="categories-num"><!-- react-text: 40 --><!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                       
-                        {{/eachUnique}}
-                
-                    </ul>
-                 
-            <div class="categories-more"><!-- react-text: 108 -->+ <!-- /react-text --><!-- react-text: 109 -->2<!-- /react-text --><!-- react-text: 110 --> more<!-- /react-text --></div>
-                </div>
-                <div class="vertical-filters-filters brand-container"  style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
-                    <span class="vertical-filters-header">Brand</span>
-                    <div class="filter-search-filterSearchBox"  >
-                        <input type="text" class="filter-search-inputBox filter-search-hidden" placeholder="Search for Brand" style="height: 35px;">
-                        <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
-                    </div>
-                    <ul class="brand-list">
-                        {{#eachUnique3 productfilter}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="productName" class="custom-control-input filterproduct " value="{{productName}}" > <span class="custom-control-indicator"></span> <!-- react-text: 120 -->{{productName}}<!-- /react-text --><span class="brand-num"><!-- react-text: 12<!-- /react-text --></span><div class="common-checkboxIndicator"></div></label></li>
-                        {{/eachUnique3 }}
-                    </ul>
-               
-            </div>
-        </section>
-    </div>
-    <div class="col-md-8" style="background: white;  max-width:1300px;">
-        <div>
-
-            <ol class="breadcrumb col-sm-12" style="background-color:transparent;">
-                        <li><a href="#">Home/</a></li>
-                        <li><a href="#">Clothing/</a></li>
-                        <li><a href="#" id="subcategory">{{productname.0.subCategory}}</a></li>
-
-            </ol>
-           </div>
-           <div class="col-sm-12" >
-               <div class="filterLabelList" style="position: relative; display: inline-block;margin-right: 5px;margin-bottom: 5px;padding: 2px 5px;padding-right: 20px;border: 1px solid #e0e0e0;"   >
-                   <p>
-                       <b style="font-style: bold;">{{productfilter.0.subCategory   }}</b>
-                       </p>
-                       </div>
-                       <button class="voonik-primary-btn" data-reactid=".rll5lhd0oi.2.0.0.0.1.1.2.0.2.1.0.6.0.0.1" style=" height:46px; width:114px; position:absolute;top:15px;  outline: 0!important; background: #ff9800;" id="clearcategory">clear all</button>
-                    </div>
-     
-         
-       <div class="row"  id="filter">
-           <br>
-           <br>
-           
-            {{#each productfilter}}
-         
-
-            <div class="col-md-3  shadow1  ">
-                
-                 <img src=" {{this.productImage}}" alt="" style="margin:-3px;" onclick="window.location.href='/product/{{this._id}}'">
-                <div class="row" >
-                 
-                  
-
-                </div>
-                <ul>
-                    <li>
-                        <p class="product-title " >{{this.productName}}</p>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
+                                style="font-size: 15px;"> My Account</span></a>
                     </li>
-                    <li>
-                        <div>
-                        <p class="discount-container" style="text-align: center;"> 
-                        
-                            <span class="after-discount"> <strong style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px;">₹-{{this.productPrice}}</strong> </span></b> </h2>
-                           
-                        </p>
-                    </div>
+                    <li class="nav-item">
+                        <a href="/userLogout" class="nav-link mr-3"><i class="fa fa-sign-out-alt"></i> <span
+                                class="text-dark" style="font-size: 15px;">
+                                Logout</span></a>
                     </li>
-                    
+
+                    <li class="nav-item" style="margin-right: 14px;">
+                        <a href="/user/cart" class="nav-link "><span
+                                class="badge badge-secondary">{{cartLength}}</span><i
+                                class="fa fa-shopping-cart"></i><span class="text-dark"
+                                style="font-size: 15px; margin-right: 22px;">Cart</span></a>
+                    </li>
                 </ul>
-               
-               
+                {{else}}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/userLogin" class="nav-link mr-3"><i class="fa fa-sign-in-alt"></i> <span
+                                class="text-dark" style="font-size: 20px; margin-right: 22px;">
+                                Login</span></a>
+                    </li>
+                </ul>
+                {{/if}}
             </div>
-           
-            
-          
-            
-             
-        <br>   
-        <br>
-        <br>
-             {{/each}}  
-            
-
-            
-       </div>
-
-        
-    </div>
-    
-</div>   
-
-<!--footer starts here-->
-
-<!--footer starts here-->
-<h5 class="text-white">Downloads</h5>
-<footer class="footer">
-<div class="container bottom_border">
-<div class="row">
-<div class=" col-sm-4 col-md col-sm-4  col-12 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
-
- </ul>
-</div>
-<div class=" col-sm-4 col-md  col-6 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
-<ul class="footer_ul_amrc">
-<li><a href="#">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">Careers</a></li>
-<li><a href="#">Pricing</a></li>
-<li><a href="#">Contact Us</a></li>
-<li><a href="#">Sell On EthnicHub</a></li>
-
-</ul>
-
-</div>
-
-
-<div class=" col-sm-4 col-md  col-6 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
-
-<ul class="footer_ul_amrc">
-<li><a href="#">Terms & Conditions</a></li>
-<li><a href="#">Policy For Sellers</a></li>
-<li><a href="#">Policy For Buyers</a></li>
-</ul>
-</div>
-<div class=" col-sm-4 col-md  col-12 col">
-<h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
-<a href="#"><img src="images.jfif"></a>
-</div>
-</div>
-</div>
-<div class="container">
-<p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
-<ul class="social_footer_ul">
-    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-    </ul>
-</footer>
         </div>
+    </nav>
+
+
+    <div class="row" style="margin-left:56px;">
+        <div class="col-md-2" style=" background:white; margin-top:53px; margin-right:100px;">
+            <section style="">
+                <div class="condition-render-verticalFilters condition-render-hung"
+                    style="top: 180.4px; bottom: auto; ">
+                    <div class="vertical-filters-filters header-container"
+                        style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
+                        <span class="header-title">FILTERS</span>
+
+                    </div>
+
+                    <div class="vertical-filters-filters categories-container"
+                        style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
+                        <hr>
+                        <span class="vertical-filters-header">Categories</span>
+                        <div class="filter-search-filterSearchBox filter-search-expanded">
+                            <input type="text" class="filter-search-inputBox" placeholder="Search for Categories"
+                                style="height: 35px;">
+                            <span class="myntraweb-sprite filter-search-closeSearch sprites-remove"></span>
+                        </div>
+                        <ul class="categories-list">
+
+                            {{#eachUnique productfilter}}
+                            <li><label class="custom-control custom-checkbox"><input type="checkbox"
+                                        class="custom-control-input filter" value="{{subCategory}}"
+                                        name="category"><span class="custom-control-indicator"></span>
+                                    <!-- react-text: 38 --> {{subCategory}}
+                                    <!-- /react-text --><span class="categories-num">
+                                        <!-- react-text: 40 -->
+                                        <!-- /react-text --></span>
+                                    <div class="common-checkboxIndicator"></div>
+                                </label></li>
+
+                            {{/eachUnique}}
+
+                        </ul>
+
+                        <div class="categories-more">
+                            <!-- react-text: 108 -->+
+                            <!-- /react-text -->
+                            <!-- react-text: 109 -->2
+                            <!-- /react-text -->
+                            <!-- react-text: 110 --> more
+                            <!-- /react-text -->
+                        </div>
+                    </div>
+                    <div class="vertical-filters-filters brand-container"
+                        style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
+                        <span class="vertical-filters-header">Brand</span>
+                        <div class="filter-search-filterSearchBox">
+                            <input type="text" class="filter-search-inputBox filter-search-hidden"
+                                placeholder="Search for Brand" style="height: 35px;">
+                            <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
+                        </div>
+                        <ul class="brand-list">
+                            {{#eachUnique3 productfilter}}
+                            <li><label class="custom-control custom-checkbox"><input type="checkbox" name="productName"
+                                        class="custom-control-input filterproduct " value="{{productName}}"> <span
+                                        class="custom-control-indicator"></span> <!-- react-text: 120 -->{{productName}}
+                                    <!-- /react-text --><span class="brand-num">
+                                        <!-- react-text: 12<!-- /react-text --></span>
+                                    <div class="common-checkboxIndicator"></div>
+                                </label></li>
+                            {{/eachUnique3 }}
+                        </ul>
+
+                    </div>
+            </section>
+        </div>
+        <div class="col-md-8" style="background: white;  max-width:1300px;">
+            <div>
+
+                <ol class="breadcrumb col-sm-12" style="background-color:transparent;">
+                    <li><a href="#">Home/</a></li>
+                    <li><a href="#">Clothing/</a></li>
+                    <li><a href="#" id="subcategory">{{productname.0.subCategory}}</a></li>
+
+                </ol>
+            </div>
+            <div class="col-sm-12">
+                <div class="filterLabelList"
+                    style="position: relative; display: inline-block;margin-right: 5px;margin-bottom: 5px;padding: 2px 5px;padding-right: 20px;border: 1px solid #e0e0e0;">
+                    <p>
+                        <b style="font-style: bold;">{{productfilter.0.subCategory   }}</b>
+                    </p>
+                </div>
+                <button class="voonik-primary-btn" data-reactid=".rll5lhd0oi.2.0.0.0.1.1.2.0.2.1.0.6.0.0.1"
+                    style=" height:46px; width:114px; position:absolute;top:15px;  outline: 0!important; background: #ff9800;"
+                    id="clearcategory">clear all</button>
+            </div>
+
+
+            <div class="row" id="filter">
+                <br>
+                <br>
+
+                {{#each productfilter}}
+
+
+                <div class="col-md-3  shadow1  ">
+
+                    <img src=" {{this.productImage}}" alt="" style="margin:-3px;"
+                        onclick="window.location.href='/product/{{this._id}}'">
+                    <div class="row">
+
+
+
+                    </div>
+                    <ul>
+                        <li>
+                            <p class="product-title ">{{this.productName}}</p>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="discount-container" style="text-align: center;">
+
+                                    <span class="after-discount"> <strong
+                                            style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px;">₹-{{this.productPrice}}</strong>
+                                    </span></b> </h2>
+
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+
+
+                <br>
+                <br>
+                <br>
+                {{/each}}
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!--footer starts here-->
+
+    <!--footer starts here-->
+    <h5 class="text-white">Downloads</h5>
+    <footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Download Our App</h5>
+
+                    </ul>
+                </div>
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Our Company</h5>
+                    <ul class="footer_ul_amrc">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Sell On EthnicHub</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Privacy Policies</h5>
+
+                    <ul class="footer_ul_amrc">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Policy For Sellers</a></li>
+                        <li><a href="#">Policy For Buyers</a></li>
+                    </ul>
+                </div>
+                <div class=" col-sm-4 col-md  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Payment Options</h5>
+                    <a href="#"><img src="uploads/images.jfif"></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+            <ul class="social_footer_ul">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+    </footer>
+    </div>
 </body>
+
 </html>

@@ -84,25 +84,35 @@
                         </div>
                     </div>
                 </form>
+                {{#if isLoggedIn}}
+
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
                                 style="font-size: 15px;"> My Account</span></a>
                     </li>
-
                     <li class="nav-item">
-                        <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
-                                class="text-dark" style="font-size: 15px;">Order
-                                History</span></a>
+                        <a href="/userLogout" class="nav-link mr-3"><i class="fa fa-sign-out-alt"></i> <span
+                                class="text-dark" style="font-size: 15px;">
+                                Logout</span></a>
                     </li>
-                    <li class="nav-item" style="margin-right: 30px">
+
+                    <li class="nav-item" style="margin-right: 14px;">
                         <a href="/user/cart" class="nav-link "><span
                                 class="badge badge-secondary">{{cartLength}}</span><i
                                 class="fa fa-shopping-cart"></i><span class="text-dark"
-                                style="font-size: 15px;">Cart</span></a>
+                                style="font-size: 15px; margin-right: 22px;">Cart</span></a>
                     </li>
-
                 </ul>
+                {{else}}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/userLogin" class="nav-link mr-3"><i class="fa fa-sign-in-alt"></i> <span
+                                class="text-dark" style="font-size: 20px; margin-right: 22px;">
+                                Login</span></a>
+                    </li>
+                </ul>
+                {{/if}}
             </div>
         </div>
     </nav>

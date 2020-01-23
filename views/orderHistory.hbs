@@ -65,6 +65,9 @@
   <!-- header ends -->
   <div class="container">
     <h1 style="margin-top: 80px">Order History</h1>
+    {{#if orderHistory}}
+
+
     {{#each orderHistory}}
     <!--- Product Card starts -->
 
@@ -100,6 +103,18 @@
     </div>
     <!--- Product Card starts -->
     {{/each}}
+    {{else}}
+
+    <div class="jumbotron text-center w-100">
+      <h1 class="display-3">Your order history is empty</h1>
+
+      <hr>
+
+      <p class="lead">
+        <a class="btn btn-primary btn-sm" href="/" role="button">Continue to homepage</a>
+      </p>
+    </div>
+    {{/if}}
 
   </div>
   <div>

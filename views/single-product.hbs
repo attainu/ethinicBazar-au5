@@ -17,11 +17,12 @@
 
     <!--jQuery library-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
     <!--Latest compiled and minified JavaScript-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/product.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
 
 
@@ -97,7 +98,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <a href="/" class="navbar-brand"><img src="./../icon.png"
-                        style=" height: 60px; width: 160px; margin-top: -8px;" /> </a>
+                        style="margin-top: -3px; margin-left: 3px; height: 50px; width: 140px" /> </a>
                 <form class="form-inline my-2 my-lg-0">
                     <div class="wrap">
                         <div class="search mr-5" style="float: right">
@@ -110,25 +111,35 @@
                         </div>
                     </div>
                 </form>
+                {{#if isLoggedIn}}
+
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
-                                style="font-size: 15px;  font-family: " Lato", sans-serif;"> My Account</span></a>
+                                style="font-size: 18px;"> My Account</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/userLogout" class="nav-link mr-3"><i class="fa fa-sign-out-alt"></i> <span
+                                class="text-dark" style="font-size: 18px;">
+                                Logout</span></a>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
-                                class="text-dark" style="font-size: 15px;">Order
-                                History</span></a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 25px">
-                        <a href="/user/cart" class="nav-link "><span style="font-size: 11px;"
+                    <li class="nav-item" style="margin-right: 14px;">
+                        <a href="/user/cart" class="nav-link "><span style="font-size: 14px;"
                                 class="badge badge-secondary">{{cartLength}}</span><i
                                 class="fa fa-shopping-cart"></i><span class="text-dark"
-                                style="font-size: 15px;">Cart</span></a>
+                                style="font-size: 18px; margin-right: 22px;">Cart</span></a>
                     </li>
-
                 </ul>
+                {{else}}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/userLogin" class="nav-link mr-3"><i class="fa fa-sign-in-alt"></i> <span
+                                class="text-dark" style="font-size: 20px; margin-right: 22px;">
+                                Login</span></a>
+                    </li>
+                </ul>
+                {{/if}}
             </div>
         </div>
     </nav>
