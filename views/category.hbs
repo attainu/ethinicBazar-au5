@@ -27,278 +27,282 @@
 
 </head>
 <style>
- 
+
 
 
 
 </style>
-    <body style="overflow-x:hidden ;">
-        
-<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a href="/" class="navbar-brand"><img src="./../icon.png"
-                    style="margin-top: 0; margin-left: 3px; height: 55px; width: 150px" /> </a>
-            <form class="form-inline my-2 my-lg-0">
-                <div class="wrap">
-                    <div class="search mr-5" style="float: right">
-                        <input type="text" class="searchTerm" id="search" placeholder="What are you looking for?" />
-                        <button type="button" id="data" style="background-color: #ffa500; border-color: #ffa500;"
-                            class="searchButton mt-1">
-                            <i class="fa fa-search"></i>
-                        </button>
+
+<body style="overflow-x:hidden ;">
+
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffa500; height: 60px">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a href="/" class="navbar-brand"><img src="./../icon.png"
+                        style="margin-top: 0; margin-left: 3px; height: 55px; width: 150px" /> </a>
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="wrap">
+                        <div class="search mr-5" style="float: right">
+                            <input type="text" class="searchTerm" id="search" placeholder="What are you looking for?" />
+                            <button type="button" id="data" style="background-color: #ffa500; border-color: #ffa500;"
+                                class="searchButton mt-1">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
 
-            {{#if isLoggedIn}}
+                {{#if isLoggedIn}}
 
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
-                            style="font-size: 15px;"> My Account</span></a>
-                </li>
-                <li class="nav-item">
-                    <a href="/userLogout" class="nav-link mr-3"><i class="fa fa-sign-out-alt"></i> <span
-                            class="text-dark" style="font-size: 15px;">
-                            Logout</span></a>
-                </li>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/user" class="nav-link mr-3"><i class="fa fa-user"></i><span class="text-dark"
+                                style="font-size: 15px;"> My Account</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/userLogout" class="nav-link mr-3"><i class="fa fa-sign-out-alt"></i> <span
+                                class="text-dark" style="font-size: 15px;">
+                                Logout</span></a>
+                    </li>
 
-                <li class="nav-item" style="margin-right: 14px;">
-                    <a href="/user/cart" class="nav-link "><span class="badge badge-secondary">{{cartLength}}</span><i
-                            class="fa fa-shopping-cart"></i><span class="text-dark"
-                            style="font-size: 15px; margin-right: 22px;">Cart</span></a>
-                </li>
-            </ul>
-            {{else}}
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="/userLogin" class="nav-link mr-3"><i class="fa fa-sign-in-alt"></i> <span class="text-dark"
-                            style="font-size: 20px; margin-right: 22px;">
-                            Login</span></a>
-                </li>
-            </ul>
-            {{/if}}
-            {{!-- <li class="nav-item">
+                    <li class="nav-item" style="margin-right: 14px;">
+                        <a href="/user/cart" class="nav-link "><span
+                                class="badge badge-secondary">{{cartLength}}</span><i
+                                class="fa fa-shopping-cart"></i><span class="text-dark"
+                                style="font-size: 15px; margin-right: 22px;">Cart</span></a>
+                    </li>
+                </ul>
+                {{else}}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/userLogin" class="nav-link mr-3"><i class="fa fa-sign-in-alt"></i> <span
+                                class="text-dark" style="font-size: 20px; margin-right: 22px;">
+                                Login</span></a>
+                    </li>
+                </ul>
+                {{/if}}
+                {{!-- <li class="nav-item">
             <a href="/user/orderHistory" class="nav-link mr-3"><i class="fas fa-truck-loading"></i> <span
                 class="text-dark" style="font-size: 15px;">Order
                 History</span></a>
           </li> --}}
 
 
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<br>
-
-<div class="row" style="margin-left:56px;" id="main">
-
-    <div class=" col-md-2 "  id="one" style=" background:white; margin-top:53px; margin-right:100px;">
-        <section style="">
-            <div class="condition-render-verticalFilters condition-render-hung" style="top: 180.4px; bottom: auto; ">
-                <div class="vertical-filters-filters header-container"
-                    style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <span class="header-title">FILTERS</span>
-
-                </div>
-
-                <div class="vertical-filters-filters categories-container"
-                    style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
-                    <hr>
-                    <span class="vertical-filters-header">Categories</span>
-                    <div class="filter-search-filterSearchBox filter-search-expanded">
-                        <input type="text" class="filter-search-inputBox" placeholder="Search for Categories"
-                            style="height: 35px;">
-                        <span class="myntraweb-sprite filter-search-closeSearch sprites-remove"></span>
-                    </div>
-                    <ul class="categories-list">
-
-                        {{#eachUnique items}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox"
-                                    class="custom-control-input" value="{{subCategory}}" name="category"><span
-                                    class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}}
-                                <!-- /react-text --><span class="categories-num">
-                                    <!-- react-text: 40 -->
-                                    <!-- /react-text --></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-
-                        {{/eachUnique}}
-
-                    </ul>
-
-
-                </div>
-                <div class="vertical-filters-filters brand-container"
-                    style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
-                    <span class="vertical-filters-header">Product Name</span>
-                    <div class="filter-search-filterSearchBox">
-                        <input type="text" class="filter-search-inputBox filter-search-hidden"
-                            placeholder="Search for Brand" style="height: 35px;">
-                        <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
-                    </div>
-                    <ul class="brand-list">
-                        {{#each items}}
-                        <li><label class="custom-control custom-checkbox"><input type="checkbox" name="productName"
-                                    class="custom-control-input filterproduct" value="{{productName}}" id="one"> <span
-                                    class="custom-control-indicator"></span> <!-- react-text: 120 -->{{productName}}
-                                <!-- /react-text --><span class="brand-num">
-                                    <!-- react-text: 12<!-- /react-text --></span>
-                                <div class="common-checkboxIndicator"></div>
-                            </label></li>
-                        {{/each}}
-                    </ul>
-
-                </div>
-
+                </ul>
             </div>
-        </section>
-    </div>
-    <div class="  col-md-8 " id="two" style="background: white;  max-width:1300px;">
-        <br>    
-        <div>
-
-            <ol class="breadcrumb col-12 col-sm-12" style="background-color:transparent;">
-                <li><a href="#">Home/</a></li>
-                <li><a href="#">Clothing/</a></li>
-                <li><a href="#">{{items.0.subCategory}}</a></li>
-
-            </ol>
         </div>
+    </nav>
 
+    <br>
 
-        <div class="row" id="filter">
-            <br>
-            <br>
+    <div class="row" style="margin-left:56px;" id="main">
 
-            {{#each items}}
+        <div class=" col-md-2 " id="one" style=" background:white; margin-top:53px; margin-right:100px;">
+            <section style="">
+                <div class="condition-render-verticalFilters condition-render-hung"
+                    style="top: 180.4px; bottom: auto; ">
+                    <div class="vertical-filters-filters header-container"
+                        style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
+                        <span class="header-title">FILTERS</span>
 
+                    </div>
 
-            <div class=" col-md-3  shadow1  ">
-
-                <img src=" {{this.productImage}}" alt="" style="margin:-3px;"
-                    onclick="window.location.href='/product/{{this._id}}'">
-
-                        <h4 class="product-title " style="text-align:center;">{{this.productName}}</h4>
-                <ul>
-                    
-                    
-                    <li>
-                        <div>
-                            <p class="discount-container" style="text-align: center;">
-
-                                <span class="after-discount"> <strong
-                                        style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px; margin-right:56px;">₹{{this.productPrice}}</strong>
-                                </span></b> </h2>
-
-                            </p>
+                    <div class="vertical-filters-filters categories-container"
+                        style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke;">
+                        <hr>
+                        <span class="vertical-filters-header">Categories</span>
+                        <div class="filter-search-filterSearchBox filter-search-expanded">
+                            <input type="text" class="filter-search-inputBox" placeholder="Search for Categories"
+                                style="height: 35px;">
+                            <span class="myntraweb-sprite filter-search-closeSearch sprites-remove"></span>
                         </div>
-                    </li>
+                        <ul class="categories-list">
 
-                </ul>
+                            {{#eachUnique items}}
+                            <li><label class="custom-control custom-checkbox"><input type="checkbox"
+                                        class="custom-control-input" value="{{subCategory}}" name="category"><span
+                                        class="custom-control-indicator"></span><!-- react-text: 38 --> {{subCategory}}
+                                    <!-- /react-text --><span class="categories-num">
+                                        <!-- react-text: 40 -->
+                                        <!-- /react-text --></span>
+                                    <div class="common-checkboxIndicator"></div>
+                                </label></li>
 
+                            {{/eachUnique}}
 
-            </div>
-
-
-
-
-
-            <br>
-            <br>
-            <br>
-            {{/each}}
-
-
-
-        </div>
+                        </ul>
 
 
-
-    </div>
-
-</div>
-
-<br>
-<br>
-
-<!--footer starts here-->
-
-<!--footer starts here-->
-<h5 class="text-white">Downloads</h5>
-<footer class="footer">
-    <div class="container bottom_border">
-        <div class="row">
-            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Download Our App</h5>
-
-                <ul class="footer_ul_amrc">
-                    <div class="row" style="margin-left: -50px;">
-
-                        <li>
-                            <a href="#" target="_blank"><img
-                                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
-                                    alt=""></a>
-
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><img
-                                    src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
-                                    alt=""></a>
-                        </li>
                     </div>
-                </ul>
+                    <div class="vertical-filters-filters brand-container"
+                        style="background: white; width: 270px; margin-left: 20px; border:1px solid whitesmoke">
+                        <span class="vertical-filters-header">Product Name</span>
+                        <div class="filter-search-filterSearchBox">
+                            <input type="text" class="filter-search-inputBox filter-search-hidden"
+                                placeholder="Search for Brand" style="height: 35px;">
+                            <span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span>
+                        </div>
+                        <ul style="margin-right: 45px;" class="brand-list">
+                            {{#each items}}
+                            <li><label class="custom-control custom-checkbox"><input type="checkbox" name="productName"
+                                        class="custom-control-input filterproduct" value="{{productName}}" id="one">
+                                    <span class="custom-control-indicator"></span>
+                                    <!-- react-text: 120 -->{{productName}}
+                                    <!-- /react-text --><span class="brand-num">
+                                        <!-- react-text: 12<!-- /react-text --></span>
+                                    <div class="common-checkboxIndicator"></div>
+                                </label></li>
+                            {{/each}}
+                        </ul>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <div class="  col-md-8 " id="two" style="background: white;  max-width:1300px;">
+            <br>
+            <div>
+
+                <ol class="breadcrumb col-12 col-sm-12" style="background-color:transparent;">
+                    <li><a href="#">Home/</a></li>
+                    <li><a href="#">Clothing/</a></li>
+                    <li><a href="#">{{items.0.subCategory}}</a></li>
+
+                </ol>
             </div>
-            <div class=" col-sm-4 col-md  col-6 col">
-                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Our Company</h5>
-                <ul class="footer_ul_amrc">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="login">Sell On EthnicHub</a></li>
 
-                </ul>
+
+            <div class="row" id="filter">
+                <br>
+                <br>
+
+                {{#each items}}
+
+
+                <div class=" col-md-3  shadow1  ">
+
+                    <img src=" {{this.productImage}}" alt="" style="margin:-3px;"
+                        onclick="window.location.href='/product/{{this._id}}'">
+
+                    <h4 class="product-title " style="text-align:center;">{{this.productName}}</h4>
+                    <ul>
+
+
+                        <li>
+                            <div>
+                                <p class="discount-container" style="text-align: center;">
+
+                                    <span class="after-discount"> <strong
+                                            style="font-family: Whitney-SemiBold, Whitney;color: #282C3F;font-size: 20px; margin-right:56px;">₹{{this.productPrice}}</strong>
+                                    </span></b> </h2>
+
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+
+
+                <br>
+                <br>
+                <br>
+                {{/each}}
+
+
 
             </div>
 
 
-            <div class=" col-sm-4 col-md  col-6 col">
-                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Privacy Policies</h5>
 
-                <ul class="footer_ul_amrc">
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Policy For Sellers</a></li>
-                    <li><a href="#">Policy For Buyers</a></li>
-                </ul>
-            </div>
-            <div class=" col-sm-4 col-md  col-12 col">
-                <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Payment Options</h5>
-                <a href="#"><img src="./../images.jfif" style="margin-left:-46px;"></a>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+
+    <!--footer starts here-->
+
+    <!--footer starts here-->
+    <h5 class="text-white">Downloads</h5>
+    <footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Download Our App</h5>
+
+                    <ul class="footer_ul_amrc">
+                        <div class="row" style="margin-left: -50px;">
+
+                            <li>
+                                <a href="#" target="_blank"><img
+                                        src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-appstore-white.png"
+                                        alt=""></a>
+
+                            </li>
+                            <li>
+                                <a href="#" target="_blank"><img
+                                        src="https://www.vectorvest.com/wp-content/themes/vectorvest/images/social-googleplay-white.png"
+                                        alt=""></a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Our Company</h5>
+                    <ul class="footer_ul_amrc">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="login">Sell On EthnicHub</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Privacy Policies</h5>
+
+                    <ul class="footer_ul_amrc">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Policy For Sellers</a></li>
+                        <li><a href="#">Policy For Buyers</a></li>
+                    </ul>
+                </div>
+                <div class=" col-sm-4 col-md  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2" style="color: white;">Payment Options</h5>
+                    <a href="#"><img src="./../images.jfif" style="margin-left:-46px;"></a>
+                </div>
             </div>
         </div>
+        <div class="container">
+            <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
+            <ul class="social_footer_ul">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+    </footer>
     </div>
-    <div class="container">
-        <p class="text-center">© 2020 EthnicHub ®. All Rights Reserved.</p>
-        <ul class="social_footer_ul">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-</footer>
-</div>
-    </body>
+</body>
 
 
 </html>
